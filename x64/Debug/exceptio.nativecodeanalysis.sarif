@@ -1,0 +1,369 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“cb”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                },
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 5,
+                  "endLine": 84,
+                  "endColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RaiseAnException",
+                  "decoratedName": "RaiseAnException",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 62,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 64,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 65,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 68,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“cb”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 70,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“_acb==(((void *)0))”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 74,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 76,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“errmsg==(((void *)0))”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 79,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 81,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 83,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                          },
+                          "region": {
+                            "startLine": 84,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“cb”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+                },
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 40,
+                  "endLine": 74,
+                  "endColumn": 49
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RaiseAnException",
+                  "decoratedName": "RaiseAnException",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/exceptio.c"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "99b0036b238f1c8d9d575ebbb246205dbbcb32f56e59f4d059d3b16d119eebb2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/genlib.h"
+          },
+          "hashes": {
+            "sha-256": "73ee88dedbe91e8bc880a553f727db8f35dfa87ba5e13d1fbc66930509659906"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/boolean.h"
+          },
+          "hashes": {
+            "sha-256": "006c24f87ad3e5e55c852e0c06e3802c6807e729745b413a8a4d2e570a0fed6d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/gcalloc.h"
+          },
+          "hashes": {
+            "sha-256": "f9f5948976f8db7780dbc97c750b1e883ba4624ba63da2e0127a2808438a95d2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/exception.h"
+          },
+          "hashes": {
+            "sha-256": "9c96a9115a24a6410a557c847addfaf4f606f936d7e2126278bece8548ad1a49"
+          }
+        }
+      ]
+    }
+  ]
+}

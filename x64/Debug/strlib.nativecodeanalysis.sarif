@@ -1,0 +1,4045 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s1\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 5,
+                  "endLine": 50,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Concat",
+                  "decoratedName": "Concat",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s2\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 5,
+                  "endLine": 51,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Concat",
+                  "decoratedName": "Concat",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s1\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 5,
+                  "endLine": 53,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Concat",
+                  "decoratedName": "Concat",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”是对“strcpy”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:130 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”不应为 NULL，因为这与“strcpy”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s2\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 5,
+                  "endLine": 54,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Concat",
+                  "decoratedName": "Concat",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”是对“strcpy”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:130 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”不应为 NULL，因为这与“strcpy”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 5,
+                  "endLine": 63,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "IthChar",
+                  "decoratedName": "IthChar",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 60,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 62,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 62,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“s”的引用。查看第 63 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 5,
+                  "endLine": 67,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "IthChar",
+                  "decoratedName": "IthChar",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 60,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 62,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 62,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 64,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“i<0||i>len”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“s”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28183",
+          "message": {
+            "text": "\"s+p1\" 可以是 \"0\"，并且是 \"s\" 中找到的值的副本。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 5,
+                  "endLine": 82,
+                  "endColumn": 29
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SubString",
+                  "decoratedName": "SubString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 72,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 73,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 76,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 77,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 77,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 78,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 79,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 80,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 81,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 82,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 5,
+                  "endLine": 76,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SubString",
+                  "decoratedName": "SubString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 72,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 73,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 76,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 76,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 5,
+                  "endLine": 100,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringLength",
+                  "decoratedName": "StringLength",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 99,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 99,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 100,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 100,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 5,
+                  "endLine": 108,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CopyString",
+                  "decoratedName": "CopyString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 105,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 107,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 107,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 108,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 108,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 5,
+                  "endLine": 109,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CopyString",
+                  "decoratedName": "CopyString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 105,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 107,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 107,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 108,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 109,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strcpy”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:130 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 109,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strcpy”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s2\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 5,
+                  "endLine": 120,
+                  "endColumn": 31
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringEqual",
+                  "decoratedName": "StringEqual",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 117,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 118,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 120,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”是对“strcmp”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:100 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 120,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”不应为 NULL，因为这与“strcmp”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s1\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 5,
+                  "endLine": 120,
+                  "endColumn": 31
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringEqual",
+                  "decoratedName": "StringEqual",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 117,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 118,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 120,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”是对“strcmp”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:100 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 120,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”不应为 NULL，因为这与“strcmp”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s2\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 5,
+                  "endLine": 128,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringCompare",
+                  "decoratedName": "StringCompare",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 125,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 126,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 128,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”是对“strcmp”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:100 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 128,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s2”不应为 NULL，因为这与“strcmp”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s1\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 5,
+                  "endLine": 128,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringCompare",
+                  "decoratedName": "StringCompare",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 125,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 126,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 128,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”是对“strcmp”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:100 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 128,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“s1”不应为 NULL，因为这与“strcmp”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28183",
+          "message": {
+            "text": "\"text+start\" 可以是 \"0\"，并且是 \"text\" 中找到的值的副本。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 5,
+                  "endLine": 140,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindChar",
+                  "decoratedName": "FindChar",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 135,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 137,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 137,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 138,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 138,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 140,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"text\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 139,
+                  "startColumn": 9,
+                  "endLine": 139,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindChar",
+                  "decoratedName": "FindChar",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 135,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 137,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“text”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 137,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 138,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start<0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "“text”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start>strlen(text)”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "“text”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28183",
+          "message": {
+            "text": "\"text+start\" 可以是 \"0\"，并且是 \"text\" 中找到的值的副本。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 5,
+                  "endLine": 153,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindString",
+                  "decoratedName": "FindString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 147,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 151,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 151,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///d:/myuni/class/pgm-c/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 153,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"text\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 152,
+                  "startColumn": 9,
+                  "endLine": 152,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindString",
+                  "decoratedName": "FindString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 147,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“text”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 151,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start<0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "“text”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start>strlen(text)”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "“text”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"str\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 5,
+                  "endLine": 153,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindString",
+                  "decoratedName": "FindString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 147,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "“str”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“text==(((void *)0))”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 151,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start<0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“start>strlen(text)”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 153,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“str”是对“strstr”的输入(在 d:\\code\\visualstudio\\vc\\tools\\msvc\\14.35.32215\\include\\vcruntime_string.h:82 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 153,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“str”不应为 NULL，因为这与“strstr”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 5,
+                  "endLine": 168,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ConvertToLowerCase",
+                  "decoratedName": "ConvertToLowerCase",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 162,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 163,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 165,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 168,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 168,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“s”的引用。查看第 168 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 17,
+                  "endLine": 169,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ConvertToLowerCase",
+                  "decoratedName": "ConvertToLowerCase",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 162,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 163,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 165,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 168,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 169,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 169,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此循环(假定“s[i]!=0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 169,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“s”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 5,
+                  "endLine": 182,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ConvertToUpperCase",
+                  "decoratedName": "ConvertToUpperCase",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 176,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 177,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 179,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 180,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 182,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 182,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“strlen”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“s”的引用。查看第 182 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 183,
+                  "startColumn": 17,
+                  "endLine": 183,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ConvertToUpperCase",
+                  "decoratedName": "ConvertToUpperCase",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 176,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 177,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 179,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 180,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 182,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“strlen”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 183,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 183,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此循环(假定“s[i]!=0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 183,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“s”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 206,
+                  "startColumn": 9,
+                  "endLine": 206,
+                  "endColumn": 49
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringToInteger",
+                  "decoratedName": "StringToInteger",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 200,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 201,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 203,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 204,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 206,
+                            "startColumn": 46
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“sscanf”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\stdio.h:2240 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 206,
+                            "startColumn": 46
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 206,
+                            "startColumn": 46
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“sscanf”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"s\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 226,
+                  "startColumn": 9,
+                  "endLine": 226,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StringToReal",
+                  "decoratedName": "StringToReal",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 222,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 223,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 225,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "“s”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 225,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 47
+                          }
+                        },
+                        "message": {
+                          "text": "“s”是对“sscanf”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\stdio.h:2240 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 47
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 47
+                          }
+                        },
+                        "message": {
+                          "text": "“s”不应为 NULL，因为这与“sscanf”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+                },
+                "region": {
+                  "startLine": 245,
+                  "startColumn": 31,
+                  "endLine": 245,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CreateString",
+                  "decoratedName": "CreateString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/strlib.c"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "667e8d7e84ed930cc64993dba4887e367a12616491c0949ab61a5eb1f5a9da52"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/genlib.h"
+          },
+          "hashes": {
+            "sha-256": "73ee88dedbe91e8bc880a553f727db8f35dfa87ba5e13d1fbc66930509659906"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/boolean.h"
+          },
+          "hashes": {
+            "sha-256": "006c24f87ad3e5e55c852e0c06e3802c6807e729745b413a8a4d2e570a0fed6d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/strlib.h"
+          },
+          "hashes": {
+            "sha-256": "b19fa44cf90322f65a1ccddf2ed081cbe4cf6e4d2fe908bb0eeae065e0a40119"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/random.c"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 21,
+                  "endLine": 48,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RandomInteger",
+                  "decoratedName": "RandomInteger",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 - ，然后将结果转换到 8 字节值。在调用运算符 - 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/random.c"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 21,
+                  "endLine": 48,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RandomInteger",
+                  "decoratedName": "RandomInteger",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/random.c"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "90d227586bf3ccbc863cd3fd8f946da545b7235629e9d4eba4962cc806d82c56"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/genlib.h"
+          },
+          "hashes": {
+            "sha-256": "73ee88dedbe91e8bc880a553f727db8f35dfa87ba5e13d1fbc66930509659906"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/boolean.h"
+          },
+          "hashes": {
+            "sha-256": "006c24f87ad3e5e55c852e0c06e3802c6807e729745b413a8a4d2e570a0fed6d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/random.h"
+          },
+          "hashes": {
+            "sha-256": "93f36951f1a3327d8723bb19f61caec9c452ac1733426fcfd8dc4bbce8c3bdd3"
+          }
+        }
+      ]
+    }
+  ]
+}

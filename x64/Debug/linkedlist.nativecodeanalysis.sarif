@@ -1,0 +1,265 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“head”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 5,
+                  "endLine": 33,
+                  "endColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewLinkedList",
+                  "decoratedName": "NewLinkedList",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 30,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 32,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“head”可能为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 33,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“head”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“ptr”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                },
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 2,
+                  "endLine": 98,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InsertNode",
+                  "decoratedName": "InsertNode",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 90,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 92,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 93,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 97,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "“ptr”可能为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+                          },
+                          "region": {
+                            "startLine": 98,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“ptr”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/MyUni/Class/Pgm-C/test/test/lib/linkedlist.c"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "bdf1ad990476fbf3b2dc9078d2b11c6f686c8fefcfea987a9138f3be101677fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/linkedlist.h"
+          },
+          "hashes": {
+            "sha-256": "b33238f640eab923f5744cf125c906e742c04ce91895eee2d311a456dabc1774"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/myuni/class/pgm-c/test/test/include/boolean.h"
+          },
+          "hashes": {
+            "sha-256": "006c24f87ad3e5e55c852e0c06e3802c6807e729745b413a8a4d2e570a0fed6d"
+          }
+        }
+      ]
+    }
+  ]
+}
