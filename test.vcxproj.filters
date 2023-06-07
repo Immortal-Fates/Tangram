@@ -144,4 +144,9 @@
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="file\error.txt" />
+    <Text Include="file\map_info.txt" />
+    <Text Include="file\map1.txt" />
+  </ItemGroup>
 </Project>

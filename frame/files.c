@@ -79,7 +79,7 @@ void GenerateMap(void){
 	}
 	fscanf(fp, "%d\n", &MapNumber_MAX);
 	char _;
-	for (int i = 1; i <= MapNumber_MAX; i++) {
+	for (int i = 0; i <= MapNumber_MAX-1; i++) {
 		fscanf(fp, "%c%c\n",&_,&_);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
 		fprintf(pp, "%d\n", map[i].vertexNum);

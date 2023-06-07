@@ -47,7 +47,6 @@ void KeyboardEventProcess(int key, int event){
 			break;
 		//todo: QE没有写好
 		case 'Q':		//按Q，判断鼠标是否在图形内，如果是就逆时针旋转七巧板
-			score = mouseX;
 			if (event) {
 				Shape* temp = head;
 				while (temp) {
@@ -67,7 +66,7 @@ void KeyboardEventProcess(int key, int event){
 				while (temp) {
 					if (isInShape(temp, mouseX, mouseY) && !game_status)
 					{
-						score += 1;
+
 						temp->angle = (temp->angle + 7) % 8;
 						break;
 					}
@@ -83,7 +82,7 @@ void KeyboardEventProcess(int key, int event){
 		case 'N':
 			isN = !event;
 			if (isN && isCtrl) {
-				score = 0;
+
 				current_time = 0;
 				Read_File("map1.txt");
 			}
@@ -99,7 +98,7 @@ void KeyboardEventProcess(int key, int event){
 			if (isS && isCtrl)
 				Save_File(current_map);
 			if (isN && isCtrl) {
-				score = 0;
+
 				current_time = 0;
 				Read_File("map1.txt");
 			}				

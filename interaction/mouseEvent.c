@@ -91,7 +91,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				{
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
-					SnapToLine(temp, 1);
+					SnapToLine(temp, 0.1);
 				}
 				temp = temp->next;
 			}
@@ -128,14 +128,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 * \param shape: 要移动的图形
 	 * \param threshold: 吸附距离的阈值
 	 */
-	SMP smp;
-	smp.mapline = &mapShape->edge[0];
-	smp.shapeline = &shape->edge[0];
-	smp.distance = threshold;
-	bool flag = FALSE;
 	// 遍历所有地图，找到当前地图
-	
-	
 	for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
 		line* mapLine = &(mapShape->edge[i]);
 		for (int j = 0; j <= shape->vertexNum - 1; j++) {
@@ -143,23 +136,17 @@ void MouseEventProcess(int x, int y, int button, int event){
 		
 			// 判断线条是否平行
 			if (IsParallel(mapLine, shapeLine)) {
-				inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, 2);					//最大三角形
+				//inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, 2);					//最大三角形
 				// 计算两条平行线之间的距离
 				double distance = DistanceBetweenLines(mapLine, shapeLine);
+				score = distance;
 				// 如果距离小于阈值，则将图形移动到平行线重合
 				if (distance < threshold) {
-					//MoveToParallelLines(mapLine, shapeLine, distance, shape);
-					smp.distance = distance;
-					smp.mapline = mapLine;
-					smp.shapeline = shapeLine;
-					flag = TRUE;
+					MoveToParallelLines(mapLine, shapeLine, distance, shape);
 				}
 			}
 		}
 	}
-	if(flag == TRUE)
-		MoveToParallelLines(smp.mapline, smp.shapeline, smp.distance, shape);
-		
  }
 
  bool IsParallel(line* line1, line* line2) {//done

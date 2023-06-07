@@ -23,7 +23,7 @@ void Main() {
 	//message box 函数
 	//MessageBox("Hello, world!");
 
-	game_status = 3;
+	game_status = 0;
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
@@ -42,7 +42,7 @@ void Main() {
 	Initshape();
 
 	//初始化地图 map.c
-	InitMap(MapNumber_MAX);
+	InitMap(6);
 
 	display();
 }

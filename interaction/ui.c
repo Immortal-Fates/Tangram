@@ -26,11 +26,15 @@ void InitButton(void) {
 void EchoInfo(void) {
 	//实时显示游戏参数
 	SetPenColor("Black");
-	char timeDisplay[100], scoreDisplay[100];
+	char timeDisplay[100], scoreDisplay[100],cu_map[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
 	MovePen(5, 8.75);
 	DrawTextString(timeDisplay);
-	sprintf(scoreDisplay, "SCORE: %d", score);
+	sprintf(scoreDisplay, "SCORE: %lf", score);
 	MovePen(7, 8.75);
 	DrawTextString(scoreDisplay);
+	sprintf(cu_map, "map_number: %d", current_map);
+	MovePen(10, 8.75);
+	DrawTextString(cu_map);
+
 }

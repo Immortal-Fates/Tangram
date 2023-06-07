@@ -10,8 +10,8 @@
  *********************************************************************/
 #include "../Header.h"
 #include "map.h"
-MapNumber_MAX = 1;  //地图数量
-current_map = 1;	//当前地图编号
+MapNumber_MAX = 6;  //地图数量
+current_map = 0;	//当前地图编号
 mymap map[20];		//地图数据
 Shape* Map_head = NULL, * Map_tail = NULL;
 Shape* mapShape = NULL;//指向当前地图的指针
@@ -64,7 +64,7 @@ Shape* CreateMap(int MapNumber) {
 void InitMap(int t) {
 	//MapData();
 	GenerateMap();
-	for (int i = 1; i <= t; i++) {
+	for (int i = 0; i <= MapNumber_MAX-1; i++) {
 		CreateMap(i);
 	}
 	
@@ -95,17 +95,3 @@ void DrawMap(int MapNumber) {
 		temp = temp->next;
 	}
 }
-
-void MapData(void) {
-	//存储地图的函数，记录每一个地图所有顶点的坐标
-	map[1].vertexNum = 4;
-	map[1].vertex[0][0] = 0;
-	map[1].vertex[0][1] = 0;
-	map[1].vertex[1][0] = 2 * sqrt(2);
-	map[1].vertex[1][1] = 0;
-	map[1].vertex[2][0] = 2 * sqrt(2);
-	map[1].vertex[2][1] = 2 * sqrt(2);
-	map[1].vertex[3][0] = 0;
-	map[1].vertex[3][1] = 2 * sqrt(2);
-}
-
