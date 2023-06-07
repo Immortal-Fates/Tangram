@@ -74,7 +74,9 @@ Shape *inventShape(bool fill, int shapetype, string _color,
 	t->Pensize = Pensize;
 	t->next = t->last = NULL;
 	
-	
+	//for (int i = 0; i <= t->vertexNum - 1; i++) {
+	//	strcpy(t->edge[i].lineColor, _color);
+	//}
 
 	if (t->shape != 3) { //非地图，加到链表中
 		if (!head) head = tail = t;
@@ -135,7 +137,7 @@ void DrawShape(Shape* t) {
 			t->edge[2].start.y = y3;
 			t->edge[2].end.x = x1;
 			t->edge[2].end.y = y1;
-
+			
 
 			break;
 		}//end of case 0
@@ -248,10 +250,15 @@ void DrawShape(Shape* t) {
 		}
 		
 	}//end of switch(t->shape)
-	MovePen(t->vertex[0].x,t->vertex[0].y);
-	for (int i = 0; i <= t->vertexNum-1; i++) {
-		DrawLine(t->edge[i].end.x - t->edge[i].start.x, t->edge[i].end.y - t->edge[i].start.y);
+	if (t->shape != -1) {
+		MovePen(t->vertex[0].x, t->vertex[0].y);
+		for (int i = 0; i <= t->vertexNum - 1; i++) {
+			//pencolor = t->edge[i].lineColor;
+			//SetPenColor(pencolor);
+			DrawLine(t->edge[i].end.x - t->edge[i].start.x, t->edge[i].end.y - t->edge[i].start.y);
+		}
 	}
+	
 	if (t->isFilled) EndFilledRegion();//结束填充
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
@@ -356,13 +363,13 @@ void Initshape(void) {
 	 */
 	
 	int penwidth = 1;
-	inventShape(1, 0, colorList[2], 1, 6.5, 2, 2, 1, penwidth);				//最大三角形
-	inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, penwidth);					//最大三角形
-	inventShape(1, 0, colorList[4], 11, 6, sqrt(2), sqrt(2), 1, penwidth);		//2nd 三角形
-	inventShape(1, 0, colorList[5], 1, 2.5, 1, 1, 1, penwidth);				//3rd 三角形
-	inventShape(1, 0, colorList[6], 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
-	inventShape(1, 1, colorList[7], 12, 4, sqrt(2), 1, 1, penwidth);			//box
-	inventShape(1, 2, colorList[2], 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
+	inventShape(1, 0, colorList[2], 1, 6.5, 2, 2, 1, penwidth);					//最大三角形
+	//inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, penwidth);					//最大三角形
+	//inventShape(1, 0, colorList[4], 11, 6, sqrt(2), sqrt(2), 1, penwidth);		//2nd 三角形
+	//inventShape(1, 0, colorList[5], 1, 2.5, 1, 1, 1, penwidth);					//3rd 三角形
+	//inventShape(1, 0, colorList[6], 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
+	//inventShape(1, 1, colorList[7], 12, 4, sqrt(2), 1, 1, penwidth);			//box
+	//inventShape(1, 2, colorList[2], 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
 	
 }
 void delete_shape(void){

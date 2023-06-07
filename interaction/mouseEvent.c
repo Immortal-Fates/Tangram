@@ -80,6 +80,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 					temp = temp->next;
 				}
 			}
+			display();
 			break;
 		
 		case BUTTON_UP://鼠标松开,停止移动
@@ -91,10 +92,13 @@ void MouseEventProcess(int x, int y, int button, int event){
 				{
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
-					SnapToLine(temp, 0.1);
+					SnapToLine(temp, THRESHOLD);
+					SnaptoPoint(temp, THRESHOLD);
+					break;
 				}
 				temp = temp->next;
 			}
+			display();
 			break;
 		
 		case MOUSEMOVE://鼠标移动,移动图形
@@ -115,9 +119,10 @@ void MouseEventProcess(int x, int y, int button, int event){
 				lastX = mouseX;
 				lastY = mouseY;//更新鼠标的位置
 			}
+			display();
 			break;
 	}
-	display();//最后更新界面
+	//最后更新界面
 }
 
 
@@ -129,24 +134,57 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 * \param threshold: 吸附距离的阈值
 	 */
 	// 遍历所有地图，找到当前地图
-	for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
-		line* mapLine = &(mapShape->edge[i]);
-		for (int j = 0; j <= shape->vertexNum - 1; j++) {
-			line* shapeLine = &(shape->edge[j]);
-		
+	strcpy(mapShape->color, "Red");
+	FILE *ErrorFile = fopen("Errorsnap.txt", "w+");
+	for (int j = 0; j <= shape->vertexNum - 1; j++) {
+		line* shapeLine = &(shape->edge[j]);
+		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
+			line* mapLine = &(mapShape->edge[i]);
+			
 			// 判断线条是否平行
 			if (IsParallel(mapLine, shapeLine)) {
-				//inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, 2);					//最大三角形
 				// 计算两条平行线之间的距离
 				double distance = DistanceBetweenLines(mapLine, shapeLine);
 				score = distance;
 				// 如果距离小于阈值，则将图形移动到平行线重合
 				if (distance < threshold) {
 					MoveToParallelLines(mapLine, shapeLine, distance, shape);
+
+					fprintf(ErrorFile, "distance:%lf\n", distance);
+					fprintf(ErrorFile, "shapeLine->start.x:%lf ", shapeLine->start.x);
+					fprintf(ErrorFile, "shapeLine->start.y:%lf ", shapeLine->start.y);
+					fprintf(ErrorFile, "shapeLine->end.x:%lf ", shapeLine->end.x);
+					fprintf(ErrorFile, "shapeLine->end.y:%lf\n", shapeLine->end.y);
+					fprintf(ErrorFile, "mapLine->start.x:%lf ", mapLine->start.x);
+					fprintf(ErrorFile, "mapLine->start.y:%lf ", mapLine->start.y);
+					fprintf(ErrorFile, "mapLine->end.x:%lf ", mapLine->end.x);
+					fprintf(ErrorFile, "mapLine->end.y:%lf\n", mapLine->end.y);
+					fprintf(ErrorFile, "i:%d j:%d\n", i, j);
 				}
 			}
 		}
 	}
+	fclose(ErrorFile);
+ }
+ void SnaptoPoint(Shape* shape, double threshold) {
+	 /**
+	 * \brief: 将图形自动吸附到邻近的点上
+	 *
+	 * \param shape: 要移动的图形
+	 * \param threshold: 吸附距离的阈值
+	 */
+	 for (int j = 0; j <= shape->vertexNum - 1; j++) {
+		 node *shapeNode,*mapNode;
+		 shapeNode = &shape->vertex[j];
+		 for (int i = 0; i <= mapShape->vertexNum - 1; i++) {
+			 mapNode = &mapShape->vertex[i];
+			 double distance = DistanceBetweenPoints(shapeNode, mapNode);
+			 if (distance < threshold) {
+				 MoveToNearestPoint(shapeNode, mapNode, shape);
+				 score = distance;
+			 }
+		 }
+	 }
  }
 
  bool IsParallel(line* line1, line* line2) {//done
@@ -165,8 +203,31 @@ void MouseEventProcess(int x, int y, int button, int event){
 	double dx2 = line2->end.x - line2->start.x;
 	double dy2 = line2->end.y - line2->start.y;
 
+	// 判断line1在line2上的投影与线段line2是否有重叠部分
 	// 判断向量是否平行
-	return (dx1 * dy2 == dx2 * dy1);
+	if (dx1 * dy2 == dx2 * dy1) {
+		// 计算线段在水平方向上的投影范围
+		double minLine1X = line1->start.x < line1->end.x ? line1->start.x : line1->end.x;
+		double maxLine1X = line1->start.x > line1->end.x ? line1->start.x : line1->end.x;
+		double minLine2X = line2->start.x < line2->end.x ? line2->start.x : line2->end.x;
+		double maxLine2X = line2->start.x > line2->end.x ? line2->start.x : line2->end.x;
+
+		// 判断线段在水平方向上是否有重叠部分
+		if (maxLine1X >= minLine2X && maxLine2X >= minLine1X) {
+			// 计算线段在垂直方向上的投影范围
+			double minLine1Y = line1->start.y < line1->end.y ? line1->start.y : line1->end.y;
+			double maxLine1Y = line1->start.y > line1->end.y ? line1->start.y : line1->end.y;
+			double minLine2Y = line2->start.y < line2->end.y ? line2->start.y : line2->end.y;
+			double maxLine2Y = line2->start.y > line2->end.y ? line2->start.y : line2->end.y;
+
+			// 判断线段在垂直方向上是否有重叠部分
+			if (maxLine1Y >= minLine2Y || maxLine2Y >= minLine1Y) {
+				// 有重叠部分
+				return TRUE;
+			}
+		}
+	}
+	return FALSE;
  }
 
  double DistanceBetweenLines(line* line1, line* line2) {//done
@@ -205,7 +266,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 	  * \param distance: 两条平行线之间的距离
 	  * \param shape: 要移动的图形
 	  */
-
+	 //*line1->lineColor = "Red";
+	 //*line2->lineColor = "Red";
 	 double dx2 = line2->end.x - line2->start.x;
 	 double dy2 = line2->end.y - line2->start.y;
 
@@ -229,3 +291,31 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 display();
  }
 
+ double DistanceBetweenPoints(node* shapeNode, node* mapNode) {
+	//done
+	 /**
+	  * \brief: 计算两个点之间的距离
+	  *
+	  * \param shapeNode: 第一个点
+	  * \param mapNode: 第二个点
+	  * \return : 两个点之间的距离
+	  */
+	 double dx = shapeNode->x - mapNode->x;
+	 double dy = shapeNode->y - mapNode->y;
+	 double distance = sqrt(dx * dx + dy * dy);
+	 return distance;
+ }
+ void MoveToNearestPoint(node* shapeNode, node* mapNode, Shape* shape) {
+	/**
+	  * \brief: 将图形移动到最近的点
+	  *
+	  * \param shapeNode: 图形的点
+	  * \param mapNode: 地图的点
+	  * \param shape: 要移动的图形
+	  */
+	 double dx = mapNode->x - shapeNode->x;
+	 double dy = mapNode->y - shapeNode->y;
+	 shape->pX += dx;
+	 shape->pY += dy;
+	 display();
+ }

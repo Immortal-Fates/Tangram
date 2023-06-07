@@ -41,12 +41,13 @@ Shape* CreateMap(int MapNumber) {
 
 	//从存储的地图数据中读取顶点坐标，计算出边的数据
 	for(int i = 0;i <= t->vertexNum-1;i++){				
-		t->vertex[i].x = map[MapNumber].vertex[i][0];
-		t->vertex[i].y = map[MapNumber].vertex[i][1];
-		if (i >= 1) {
-			t->edge[i - 1].start = t->vertex[i-1];
-			t->edge[i - 1].end = t->vertex[i];
-		}
+		t->vertex[i].x = map[MapNumber].vertex[i][0]+t->pX;
+		t->vertex[i].y = map[MapNumber].vertex[i][1]+t->pY;
+		
+	}
+	for(int i = 0;i <= t->vertexNum-2;i++){
+		t->edge[i].start = t->vertex[i];
+		t->edge[i].end = t->vertex[i+1];
 	}
 	t->edge[t->vertexNum-1].start = t->vertex[t->vertexNum-1];
 	t->edge[t->vertexNum-1].end = t->vertex[0];
@@ -62,12 +63,9 @@ Shape* CreateMap(int MapNumber) {
 	return t;
 }
 void InitMap(int t) {
-	//MapData();
-	GenerateMap();
 	for (int i = 0; i <= MapNumber_MAX-1; i++) {
 		CreateMap(i);
 	}
-	
 }
 
 void DrawMap(int MapNumber) {

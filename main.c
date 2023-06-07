@@ -42,6 +42,7 @@ void Main() {
 	Initshape();
 
 	//³õÊ¼»¯µØÍ¼ map.c
+	GenerateMap();
 	InitMap(6);
 
 	display();

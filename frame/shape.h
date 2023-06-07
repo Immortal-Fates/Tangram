@@ -15,6 +15,7 @@ typedef struct Node {
 }node;
 typedef struct Line {
 	node start, end;
+	char lineColor[20];	//ÏßµÄÑÕÉ«
 }line;
 typedef struct Tangram {
 	bool isFilled;		// 0-not filled 1-filled
