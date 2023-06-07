@@ -18,13 +18,12 @@ void Read_File(string filename) {
 		printf("Can't open file %s\n", filename); //错误处理，返回错误代码
 		return;
 	}
-	fscanf(fp, "%d\n", &current_map);
+	fscanf(fp, "%d\n", &MapNumber_MAX);
 
 	delete_shape();
 
 
 	for (int i = 1; i <= 7; i++) {
-		//todo: 优化存取逻辑
 		Shape* t = (Shape*)malloc(sizeof(Shape)); // 分配内存
 		bool isfilled;
 		char color[10];
@@ -32,9 +31,8 @@ void Read_File(string filename) {
 		double pX, pY, width, height;
 		fscanf(fp, "%d %s %lf %lf %lf %lf %d %d\n",
 			&shape,color,&pX, &pY, &width, &height,
-			&angle, &Pensize);
-		//todo:bool & string 读取
-		inventShape(1, shape, "Red",
+			&angle, &Pensize); 
+		inventShape(1, shape, color,
 			pX, pY, width, height,
 			angle+1, Pensize);
 
@@ -80,7 +78,9 @@ void GenerateMap(void){
 		return;
 	}
 	fscanf(fp, "%d\n", &MapNumber_MAX);
+	char _;
 	for (int i = 1; i <= MapNumber_MAX; i++) {
+		fscanf(fp, "%c%c\n",&_,&_);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
 		fprintf(pp, "%d\n", map[i].vertexNum);
 		for(int j = 0;j <= map[i].vertexNum-1;j++){
@@ -92,6 +92,8 @@ void GenerateMap(void){
 			fprintf(pp,"%lf %lf\n",map[i].vertex[j][0],map[i].vertex[j][1]);
 		}
 	}
+	fscanf(fp, "%c%c\n", &_, &_);
+	fprintf(pp, "##");
 	fclose(fp);
 	fclose(pp);
 }

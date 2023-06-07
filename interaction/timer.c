@@ -17,7 +17,7 @@ void timer(int timerID) {
 	current_time += 0.1;
 	score += rand() % 10;
 	Shape* li = inventShape(1, -1, "Red", 8, 5, 1, 1, 1, 1);			//平行四边形
-	  inventShape(1, -1, colorList[8], 7, 5, 1, 1, 1, 1);			//平行四边形
+	  inventShape(1, -1, colorList[8], 7,4, 1, 1, 1, 1);			//平行四边形
 	line m, n;
 	m.start.x = 8;
 	m.start.y = 2;
@@ -28,8 +28,7 @@ void timer(int timerID) {
 	n.end.x =1.5;
 	n.end.y = 5;
 	line *mm = &m, *nn = &n;
-	//
-	////MoveToParallelLines(nn,mm, 1.5, li);
-	score = DistanceBetweenLines(mm, nn);
+	//MoveToParallelLines(nn,mm, 0, li);
+	//score = DistanceBetweenLines(mm, nn);
 	display();
 }

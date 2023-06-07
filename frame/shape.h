@@ -19,8 +19,8 @@ typedef struct Line {
 typedef struct Tangram {
 	bool isFilled;		// 0-not filled 1-filled
 	int shape;			// 0-triangle  1-box  2-parallelogram 3-map
-	string color;		// 图形的颜色
-	string fix_color;	// 固定的颜色
+	char color[20];		// 图形的颜色
+	char fix_color[20];	// 固定的颜色
 	double pX, pY, width, height;
 	/*
 		pX, pY is the left bottom point(triangle,parallelogram),middle point(box)
@@ -39,7 +39,7 @@ typedef struct Tangram {
 
 
 void DrawShape(Shape* t);//画图形
-Shape *inventShape(bool fill, int shapetype, string _color,
+Shape *inventShape(bool fill, int shapetype, char * _color,
 	double px, double py, double w, double h,int angle,int Pensize, ... );//创建图形
 void Initshape(void);							//初始化七个七巧板图形
 void delete_shape(void);						//删除图形

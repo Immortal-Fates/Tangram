@@ -20,7 +20,6 @@ void InitButton(void) {
 	DrawLine(WindowWidth, 0);
 	MovePen(0, 0.45);
 	DrawLine(WindowWidth, 0);
-	//todo: invent button
 
 }
 
@@ -31,7 +30,7 @@ void EchoInfo(void) {
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
 	MovePen(5, 8.75);
 	DrawTextString(timeDisplay);
-	sprintf(scoreDisplay, "SCORE: %lf", score);
+	sprintf(scoreDisplay, "SCORE: %d", score);
 	MovePen(7, 8.75);
 	DrawTextString(scoreDisplay);
 }

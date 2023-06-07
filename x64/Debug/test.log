@@ -1,10 +1,3 @@
 ﻿D:\Code\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(test.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  main.c
-D:\MyUni\Class\Pgm-C\test\test\main.c(65,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(90,58): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(90,55): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(91,56): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(91,53): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(92,24): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(93,24): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+  mouseEvent.c
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test\test\x64\Debug\Tangram.exe

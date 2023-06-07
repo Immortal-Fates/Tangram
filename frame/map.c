@@ -31,7 +31,7 @@ Shape* CreateMap(int MapNumber) {
 	t->pX = 4.5;
 	t->pY = 4;
 	t->angle = 1;
-	t->color = "Black";
+	strcpy(t->color, "Black");
 	t->isFilled = 0;
 	t->isSelected = FALSE;
 	t->Pensize = 1;

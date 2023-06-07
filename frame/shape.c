@@ -64,7 +64,7 @@ Shape *inventShape(bool fill, int shapetype, string _color,
 	Shape *t = (Shape *)malloc(sizeof(Shape));
 	t->isFilled = fill;
 	t->shape = shapetype;
-	t->color = _color;
+	strcpy(t->color, _color);
 	t->pX = px;
 	t->pY = py;
 	t->width = w;
@@ -362,7 +362,7 @@ void Initshape(void) {
 	inventShape(1, 0, colorList[5], 1, 2.5, 1, 1, 1, penwidth);				//3rd 三角形
 	inventShape(1, 0, colorList[6], 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
 	inventShape(1, 1, colorList[7], 12, 4, sqrt(2), 1, 1, penwidth);			//box
-	inventShape(1, 2, colorList[8], 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
+	inventShape(1, 2, colorList[2], 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
 	
 }
 void delete_shape(void){

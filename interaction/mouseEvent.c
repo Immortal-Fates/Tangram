@@ -50,8 +50,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 					{
 						MouseisMove = TRUE;
 						temp->isSelected = TRUE;		//选中的时候改变该图形的状态，防止移动的时候影响其他图形
-						temp->fix_color = temp->color;	//记录原来的颜色
-						temp->color = "Green";			//选中的时候改变颜色
+						strcpy(temp->fix_color, temp->color);//记录原来的颜色
+						strcpy(temp->color, "Green");		//选中的时候改变颜色
 						break;
 					}
 					temp = temp->next;
@@ -89,10 +89,9 @@ void MouseEventProcess(int x, int y, int button, int event){
 			{
 				if (temp->isSelected == TRUE)
 				{
-					
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
-					temp->color = temp->fix_color;
-					//SnapToLine(temp,0.1);//自动吸附到最近的边界
+					strcpy(temp->color,temp->fix_color);//记录原来的颜色
+					SnapToLine(temp, 1);
 				}
 				temp = temp->next;
 			}
@@ -100,7 +99,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 		
 		case MOUSEMOVE://鼠标移动,移动图形
 			if (MouseisMove) {
-				SetEraseMode(TRUE);
 				dx = mouseX - lastX;
 				dy = mouseY - lastY;//计算鼠标移动的距离
 				Shape* temp = head;
@@ -116,14 +114,13 @@ void MouseEventProcess(int x, int y, int button, int event){
 				}
 				lastX = mouseX;
 				lastY = mouseY;//更新鼠标的位置
-				SetEraseMode(FALSE);
 			}
 			break;
 	}
 	display();//最后更新界面
 }
 
-//`todo: angle=4/5 失效；edge=2+就不行；竖线不行
+
  void SnapToLine(Shape* shape, double threshold) {
 	/**
 	 * \brief: 将图形自动吸附到邻近的线条上
@@ -131,17 +128,14 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 * \param shape: 要移动的图形
 	 * \param threshold: 吸附距离的阈值
 	 */
-
-	 // 如果图形是地图，则不进行吸附
-	if (shape->shape == 3)
-		return;
-
 	SMP smp;
 	smp.mapline = &mapShape->edge[0];
 	smp.shapeline = &shape->edge[0];
 	smp.distance = threshold;
 	bool flag = FALSE;
 	// 遍历所有地图，找到当前地图
+	
+	
 	for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
 		line* mapLine = &(mapShape->edge[i]);
 		for (int j = 0; j <= shape->vertexNum - 1; j++) {
@@ -149,10 +143,12 @@ void MouseEventProcess(int x, int y, int button, int event){
 		
 			// 判断线条是否平行
 			if (IsParallel(mapLine, shapeLine)) {
+				inventShape(1, 0, colorList[3], 1, 4, 2, 2, 1, 2);					//最大三角形
 				// 计算两条平行线之间的距离
 				double distance = DistanceBetweenLines(mapLine, shapeLine);
 				// 如果距离小于阈值，则将图形移动到平行线重合
-				if (distance < smp.distance) {
+				if (distance < threshold) {
+					//MoveToParallelLines(mapLine, shapeLine, distance, shape);
 					smp.distance = distance;
 					smp.mapline = mapLine;
 					smp.shapeline = shapeLine;

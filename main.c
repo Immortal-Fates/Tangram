@@ -65,6 +65,12 @@ void display() {
 			if (button(GenUIID(0), 14, 2, WindowWidth / 10, 0.4, "·µ»Ø")) {
 				game_status = 3;
 			}
+			if (button(GenUIID(0), 6.3, 1, WindowWidth / 10, 0.4, "tuck")){
+				current_map += 1;
+				current_map %= MapNumber_MAX;
+				display();
+			}
+				
 			break;
 		case 2: //restart
 			current_time = 0;
