@@ -37,7 +37,7 @@ typedef struct Tangram {
 	int vertexNum;					//顶点数
 	int map_number;					//地图编号
 }Shape;//存储图形的结构体
-
+extern Shape* tangramshape[7];
 
 void DrawShape(Shape* t);//画图形
 Shape *inventShape(bool fill, int shapetype, char * _color,

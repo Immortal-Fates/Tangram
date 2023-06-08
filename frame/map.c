@@ -41,7 +41,7 @@ Shape* CreateMap(int MapNumber) {
 
 	//从存储的地图数据中读取顶点坐标，计算出边的数据
 	for(int i = 0;i <= t->vertexNum-1;i++){				
-		t->vertex[i].x = map[MapNumber].vertex[i][0]+t->pX;
+		t->vertex[i].x = map[MapNumber].vertex[i][0]+t->pX;//!!!!这里需要把地图的相对坐标转换为绝对坐标，否则会出现吸附错误
 		t->vertex[i].y = map[MapNumber].vertex[i][1]+t->pY;
 		
 	}

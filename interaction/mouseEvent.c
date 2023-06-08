@@ -92,7 +92,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				{
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
-					SnapToLine(temp, THRESHOLD);
+					SnapToLine(temp, 0.3);
 					SnaptoPoint(temp, 0.33);
 					
 					break;
@@ -146,7 +146,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 			if (IsParallel(mapLine, shapeLine)) {
 				// 计算两条平行线之间的距离
 				double distance = DistanceBetweenLines(mapLine, shapeLine);
-				score = distance;
 				// 如果距离小于阈值，则将图形移动到平行线重合
 				if (distance < threshold) {
 					MoveToParallelLines(mapLine, shapeLine, distance, shape);
@@ -182,7 +181,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 			 double distance = DistanceBetweenPoints(shapeNode, mapNode);
 			 if (distance < threshold) {
 				 MoveToNearestPoint(shapeNode, mapNode, shape);
-				 score = distance;
 			 }
 		 }
 	 }

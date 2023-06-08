@@ -22,8 +22,8 @@ void MouseEventProcess(int x, int y, int button, int event);
 void Main() {
 	//message box 函数
 	//MessageBox("Hello, world!");
-
-	game_status = 0;
+	current_time = 60;//给定60s的游戏时间
+	game_status = 3;
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
@@ -66,7 +66,7 @@ void display() {
 			if (button(GenUIID(0), 14, 2, WindowWidth / 10, 0.4, "返回")) {
 				game_status = 3;
 			}
-			if (button(GenUIID(0), 6.3, 1, WindowWidth / 10, 0.4, "tuck")){
+			if (button(GenUIID(0), 6.3, 1, WindowWidth / 10, 0.4, "change map")){
 				current_map += 1;
 				current_map %= MapNumber_MAX;
 				display();
