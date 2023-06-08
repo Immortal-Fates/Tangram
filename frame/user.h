@@ -19,5 +19,5 @@ bool user_login(char* name, char* password);
 void user_init(void);
 void rank();//Í°ÅÅĞò or ¿ìËÙÅÅĞò
 inline void swap(user* a, user* b);
-
+void echo_ranklist(void);
 #endif // !_USER_H_
