@@ -46,7 +46,6 @@ void Save_File(int MapNumber)
 	 * \brief 保存游戏状态,以便下次继续游戏
 	 * \param MapNumber : 地图编号
 	 */
-	//todo: 优化存取逻辑
 	FILE *fp;
 	char filename[20];
 	sprintf(filename, "./file/map%d.txt", MapNumber);

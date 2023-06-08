@@ -14,7 +14,7 @@
 #include "../Header.h"
 #include "mouseEvent.h"
 
-
+//todo: 吸附的时候会吸附到奇怪的地方上。
 double threshold = 0.5;//鼠标移动的阈值
 void MouseEventProcess(int x, int y, int button, int event){
 	/**
