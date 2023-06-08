@@ -100,8 +100,47 @@ void GenerateMap(void){
 
 
 void Save_Ranklist(void) {
-
+	//输出排行榜数据到./file/ranklist.txt
+	FILE* fp;
+	if ((fp = fopen("./file/ranklist.txt", "r")) == NULL) {
+		printf("Can't open map info\n"); //错误处理，返回错误代码
+		fclose(fp); // 关闭文件指针
+		return;
+	}
+	fprintf(fp, "%d\n", playerNumber);
+	for (int i = 0; i < playerNumber; i++) {
+		fprintf(fp, "%d %s %d %d\n",player[i].index, player[i].name, player[i].score, player[i].time);
+	}
+	fclose(fp);
 }
 void Read_Ranklist(void) {
-
+	FILE* fp;
+	if ((fp = fopen("./file/ranklist.txt", "r")) == NULL) {
+		printf("Can't open file\n"); //错误处理，返回错误代码
+		fclose(fp); // 关闭文件指针
+		return;
+	}
+	fscanf(fp, "%d\n", &playerNumber);
+	for (int i = 0; i < playerNumber; i++) {
+		fscanf();
+	}
+	fclose(fp);
 }
+
+void Save_Userinfo(void) {
+	//输出用户数据到./file/userinfo.txt
+	FILE* fp;
+	if ((fp = fopen("./file/userinfo.txt", "r")) == NULL) {
+		printf("Can't open map info\n"); //错误处理，返回错误代码
+		fclose(fp); // 关闭文件指针
+		return;
+	}
+	fprintf(fp, "%d\n", playerNumber);
+	for (int i = 0; i < playerNumber; i++) {
+		fprintf(fp, "%d %s %s\n", i, player[i].name,player[i].password);
+	}
+	fclose(fp);
+}
+
+
+

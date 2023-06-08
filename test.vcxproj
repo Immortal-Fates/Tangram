@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="frame\user.c" />
     <ClCompile Include="lib\eval.c" />
     <ClCompile Include="frame\map.c" />
     <ClCompile Include="frame\music.c" />
@@ -153,6 +154,7 @@
     <ClCompile Include="interaction\timer.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frame\user.h" />
     <ClInclude Include="include\eval.h" />
     <ClInclude Include="frame\file.h" />
     <ClInclude Include="include\imgui.h" />

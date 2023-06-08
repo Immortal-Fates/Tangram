@@ -18,6 +18,7 @@
 #include "./frame/file.h"
 #include "./frame/map.h"
 #include "./frame/shape.h"
+#include "./frame/user.h"
 #include "./interaction/judge.h"
 #include "./interaction/solve.h"
 #include "./interaction/ui.h"

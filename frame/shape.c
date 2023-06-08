@@ -1,6 +1,12 @@
+/*****************************************************************//**
+ * \file   shape.c
+ * \brief  用于图形的定义，包括图形的初始化，图形的移动，图形的旋转，图形的缩放，图形的绘制
+ * \author Philfan
+ * \date   June 2023
+ *********************************************************************/
 #include "../Header.h"
 #include "shape.h"
-Shape* head = NULL, * tail = NULL;
+Shape *head = NULL, * tail = NULL;
 char colorList[100][100] = {
 	"Green","Orange","Blue", "Violet", "Cyan","Yellow", "Red",
 	"Black", "Dark Gray", "Gray", "Brown",
