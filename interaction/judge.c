@@ -8,8 +8,6 @@
 #include "../Header.h"
 #include "judge.h"
 
-bool IsParallel(line* line1, line* line2);				//from mouseevent.c
-double DistanceBetweenLines(line* line1, line* line2);	//from mouseevent.c
 
 //todo:ÅĞ¶ÏÊÇ·ñÍê³ÉÆ´Í¼
 bool judge_complishment ()

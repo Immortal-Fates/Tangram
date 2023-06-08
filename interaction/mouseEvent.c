@@ -93,7 +93,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
 					SnapToLine(temp, THRESHOLD);
-					SnaptoPoint(temp, THRESHOLD);
+					SnaptoPoint(temp, 0.33);
+					
 					break;
 				}
 				temp = temp->next;

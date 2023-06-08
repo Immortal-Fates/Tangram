@@ -16,14 +16,14 @@ void timer(int timerID) {
 
 	current_time += 0.1;
 	//score += rand() % 10;
-	Shape* li = inventShape(1, -1, "Red", 8, 5, 1, 1, 1, 1);			//平行四边形
-	inventShape(1, -1, "Red", 8, 4, 1, 1, 1, 1);			//平行四边形
+	/*Shape* li = inventShape(1, -1, "Red", 8, 5, 1, 1, 1, 1);			//平行四边形
+	inventShape(1, -1, "Red", 8, 4.5, 1, 1, 1, 1);			//平行四边形
 	  node a, b;
 	  a.x = 0.0;
 	  a.y = 0.0;
-	  b.x = 1.0;
+	  b.x = 3.0;
 	  b.y = 1.0;
 	  score = DistanceBetweenPoints(&a, &b);
-	 //MoveToNearestPoint(&a, &b, li);
+	 MoveToNearestPoint(&a, &b, li);*/
 	display();
 }
