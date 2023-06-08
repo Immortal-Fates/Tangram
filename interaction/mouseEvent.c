@@ -136,7 +136,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 */
 	// 遍历所有地图，找到当前地图
 	strcpy(mapShape->color, "Red");
-	FILE *ErrorFile = fopen("./file/Errorssnap.txt", "w+");
+	//FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		line* shapeLine = &(shape->edge[j]);
 		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
@@ -150,7 +150,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				if (distance < threshold) {
 					MoveToParallelLines(mapLine, shapeLine, distance, shape);
 
-					fprintf(ErrorFile, "distance:%lf\n", distance);
+					/*fprintf(ErrorFile, "distance:%lf\n", distance);
 					fprintf(ErrorFile, "shapeLine->start.x:%lf ", shapeLine->start.x);
 					fprintf(ErrorFile, "shapeLine->start.y:%lf ", shapeLine->start.y);
 					fprintf(ErrorFile, "shapeLine->end.x:%lf ", shapeLine->end.x);
@@ -159,12 +159,12 @@ void MouseEventProcess(int x, int y, int button, int event){
 					fprintf(ErrorFile, "mapLine->start.y:%lf ", mapLine->start.y);
 					fprintf(ErrorFile, "mapLine->end.x:%lf ", mapLine->end.x);
 					fprintf(ErrorFile, "mapLine->end.y:%lf\n", mapLine->end.y);
-					fprintf(ErrorFile, "i:%d j:%d\n", i, j);
+					fprintf(ErrorFile, "i:%d j:%d\n", i, j);*/
 				}
 			}
 		}
 	}
-	fclose(ErrorFile);
+	//fclose(ErrorFile);
  }
  void SnaptoPoint(Shape* shape, double threshold) {
 	 /**

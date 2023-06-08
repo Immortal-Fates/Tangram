@@ -1,5 +1,68 @@
 ﻿D:\Code\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(test.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  files.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  map.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  music.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  shape.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
   user.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  judge.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  keyboardEvent.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  mouseEvent.c
+  solve.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  timer.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  ui.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+  main.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\main.c(64,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(67,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(70,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(73,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(88,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(91,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(96,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(122,49): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(122,46): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(133,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(133,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(135,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(136,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(140,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(153,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(153,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(155,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(160,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(164,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(168,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(172,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(176,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(180,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(184,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(188,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(191,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(199,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(199,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(201,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(203,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+  正在生成代码...
+D:\MyUni\Class\Pgm-C\test\test\interaction\judge.c(113): warning C4716: “CalculateArea”: 必须返回一个值
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test\test\x64\Debug\Tangram.exe

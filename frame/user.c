@@ -17,7 +17,6 @@ void user_register(char* name, char* password) {
 	 * \param name		ÓÃ»§Ãû
 	 * \param password	ÃÜÂë
 	 */
-	
 	player[playerNumber].index = playerNumber;
 	strcpy(player[playerNumber].name, name);
 	player[playerNumber].score = 0;
