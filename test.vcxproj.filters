@@ -154,5 +154,7 @@
     <Text Include="file\error.txt" />
     <Text Include="file\map_info.txt" />
     <Text Include="file\map1.txt" />
+    <Text Include="file\ranklist.txt" />
+    <Text Include="file\userinfo.txt" />
   </ItemGroup>
 </Project>

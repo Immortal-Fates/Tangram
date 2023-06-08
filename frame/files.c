@@ -25,7 +25,6 @@ void Read_File(string filename) {
 
 	for (int i = 1; i <= 7; i++) {
 		Shape* t = (Shape*)malloc(sizeof(Shape)); // 分配内存
-		bool isfilled;
 		char color[10];
 		int shape, angle, Pensize;
 		double pX, pY, width, height;
@@ -102,14 +101,14 @@ void GenerateMap(void){
 void Save_Ranklist(void) {
 	//输出排行榜数据到./file/ranklist.txt
 	FILE* fp;
-	if ((fp = fopen("./file/ranklist.txt", "r")) == NULL) {
+	if ((fp = fopen("./file/ranklist.txt", "w")) == NULL) {
 		printf("Can't open map info\n"); //错误处理，返回错误代码
 		fclose(fp); // 关闭文件指针
 		return;
 	}
 	fprintf(fp, "%d\n", playerNumber);
 	for (int i = 0; i < playerNumber; i++) {
-		fprintf(fp, "%d %s %d %d\n",player[i].index, player[i].name, player[i].score, player[i].time);
+		fprintf(fp, "%d %s %lf %d\n",player[i].index, player[i].name, player[i].score, player[i].time);
 	}
 	fclose(fp);
 }
@@ -122,7 +121,7 @@ void Read_Ranklist(void) {
 	}
 	fscanf(fp, "%d\n", &playerNumber);
 	for (int i = 0; i < playerNumber; i++) {
-		fscanf();
+		fscanf(fp, "%d %s %lf %d\n", &player[i].index, player[i].name, &player[i].score, &player[i].time);
 	}
 	fclose(fp);
 }
@@ -130,7 +129,7 @@ void Read_Ranklist(void) {
 void Save_Userinfo(void) {
 	//输出用户数据到./file/userinfo.txt
 	FILE* fp;
-	if ((fp = fopen("./file/userinfo.txt", "r")) == NULL) {
+	if ((fp = fopen("./file/userinfo.txt", "w")) == NULL) {
 		printf("Can't open map info\n"); //错误处理，返回错误代码
 		fclose(fp); // 关闭文件指针
 		return;

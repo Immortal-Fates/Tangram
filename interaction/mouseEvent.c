@@ -136,7 +136,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 */
 	// 遍历所有地图，找到当前地图
 	strcpy(mapShape->color, "Red");
-	FILE *ErrorFile = fopen("Errorsnap.txt", "w+");
+	FILE *ErrorFile = fopen("./file/Errorssnap.txt", "w+");
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		line* shapeLine = &(shape->edge[j]);
 		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条

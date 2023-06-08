@@ -1,0 +1,8 @@
+distance:0.077301
+shapeLine->start.x:5.317178 shapeLine->start.y:4.000000 shapeLine->end.x:7.317178 shapeLine->end.y:4.000000
+mapLine->start.x:4.500000 mapLine->start.y:4.000000 mapLine->end.x:6.500000 mapLine->end.y:4.000000
+i:0 j:0
+distance:0.000000
+shapeLine->start.x:5.317178 shapeLine->start.y:4.000000 shapeLine->end.x:7.317178 shapeLine->end.y:4.000000
+mapLine->start.x:6.500000 mapLine->start.y:4.000000 mapLine->end.x:7.500000 mapLine->end.y:4.000000
+i:1 j:0

@@ -1,3 +1,5 @@
 ﻿D:\Code\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(test.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  shape.c
+  user.c
+D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
+D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test\test\x64\Debug\Tangram.exe
