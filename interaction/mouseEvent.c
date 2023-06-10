@@ -14,8 +14,7 @@
 #include "../Header.h"
 #include "mouseEvent.h"
 
-//todo: 吸附的时候会吸附到奇怪的地方上。
-double threshold = 0.5;//鼠标移动的阈值
+
 void MouseEventProcess(int x, int y, int button, int event){
 	/**
 	 * \brief: 鼠标左键按下 逆时针旋转；鼠标右键按下 顺时针旋转；鼠标中键长按拖动，实现图形移动
@@ -92,8 +91,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 				{
 					temp->isSelected = FALSE;//松开鼠标的时候改变该图形的状态，清除所有的状态，恢复原样
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
-					SnapToLine(temp, 0.3);
-					SnaptoPoint(temp, 0.33);
+					SnapToLine(temp, THRESHOLD);
+					SnaptoPoint(temp, THRESHOLD);
 					
 					break;
 				}
@@ -129,20 +128,19 @@ void MouseEventProcess(int x, int y, int button, int event){
 
  void SnapToLine(Shape* shape, double threshold) {
 	/**
-	 * \brief: 将图形自动吸附到邻近的线条上
-	 *	
+	 * \brief: 将图形自动吸附到邻近的线条上（包括地图的线条和图形的线条）
 	 * \param shape: 要移动的图形
 	 * \param threshold: 吸附距离的阈值
+	 * \param mapShape: 当前地图的图形指针 Shape*类型
 	 */
-	// 遍历所有地图，找到当前地图
-	//strcpy(mapShape->color, "Red");
-	FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
+	
+	//FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		
 		line* shapeLine = &(shape->edge[j]);
-		fprintf(ErrorFile, "##\n\n %d\n", j);
-		fprintf(ErrorFile, "%lf %lf\n",shapeLine->start.x, shapeLine->start.y);
-		fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
+		//fprintf(ErrorFile, "##\n\n %d\n", j);
+		//fprintf(ErrorFile, "%lf %lf\n",shapeLine->start.x, shapeLine->start.y);
+		//fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
 		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
 			line* mapLine = &(mapShape->edge[i]);
 			// 判断线条是否平行
@@ -153,7 +151,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 				if (distance < threshold) {
 					MoveToParallelLines(mapLine, shapeLine, distance, shape);
 
-					/*fprintf(ErrorFile, "distance:%lf\n", distance);
+					/* 用于debug 
+					fprintf(ErrorFile, "distance:%lf\n", distance);
 					fprintf(ErrorFile, "shapeLine->start.x:%lf ", shapeLine->start.x);
 					fprintf(ErrorFile, "shapeLine->start.y:%lf ", shapeLine->start.y);
 					fprintf(ErrorFile, "shapeLine->end.x:%lf ", shapeLine->end.x);
@@ -162,32 +161,26 @@ void MouseEventProcess(int x, int y, int button, int event){
 					fprintf(ErrorFile, "mapLine->start.y:%lf ", mapLine->start.y);
 					fprintf(ErrorFile, "mapLine->end.x:%lf ", mapLine->end.x);
 					fprintf(ErrorFile, "mapLine->end.y:%lf\n", mapLine->end.y);
-					fprintf(ErrorFile, "i:%d j:%d\n", i, j);*/
+					fprintf(ErrorFile, "i:%d j:%d\n", i, j);
+					*/
 				}
 			}
 		}
 		Shape* t = head;
 		while (t)
 		{
-			if (strcmp(t->color,shape->color) != 0)//没有被选中
+			if (t->isSelected == FALSE)//没有被选中
 			{
-				fprintf(ErrorFile, "#### %d %s %lf\n", t->shape,t->color,t->pX);
 
 				for (int i = 0; i < t->vertexNum; i++) {
 					line* oshapeLine = &(t->edge[i]);
 					// 判断线条是否平行
-					fprintf(ErrorFile, "oshapeline line%d start = %lf %lf\n", i,oshapeLine->start.x,oshapeLine->start.y);
-					fprintf(ErrorFile, "oshapeline line%d end = %lf %lf\n", i, oshapeLine->end.x, oshapeLine->end.y);
-
 					if (IsParallel(oshapeLine, shapeLine)) {
 						// 计算两条平行线之间的距离
-						fprintf(ErrorFile, "#IsParallel %s %d to %s %d\n", shape->color,j, t->color,i);
 						double distance = DistanceBetweenLines(oshapeLine, shapeLine);
 						// 如果距离小于阈值，则将图形移动到平行线重合
-						score = distance;
 						if (distance < threshold) {
-							//MoveToParallelLines(oshapeLine, shapeLine, distance, shape);
-							//fprintf(ErrorFile, "#move %s to %s\n", shape->color,t->color);
+							MoveToParallelLines(oshapeLine, shapeLine, distance, shape);
 						}
 					}
 				}				
@@ -195,7 +188,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 			t = t->next;
 		}
 	}
-	fclose(ErrorFile);
+	//fclose(ErrorFile);
  }
  void SnaptoPoint(Shape* shape, double threshold) {
 	 /**
@@ -220,7 +213,6 @@ void MouseEventProcess(int x, int y, int button, int event){
  bool IsParallel(line* line1, line* line2) {//done
 	/**
 	 * \brief: 判断两条线是否平行
-	 *
 	 * \param line1: 第一条线
 	 * \param line2: 第二条线
 	 * \return : 如果两条线平行，则返回true；否则返回false
@@ -229,16 +221,20 @@ void MouseEventProcess(int x, int y, int button, int event){
 	double dy1 = line1->end.y - line1->start.y;
 	double dx2 = line2->end.x - line2->start.x;
 	double dy2 = line2->end.y - line2->start.y;
-
-	// 判断line1在line2上的投影与线段line2是否有重叠部分
-	// 判断向量是否平行
-	if (fabs(dx1 * dy2 - dx2 * dy1) < 0.001) {
-		return TRUE;
+	if(isequal(dx1 * dy2 , dx2 * dy1)){
+		if(Iscrossed(line1,line2))
+			return TRUE;
 	}
 	return FALSE;
  }
 
  int  Iscrossed(line* line1, line* line2) {
+	 /**
+	  * .\brief 判断两条线段在水平和垂直方向有无交叉部分
+	  * \param line1	第一条线段
+	  * \param line2	第二条线段
+	  * \return 若没有交叉部分，返回值为0 有交叉部分 返回正实数
+	  */
 	 double dx1 = line1->end.x - line1->start.x;
 	 double dy1 = line1->end.y - line1->start.y;
 	 double dx2 = line2->end.x - line2->start.x;
@@ -254,15 +250,15 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 double minLine2Y = line2->start.y < line2->end.y ? line2->start.y : line2->end.y;
 	 double maxLine2Y = line2->start.y > line2->end.y ? line2->start.y : line2->end.y;
 
-	 if (dx1 == 0 && dx2 == 0)
+	 if (isequal(dx1,0) && isequal(dx2, 0)) {
 		 if (maxLine1Y >= minLine2Y && maxLine2Y >= minLine1Y)
 			 return 1;
-	 else if (dy1 == 0 && dy2 == 0)
+	 }
+	 else if (isequal(dy1, 0) && isequal(dy2, 0)) { 
 		 if (maxLine1X >= minLine2X && maxLine2X >= minLine1X)
 			 return 2;
-			 // 判断线段在水平方向上是否有重叠部分
-	 if (maxLine1X >= minLine2X && maxLine2X >= minLine1X) {
-		 // 判断线段在垂直方向上是否有重叠部分
+	 }
+	 else if (maxLine1X >= minLine2X && maxLine2X >= minLine1X) {
 		 if (maxLine1Y >= minLine2Y && maxLine2Y >= minLine1Y) {
 			 return 3;
 		 }
@@ -270,6 +266,18 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 return 0;
  }
 
+ int isequal(double a, double b) {
+	/**
+	 * \brief 判断两个浮点数是否相等
+	 * \param a 浮点数1
+	 * \param b	浮点数2
+	 * \relates ERROR 精确度 设置为0.0001
+	 */
+	if (fabs(a - b) < ERROR) 
+		 return 1;
+	else
+		 return 0;
+}
  double DistanceBetweenLines(line* line1, line* line2) {//done
 	/**
 	 * \brief: 计算两条平行线之间的距离

@@ -2,10 +2,13 @@
 #ifndef _MOUSEEVENT_H_
 #define MOUSEEVENT_H
 #include "../Header.h"
-#define THRESHOLD 0.5
+#define THRESHOLD 0.3	//吸附阈值
+#define ERROR 0.001		//判定浮点数相等时候的误差
 
 void MouseEventProcess(int x, int y, int button, int event);
 
+
+int isequal(double a, double b);
 //对线的吸附
 void SnapToLine(Shape* shape, double threshold);
 bool IsParallel(line* line1, line* line2);

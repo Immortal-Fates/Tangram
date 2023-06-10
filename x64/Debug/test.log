@@ -2,39 +2,63 @@
   files.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   map.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   music.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   shape.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   user.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   judge.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
 D:\MyUni\Class\Pgm-C\test\test\interaction\judge.c(16,1): warning C4273: “MessageBoxA”: dll 链接不一致
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(9153,1): message : 参见“MessageBoxA”的前一个定义
   keyboardEvent.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   mouseEvent.c
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   solve.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   timer.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   ui.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   main.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
+D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
 D:\MyUni\Class\Pgm-C\test\test\main.c(64,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(67,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(70,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
