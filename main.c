@@ -75,6 +75,30 @@ void display() {
 			}
 			break;
 		}
+		case -2: {
+			InitButton();	//画出整体界面 button.c
+			EchoInfo();		//显示分数和时间	button.c
+			//输出结束信息
+			SetPenColor("red");
+			SetPenSize(1);
+			MovePen(0, 0);
+			StartFilledRegion(1);
+			DrawLine(14, 0);
+			DrawLine(0, 9);
+			DrawLine(-14, 0);
+			DrawLine(0, -9);
+			EndFilledRegion();
+			SetPenColor("black");
+			SetPenSize(1);
+			SetPointSize(30);
+			MovePen(4.6, 5);
+			DrawTextString("Game Over");
+			if (button(GenUIID(0), 4.6, 4, WindowWidth / 3, 1, "new game")) {
+				game_status = 7;
+			}
+
+			break;
+		}
 		case 0: case 1: //running //pause
 		{	
 			InitButton();	//画出整体界面 button.c

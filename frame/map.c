@@ -99,41 +99,41 @@ void DIY_map(void){
 	 * .\brief 用户自定义地图
 	 * 
 	 */
-	int numVertices = t->vertexNum;
-	int startIndex = 0;
-	int currentIndex = startIndex;
-	int nextIndex;
+	//int numVertices = t->vertexNum;
+	//int startIndex = 0;
+	//int currentIndex = startIndex;
+	//int nextIndex;
 
-	// 寻找最左下角的顶点作为起始点
-	for (int i = 1; i < numVertices; i++) {
-		if (t->vertex[i].y < t->vertex[startIndex].y ||
-			(t->vertex[i].y == t->vertex[startIndex].y && t->vertex[i].x < t->vertex[startIndex].x)) {
-			startIndex = i;
-		}
-	}
+	//// 寻找最左下角的顶点作为起始点
+	//for (int i = 1; i < numVertices; i++) {
+	//	if (t->vertex[i].y < t->vertex[startIndex].y ||
+	//		(t->vertex[i].y == t->vertex[startIndex].y && t->vertex[i].x < t->vertex[startIndex].x)) {
+	//		startIndex = i;
+	//	}
+	//}
 
-	int contourIndex = 0;
-	do {
-		contour[contourIndex++] = t->vertex[currentIndex];
-		nextIndex = (currentIndex + 1) % numVertices;
+	//int contourIndex = 0;
+	//do {
+	//	contour[contourIndex++] = t->vertex[currentIndex];
+	//	nextIndex = (currentIndex + 1) % numVertices;
 
-		for (int i = 0; i < numVertices; i++) {
-			if (i != currentIndex && i != nextIndex) {
-				double crossProduct = (t->vertex[i].x - t->vertex[currentIndex].x) * (t->vertex[nextIndex].y - t->vertex[currentIndex].y) -
-					(t->vertex[nextIndex].x - t->vertex[currentIndex].x) * (t->vertex[i].y - t->vertex[currentIndex].y);
+	//	for (int i = 0; i < numVertices; i++) {
+	//		if (i != currentIndex && i != nextIndex) {
+	//			double crossProduct = (t->vertex[i].x - t->vertex[currentIndex].x) * (t->vertex[nextIndex].y - t->vertex[currentIndex].y) -
+	//				(t->vertex[nextIndex].x - t->vertex[currentIndex].x) * (t->vertex[i].y - t->vertex[currentIndex].y);
 
-				if (crossProduct < 0) {
-					nextIndex = i;
-				}
-			}
-		}
+	//			if (crossProduct < 0) {
+	//				nextIndex = i;
+	//			}
+	//		}
+	//	}
 
-		currentIndex = nextIndex;
-	} while (currentIndex != startIndex);
+	//	currentIndex = nextIndex;
+	//} while (currentIndex != startIndex);
 
-	// 输出轮廓上的坐标
-	printf("Contour coordinates (in counter-clockwise order):\n");
-	for (int i = 0; i < contourIndex; i++) {
-		printf("(%f, %f)\n", contour[i].x, contour[i].y);
-	}
+	//// 输出轮廓上的坐标
+	//printf("Contour coordinates (in counter-clockwise order):\n");
+	//for (int i = 0; i < contourIndex; i++) {
+	//	printf("(%f, %f)\n", contour[i].x, contour[i].y);
+	//}
 }

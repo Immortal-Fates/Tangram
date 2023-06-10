@@ -93,7 +93,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
 					SnapToLine(temp, THRESHOLD);
 					SnaptoPoint(temp, THRESHOLD);
-					
+					judge_complishment();
 					break;
 				}
 				temp = temp->next;

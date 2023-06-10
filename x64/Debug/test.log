@@ -1,100 +1,4 @@
 ﻿D:\Code\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(test.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  files.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  map.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(102,21): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(102,23): error C2223: “->vertexNum”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(109,8): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(109,10): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(109,25): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(109,27): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,6): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,8): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,24): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,26): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,51): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,53): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,68): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(110,70): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(117,10): error C2065: “contour”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(117,25): error C2109: 下标要求数组或指针类型
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(117,30): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(117,32): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,29): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,31): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,46): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,48): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,76): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,78): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,101): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(122,103): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,8): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,10): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,33): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,35): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,63): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,65): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,80): error C2065: “t”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(123,82): error C2223: “->vertex”的左侧必须指向结构/联合
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,31): error C2065: “contour”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,33): error C2109: 下标要求数组或指针类型
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,45): error C2065: “contour”: 未声明的标识符
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,47): error C2109: 下标要求数组或指针类型
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,10): warning C4473: “printf”: 没有为格式字符串传递足够的参数
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,10): message : 占位符和其参数预计 2 可变参数，但提供的却是 0 参数
-D:\MyUni\Class\Pgm-C\test\test\frame\map.c(137,10): message : 缺失的可变参数 1 为格式字符串“%f”所需
-  music.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  shape.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  user.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  judge.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\judge.c(16,1): warning C4273: “MessageBoxA”: dll 链接不一致
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(9153,1): message : 参见“MessageBoxA”的前一个定义
-  keyboardEvent.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  mouseEvent.c
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  solve.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  timer.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-  ui.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
   main.c
 D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
@@ -104,33 +8,33 @@ D:\MyUni\Class\Pgm-C\test\test\main.c(64,15): warning C4311: “类型强制转�
 D:\MyUni\Class\Pgm-C\test\test\main.c(67,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(70,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(73,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(88,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(91,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(96,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(122,49): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(122,46): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(133,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(133,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(135,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(136,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(142,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(156,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(112,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(115,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(120,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(146,49): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(146,46): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(157,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(157,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
 D:\MyUni\Class\Pgm-C\test\test\main.c(159,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(166,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(166,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(168,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(173,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(177,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(181,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(185,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(189,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(193,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(160,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(166,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(180,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(183,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(190,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(190,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(192,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(197,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(201,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(204,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(212,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(212,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(214,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(216,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-  正在生成代码...
-D:\MyUni\Class\Pgm-C\test\test\interaction\judge.c(114): warning C4716: “CalculateArea”: 必须返回一个值
+D:\MyUni\Class\Pgm-C\test\test\main.c(205,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(209,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(213,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(217,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(221,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(225,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(228,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(236,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(236,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(238,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(240,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+  test.vcxproj -> D:\MyUni\Class\Pgm-C\test\test\x64\Debug\Tangram.exe
