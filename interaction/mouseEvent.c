@@ -125,7 +125,18 @@ void MouseEventProcess(int x, int y, int button, int event){
 	//最后更新界面
 }
 
-
+int isequal(double a, double b) {
+	/**
+	 * \brief 判断两个浮点数是否相等
+	 * \param a 浮点数1
+	 * \param b	浮点数2
+	 * \relates ERROR 精确度 设置为0.0001
+	 */
+	if (fabs(a - b) < ERROR)
+		return 1;
+	else
+		return 0;
+}
  void SnapToLine(Shape* shape, double threshold) {
 	/**
 	 * \brief: 将图形自动吸附到邻近的线条上（包括地图的线条和图形的线条）
@@ -190,26 +201,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	}
 	//fclose(ErrorFile);
  }
- void SnaptoPoint(Shape* shape, double threshold) {
-	 /**
-	 * \brief: 将图形自动吸附到邻近的点上
-	 *
-	 * \param shape: 要移动的图形
-	 * \param threshold: 吸附距离的阈值
-	 */
-	 for (int j = 0; j <= shape->vertexNum - 1; j++) {
-		 node *shapeNode,*mapNode;
-		 shapeNode = &shape->vertex[j];
-		 for (int i = 0; i <= mapShape->vertexNum - 1; i++) {
-			 mapNode = &mapShape->vertex[i];
-			 double distance = DistanceBetweenPoints(shapeNode, mapNode);
-			 if (distance < threshold) {
-				 MoveToNearestPoint(shapeNode, mapNode, shape);
-			 }
-		 }
-	 }
- }
-
  bool IsParallel(line* line1, line* line2) {//done
 	/**
 	 * \brief: 判断两条线是否平行
@@ -227,7 +218,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	}
 	return FALSE;
  }
-
  int  Iscrossed(line* line1, line* line2) {
 	 /**
 	  * .\brief 判断两条线段在水平和垂直方向有无交叉部分
@@ -265,19 +255,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 }
 	 return 0;
  }
-
- int isequal(double a, double b) {
-	/**
-	 * \brief 判断两个浮点数是否相等
-	 * \param a 浮点数1
-	 * \param b	浮点数2
-	 * \relates ERROR 精确度 设置为0.0001
-	 */
-	if (fabs(a - b) < ERROR) 
-		 return 1;
-	else
-		 return 0;
-}
  double DistanceBetweenLines(line* line1, line* line2) {//done
 	/**
 	 * \brief: 计算两条平行线之间的距离
@@ -304,7 +281,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	return distance;
 
  }
-
  void MoveToParallelLines(line* line1, line* line2, double distance, Shape* shape) {//done
 	 /**
 	  * \brief: 已知两条平行线之间的距离，将图形移动到平行线重合
@@ -339,6 +315,42 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 display();
  }
 
+
+ void SnaptoPoint(Shape* shape, double threshold) {
+	 /**
+	 * \brief: 将图形自动吸附到邻近的点上
+	 *
+	 * \param shape: 要移动的图形
+	 * \param threshold: 吸附距离的阈值
+	 */
+	 for (int j = 0; j <= shape->vertexNum - 1; j++) {
+		 node* shapeNode, * mapNode, * oshapeNode;
+		 shapeNode = &shape->vertex[j];
+		 for (int i = 0; i <= mapShape->vertexNum - 1; i++) {
+			 mapNode = &mapShape->vertex[i];
+			 double distance = DistanceBetweenPoints(shapeNode, mapNode);
+			 if (distance < threshold) {
+				 MoveToNearestPoint(shapeNode, mapNode, shape);
+			 }
+		 }
+		 Shape* t = head;
+		 while (t)
+		 {
+			 if (t->isSelected == FALSE)//没有被选中
+			 {
+
+				 for (int i = 0; i < t->vertexNum; i++) {
+					 oshapeNode = &t->vertex[i];
+					 double distance = DistanceBetweenPoints(shapeNode, oshapeNode);
+					 if (distance < threshold) {
+						 MoveToNearestPoint(shapeNode, oshapeNode, shape);
+					 }
+				 }
+			 }
+			 t = t->next;
+		 }
+	 }
+ }
  double DistanceBetweenPoints(node* shapeNode, node* mapNode) {
 	//done
 	 /**
