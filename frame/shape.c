@@ -370,7 +370,7 @@ void Initshape(void) {
 	tangramshape[1] = inventShape(1, 0, "Orange", 1, 4, 2, 2, 1, penwidth);					//最大三角形
 	tangramshape[2] = inventShape(1, 0, "Blue", 11, 6, sqrt(2), sqrt(2), 1, penwidth);		//2nd 三角形
 	tangramshape[3] = inventShape(1, 0, "Red", 1, 2.5, 1, 1, 1, penwidth);					//3rd 三角形
-	tangramshape[4] = inventShape(1, 0, "Brown", 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
+	tangramshape[4] = inventShape(1, 0, "Black", 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
 	tangramshape[5] = inventShape(1, 1, "Yellow", 12, 4, sqrt(2), 1, 1, penwidth);			//box
 	tangramshape[6] = inventShape(1, 2, "Red", 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
 }

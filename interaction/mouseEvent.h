@@ -11,6 +11,8 @@ void SnapToLine(Shape* shape, double threshold);
 bool IsParallel(line* line1, line* line2);
 double DistanceBetweenLines(line* line1, line* line2);
 void MoveToParallelLines(line* line1, line* line2, double distance, Shape* shape);
+int Iscrossed(line* line1, line* line2);
+
 //¶ÔµãµÄÎü¸½
 void SnaptoPoint(Shape* shape, double threshold);
 double DistanceBetweenPoints(node* shapeNode, node* mapNode);

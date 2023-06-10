@@ -9,7 +9,7 @@
 #include "Header.h"
 
 int game_status = 3;
-double score = 0;
+double score;
 double current_time = 0.0;
 double WindowWidth = 14;
 double window_height = 9;
@@ -23,7 +23,7 @@ void Main() {
 	//message box 函数
 	//MessageBox("Hello, world!");
 	current_time = TIME_LEFT;//给定60s的游戏时间
-	game_status = 3;
+	game_status = 0;
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();

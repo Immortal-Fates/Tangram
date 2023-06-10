@@ -13,7 +13,8 @@
 
 
 //todo:判断是否完成拼图
-bool Game_win(void)
+MessageBox();
+ bool Game_win(void)
 {
 	/**
 	 * \brief 判断玩家是否完成拼图

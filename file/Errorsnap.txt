@@ -1,8 +1,220 @@
-distance:0.077301
-shapeLine->start.x:5.317178 shapeLine->start.y:4.000000 shapeLine->end.x:7.317178 shapeLine->end.y:4.000000
-mapLine->start.x:4.500000 mapLine->start.y:4.000000 mapLine->end.x:6.500000 mapLine->end.y:4.000000
-i:0 j:0
-distance:0.000000
-shapeLine->start.x:5.317178 shapeLine->start.y:4.000000 shapeLine->end.x:7.317178 shapeLine->end.y:4.000000
-mapLine->start.x:6.500000 mapLine->start.y:4.000000 mapLine->end.x:7.500000 mapLine->end.y:4.000000
-i:1 j:0
+##
+
+ 0
+11.908163 6.408163
+10.908163 6.408163
+#### 0 Brown 1.000000
+oshapeline line0 start = 1.000000 6.500000
+oshapeline line0 end = 3.000000 6.500000
+#IsParallel Yellow 0 to Brown 0
+oshapeline line1 start = 3.000000 6.500000
+oshapeline line1 end = 1.000000 8.500000
+oshapeline line2 start = 1.000000 8.500000
+oshapeline line2 end = 1.000000 6.500000
+#### 0 Orange 1.000000
+oshapeline line0 start = 1.000000 4.000000
+oshapeline line0 end = 3.000000 4.000000
+#IsParallel Yellow 0 to Orange 0
+oshapeline line1 start = 3.000000 4.000000
+oshapeline line1 end = 1.000000 6.000000
+oshapeline line2 start = 1.000000 6.000000
+oshapeline line2 end = 1.000000 4.000000
+#### 0 Blue 11.000000
+oshapeline line0 start = 11.000000 6.000000
+oshapeline line0 end = 12.414214 6.000000
+#IsParallel Yellow 0 to Blue 0
+oshapeline line1 start = 12.414214 6.000000
+oshapeline line1 end = 11.000000 7.414214
+oshapeline line2 start = 11.000000 7.414214
+oshapeline line2 end = 11.000000 6.000000
+#### 0 Red 1.000000
+oshapeline line0 start = 1.000000 2.500000
+oshapeline line0 end = 2.000000 2.500000
+#IsParallel Yellow 0 to Red 0
+oshapeline line1 start = 2.000000 2.500000
+oshapeline line1 end = 1.000000 3.500000
+oshapeline line2 start = 1.000000 3.500000
+oshapeline line2 end = 1.000000 2.500000
+#### 0 Black 1.000000
+oshapeline line0 start = 1.000000 1.000000
+oshapeline line0 end = 2.000000 1.000000
+#IsParallel Yellow 0 to Black 0
+oshapeline line1 start = 2.000000 1.000000
+oshapeline line1 end = 1.000000 2.000000
+oshapeline line2 start = 1.000000 2.000000
+oshapeline line2 end = 1.000000 1.000000
+#### 2 Red 11.000000
+oshapeline line0 start = 11.000000 2.000000
+oshapeline line0 end = 12.414214 2.000000
+#IsParallel Yellow 0 to Red 0
+oshapeline line1 start = 12.414214 2.000000
+oshapeline line1 end = 13.121320 2.707107
+oshapeline line2 start = 13.121320 2.707107
+oshapeline line2 end = 11.707107 2.707107
+#IsParallel Yellow 0 to Red 2
+oshapeline line3 start = 11.707107 2.707107
+oshapeline line3 end = 11.000000 2.000000
+##
+
+ 1
+10.908163 6.408163
+10.908163 5.408163
+#### 0 Brown 1.000000
+oshapeline line0 start = 1.000000 6.500000
+oshapeline line0 end = 3.000000 6.500000
+oshapeline line1 start = 3.000000 6.500000
+oshapeline line1 end = 1.000000 8.500000
+oshapeline line2 start = 1.000000 8.500000
+oshapeline line2 end = 1.000000 6.500000
+#IsParallel Yellow 1 to Brown 2
+#### 0 Orange 1.000000
+oshapeline line0 start = 1.000000 4.000000
+oshapeline line0 end = 3.000000 4.000000
+oshapeline line1 start = 3.000000 4.000000
+oshapeline line1 end = 1.000000 6.000000
+oshapeline line2 start = 1.000000 6.000000
+oshapeline line2 end = 1.000000 4.000000
+#IsParallel Yellow 1 to Orange 2
+#### 0 Blue 11.000000
+oshapeline line0 start = 11.000000 6.000000
+oshapeline line0 end = 12.414214 6.000000
+oshapeline line1 start = 12.414214 6.000000
+oshapeline line1 end = 11.000000 7.414214
+oshapeline line2 start = 11.000000 7.414214
+oshapeline line2 end = 11.000000 6.000000
+#IsParallel Yellow 1 to Blue 2
+#### 0 Red 1.000000
+oshapeline line0 start = 1.000000 2.500000
+oshapeline line0 end = 2.000000 2.500000
+oshapeline line1 start = 2.000000 2.500000
+oshapeline line1 end = 1.000000 3.500000
+oshapeline line2 start = 1.000000 3.500000
+oshapeline line2 end = 1.000000 2.500000
+#IsParallel Yellow 1 to Red 2
+#### 0 Black 1.000000
+oshapeline line0 start = 1.000000 1.000000
+oshapeline line0 end = 2.000000 1.000000
+oshapeline line1 start = 2.000000 1.000000
+oshapeline line1 end = 1.000000 2.000000
+oshapeline line2 start = 1.000000 2.000000
+oshapeline line2 end = 1.000000 1.000000
+#IsParallel Yellow 1 to Black 2
+#### 2 Red 11.000000
+oshapeline line0 start = 11.000000 2.000000
+oshapeline line0 end = 12.414214 2.000000
+oshapeline line1 start = 12.414214 2.000000
+oshapeline line1 end = 13.121320 2.707107
+oshapeline line2 start = 13.121320 2.707107
+oshapeline line2 end = 11.707107 2.707107
+oshapeline line3 start = 11.707107 2.707107
+oshapeline line3 end = 11.000000 2.000000
+##
+
+ 2
+10.908163 5.408163
+11.908163 5.408163
+#### 0 Brown 1.000000
+oshapeline line0 start = 1.000000 6.500000
+oshapeline line0 end = 3.000000 6.500000
+#IsParallel Yellow 2 to Brown 0
+oshapeline line1 start = 3.000000 6.500000
+oshapeline line1 end = 1.000000 8.500000
+oshapeline line2 start = 1.000000 8.500000
+oshapeline line2 end = 1.000000 6.500000
+#### 0 Orange 1.000000
+oshapeline line0 start = 1.000000 4.000000
+oshapeline line0 end = 3.000000 4.000000
+#IsParallel Yellow 2 to Orange 0
+oshapeline line1 start = 3.000000 4.000000
+oshapeline line1 end = 1.000000 6.000000
+oshapeline line2 start = 1.000000 6.000000
+oshapeline line2 end = 1.000000 4.000000
+#### 0 Blue 11.000000
+oshapeline line0 start = 11.000000 6.000000
+oshapeline line0 end = 12.414214 6.000000
+#IsParallel Yellow 2 to Blue 0
+oshapeline line1 start = 12.414214 6.000000
+oshapeline line1 end = 11.000000 7.414214
+oshapeline line2 start = 11.000000 7.414214
+oshapeline line2 end = 11.000000 6.000000
+#### 0 Red 1.000000
+oshapeline line0 start = 1.000000 2.500000
+oshapeline line0 end = 2.000000 2.500000
+#IsParallel Yellow 2 to Red 0
+oshapeline line1 start = 2.000000 2.500000
+oshapeline line1 end = 1.000000 3.500000
+oshapeline line2 start = 1.000000 3.500000
+oshapeline line2 end = 1.000000 2.500000
+#### 0 Black 1.000000
+oshapeline line0 start = 1.000000 1.000000
+oshapeline line0 end = 2.000000 1.000000
+#IsParallel Yellow 2 to Black 0
+oshapeline line1 start = 2.000000 1.000000
+oshapeline line1 end = 1.000000 2.000000
+oshapeline line2 start = 1.000000 2.000000
+oshapeline line2 end = 1.000000 1.000000
+#### 2 Red 11.000000
+oshapeline line0 start = 11.000000 2.000000
+oshapeline line0 end = 12.414214 2.000000
+#IsParallel Yellow 2 to Red 0
+oshapeline line1 start = 12.414214 2.000000
+oshapeline line1 end = 13.121320 2.707107
+oshapeline line2 start = 13.121320 2.707107
+oshapeline line2 end = 11.707107 2.707107
+#IsParallel Yellow 2 to Red 2
+oshapeline line3 start = 11.707107 2.707107
+oshapeline line3 end = 11.000000 2.000000
+##
+
+ 3
+11.908163 5.408163
+11.908163 6.408163
+#### 0 Brown 1.000000
+oshapeline line0 start = 1.000000 6.500000
+oshapeline line0 end = 3.000000 6.500000
+oshapeline line1 start = 3.000000 6.500000
+oshapeline line1 end = 1.000000 8.500000
+oshapeline line2 start = 1.000000 8.500000
+oshapeline line2 end = 1.000000 6.500000
+#IsParallel Yellow 3 to Brown 2
+#### 0 Orange 1.000000
+oshapeline line0 start = 1.000000 4.000000
+oshapeline line0 end = 3.000000 4.000000
+oshapeline line1 start = 3.000000 4.000000
+oshapeline line1 end = 1.000000 6.000000
+oshapeline line2 start = 1.000000 6.000000
+oshapeline line2 end = 1.000000 4.000000
+#IsParallel Yellow 3 to Orange 2
+#### 0 Blue 11.000000
+oshapeline line0 start = 11.000000 6.000000
+oshapeline line0 end = 12.414214 6.000000
+oshapeline line1 start = 12.414214 6.000000
+oshapeline line1 end = 11.000000 7.414214
+oshapeline line2 start = 11.000000 7.414214
+oshapeline line2 end = 11.000000 6.000000
+#IsParallel Yellow 3 to Blue 2
+#### 0 Red 1.000000
+oshapeline line0 start = 1.000000 2.500000
+oshapeline line0 end = 2.000000 2.500000
+oshapeline line1 start = 2.000000 2.500000
+oshapeline line1 end = 1.000000 3.500000
+oshapeline line2 start = 1.000000 3.500000
+oshapeline line2 end = 1.000000 2.500000
+#IsParallel Yellow 3 to Red 2
+#### 0 Black 1.000000
+oshapeline line0 start = 1.000000 1.000000
+oshapeline line0 end = 2.000000 1.000000
+oshapeline line1 start = 2.000000 1.000000
+oshapeline line1 end = 1.000000 2.000000
+oshapeline line2 start = 1.000000 2.000000
+oshapeline line2 end = 1.000000 1.000000
+#IsParallel Yellow 3 to Black 2
+#### 2 Red 11.000000
+oshapeline line0 start = 11.000000 2.000000
+oshapeline line0 end = 12.414214 2.000000
+oshapeline line1 start = 12.414214 2.000000
+oshapeline line1 end = 13.121320 2.707107
+oshapeline line2 start = 13.121320 2.707107
+oshapeline line2 end = 11.707107 2.707107
+oshapeline line3 start = 11.707107 2.707107
+oshapeline line3 end = 11.000000 2.000000

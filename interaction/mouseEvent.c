@@ -135,13 +135,16 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 * \param threshold: 吸附距离的阈值
 	 */
 	// 遍历所有地图，找到当前地图
-	strcpy(mapShape->color, "Red");
-	//FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
+	//strcpy(mapShape->color, "Red");
+	FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
+		
 		line* shapeLine = &(shape->edge[j]);
+		fprintf(ErrorFile, "##\n\n %d\n", j);
+		fprintf(ErrorFile, "%lf %lf\n",shapeLine->start.x, shapeLine->start.y);
+		fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
 		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
 			line* mapLine = &(mapShape->edge[i]);
-			
 			// 判断线条是否平行
 			if (IsParallel(mapLine, shapeLine)) {
 				// 计算两条平行线之间的距离
@@ -163,8 +166,36 @@ void MouseEventProcess(int x, int y, int button, int event){
 				}
 			}
 		}
+		Shape* t = head;
+		while (t)
+		{
+			if (strcmp(t->color,shape->color) != 0)//没有被选中
+			{
+				fprintf(ErrorFile, "#### %d %s %lf\n", t->shape,t->color,t->pX);
+
+				for (int i = 0; i < t->vertexNum; i++) {
+					line* oshapeLine = &(t->edge[i]);
+					// 判断线条是否平行
+					fprintf(ErrorFile, "oshapeline line%d start = %lf %lf\n", i,oshapeLine->start.x,oshapeLine->start.y);
+					fprintf(ErrorFile, "oshapeline line%d end = %lf %lf\n", i, oshapeLine->end.x, oshapeLine->end.y);
+
+					if (IsParallel(oshapeLine, shapeLine)) {
+						// 计算两条平行线之间的距离
+						fprintf(ErrorFile, "#IsParallel %s %d to %s %d\n", shape->color,j, t->color,i);
+						double distance = DistanceBetweenLines(oshapeLine, shapeLine);
+						// 如果距离小于阈值，则将图形移动到平行线重合
+						score = distance;
+						if (distance < threshold) {
+							//MoveToParallelLines(oshapeLine, shapeLine, distance, shape);
+							//fprintf(ErrorFile, "#move %s to %s\n", shape->color,t->color);
+						}
+					}
+				}				
+			}
+			t = t->next;
+		}
 	}
-	//fclose(ErrorFile);
+	fclose(ErrorFile);
  }
  void SnaptoPoint(Shape* shape, double threshold) {
 	 /**
@@ -194,9 +225,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	 * \param line2: 第二条线
 	 * \return : 如果两条线平行，则返回true；否则返回false
 	 */
-
-	 // 计算线的方向向量
-	
 	double dx1 = line1->end.x - line1->start.x;
 	double dy1 = line1->end.y - line1->start.y;
 	double dx2 = line2->end.x - line2->start.x;
@@ -204,29 +232,42 @@ void MouseEventProcess(int x, int y, int button, int event){
 
 	// 判断line1在line2上的投影与线段line2是否有重叠部分
 	// 判断向量是否平行
-	if (dx1 * dy2 == dx2 * dy1) {
-		// 计算线段在水平方向上的投影范围
-		double minLine1X = line1->start.x < line1->end.x ? line1->start.x : line1->end.x;
-		double maxLine1X = line1->start.x > line1->end.x ? line1->start.x : line1->end.x;
-		double minLine2X = line2->start.x < line2->end.x ? line2->start.x : line2->end.x;
-		double maxLine2X = line2->start.x > line2->end.x ? line2->start.x : line2->end.x;
-
-		// 判断线段在水平方向上是否有重叠部分
-		if (maxLine1X >= minLine2X && maxLine2X >= minLine1X) {
-			// 计算线段在垂直方向上的投影范围
-			double minLine1Y = line1->start.y < line1->end.y ? line1->start.y : line1->end.y;
-			double maxLine1Y = line1->start.y > line1->end.y ? line1->start.y : line1->end.y;
-			double minLine2Y = line2->start.y < line2->end.y ? line2->start.y : line2->end.y;
-			double maxLine2Y = line2->start.y > line2->end.y ? line2->start.y : line2->end.y;
-
-			// 判断线段在垂直方向上是否有重叠部分
-			if (maxLine1Y >= minLine2Y || maxLine2Y >= minLine1Y) {
-				// 有重叠部分
-				return TRUE;
-			}
-		}
+	if (fabs(dx1 * dy2 - dx2 * dy1) < 0.001) {
+		return TRUE;
 	}
 	return FALSE;
+ }
+
+ int  Iscrossed(line* line1, line* line2) {
+	 double dx1 = line1->end.x - line1->start.x;
+	 double dy1 = line1->end.y - line1->start.y;
+	 double dx2 = line2->end.x - line2->start.x;
+	 double dy2 = line2->end.y - line2->start.y;
+	 //计算线段在水平方向上的投影范围
+	 double minLine1X = line1->start.x < line1->end.x ? line1->start.x : line1->end.x;
+	 double maxLine1X = line1->start.x > line1->end.x ? line1->start.x : line1->end.x;
+	 double minLine2X = line2->start.x < line2->end.x ? line2->start.x : line2->end.x;
+	 double maxLine2X = line2->start.x > line2->end.x ? line2->start.x : line2->end.x;
+	 // 计算线段在垂直方向上的投影范围
+	 double minLine1Y = line1->start.y < line1->end.y ? line1->start.y : line1->end.y;
+	 double maxLine1Y = line1->start.y > line1->end.y ? line1->start.y : line1->end.y;
+	 double minLine2Y = line2->start.y < line2->end.y ? line2->start.y : line2->end.y;
+	 double maxLine2Y = line2->start.y > line2->end.y ? line2->start.y : line2->end.y;
+
+	 if (dx1 == 0 && dx2 == 0)
+		 if (maxLine1Y >= minLine2Y && maxLine2Y >= minLine1Y)
+			 return 1;
+	 else if (dy1 == 0 && dy2 == 0)
+		 if (maxLine1X >= minLine2X && maxLine2X >= minLine1X)
+			 return 2;
+			 // 判断线段在水平方向上是否有重叠部分
+	 if (maxLine1X >= minLine2X && maxLine2X >= minLine1X) {
+		 // 判断线段在垂直方向上是否有重叠部分
+		 if (maxLine1Y >= minLine2Y && maxLine2Y >= minLine1Y) {
+			 return 3;
+		 }
+	 }
+	 return 0;
  }
 
  double DistanceBetweenLines(line* line1, line* line2) {//done
