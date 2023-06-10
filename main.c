@@ -138,6 +138,7 @@ void display() {
 			break;
 		case 4: //ranklist
 			echo_ranklist();
+			
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 				game_status = -1;
 			}
@@ -146,7 +147,18 @@ void display() {
 
 			break;
 		case 6: //createMap
-
+			InitButton();
+			Shape* temp = head;
+			while (temp) {
+				DrawShape(temp);
+				temp = temp->next;
+			}
+			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "save")) {
+				
+			}
+			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+				game_status = 7;
+			}
 			break;
 		case 7: //new game
 			InitButton();

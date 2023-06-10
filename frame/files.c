@@ -95,6 +95,9 @@ void GenerateMap(void){
 	fclose(fp);
 	fclose(pp);
 }
+void SaveMap(void) {
+
+}
 
 
 

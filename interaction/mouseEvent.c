@@ -125,6 +125,9 @@ void MouseEventProcess(int x, int y, int button, int event){
 	//最后更新界面
 }
 
+
+
+/*对线的吸附*/
 int isequal(double a, double b) {
 	/**
 	 * \brief 判断两个浮点数是否相等
@@ -182,14 +185,10 @@ int isequal(double a, double b) {
 		{
 			if (t->isSelected == FALSE)//没有被选中
 			{
-
 				for (int i = 0; i < t->vertexNum; i++) {
-					line* oshapeLine = &(t->edge[i]);
-					// 判断线条是否平行
-					if (IsParallel(oshapeLine, shapeLine)) {
-						// 计算两条平行线之间的距离
-						double distance = DistanceBetweenLines(oshapeLine, shapeLine);
-						// 如果距离小于阈值，则将图形移动到平行线重合
+					line* oshapeLine = &(t->edge[i]);// 判断线条是否平行
+					if (IsParallel(oshapeLine, shapeLine)) { // 计算两条平行线之间的距离
+						double distance = DistanceBetweenLines(oshapeLine, shapeLine);// 如果距离小于阈值，则将图形移动到平行线重合
 						if (distance < threshold) {
 							MoveToParallelLines(oshapeLine, shapeLine, distance, shape);
 						}
@@ -315,7 +314,7 @@ int isequal(double a, double b) {
 	 display();
  }
 
-
+/*对点的吸附*/
  void SnaptoPoint(Shape* shape, double threshold) {
 	 /**
 	 * \brief: 将图形自动吸附到邻近的点上

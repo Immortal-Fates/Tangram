@@ -3,6 +3,7 @@
 #define MAP_H
 #include "shape.h"
 
+
 typedef struct MAP {
 	int vertexNum;
 	double vertex[100][2];
@@ -17,6 +18,8 @@ void InitMap(int MapNumber_MAX);
 Shape* CreateMap(int MapNumber);
 void DrawMap(int MapNumber);
 void MapData(void);
+
+void DIY_map(void);
 #endif // !_MAP_H_
 
 
