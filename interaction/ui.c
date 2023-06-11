@@ -11,6 +11,8 @@
 
 
 void InitButton(void) {
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
 	SetPenColor("Black");
 	SetPenSize(1);
 	MovePen(0, 9);
@@ -21,11 +23,15 @@ void InitButton(void) {
 	DrawLine(WindowWidth, 0);
 	MovePen(0, 0.45);
 	DrawLine(WindowWidth, 0);
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
 
 }
 
 void EchoInfo(void) {
 	//实时显示游戏参数
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
 	SetPenColor("Black");
 	char timeDisplay[100], scoreDisplay[100],cu_map[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
@@ -37,5 +43,6 @@ void EchoInfo(void) {
 	sprintf(cu_map, "map_number: %d", current_map);
 	MovePen(10, 8.75);
 	DrawTextString(cu_map);
-
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
 }

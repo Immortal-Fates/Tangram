@@ -83,6 +83,8 @@ void display() {
 			InitButton();	//画出整体界面 button.c
 			EchoInfo();		//显示分数和时间	button.c
 			//输出结束信息
+			int pensize = GetPenSize();
+			string pencolor = GetPenColor();
 			SetPenColor("black");
 			SetPenSize(1);
 			MovePen(0, 0);
@@ -92,11 +94,16 @@ void display() {
 			DrawLine(-14, 0);
 			DrawLine(0, -9);
 			EndFilledRegion();
+
 			SetPenColor("RED");
 			SetPenSize(1);
 			SetPointSize(30);
 			MovePen(4.6, 5);
 			DrawTextString("Game Over");
+			SetPenSize(pensize);	//back to system pensize
+			SetPenColor(pencolor);	//back to system pencolor
+
+
 			if (button(GenUIID(0), 4.6, 4, WindowWidth / 3, 1, "new game")) {
 				game_status = 7;
 			}
@@ -149,13 +156,16 @@ void display() {
 		case 3: //welcome
 			DisplayClear();
 			MovePen(0, 0);
+
 			SetPenColor("white");
+
 			StartFilledRegion(1);
 			DrawLine(14, 0);
 			DrawLine(0, 9);
 			DrawLine(-14, 0);
 			DrawLine(0, -9);
 			EndFilledRegion();
+
 			SetPenSize(1);
 			MovePen(0, 0);
 			SetPointSize(100);
