@@ -345,9 +345,4 @@ bool judge_point_in_map(node point)
 //    return area;
 //}
 //
-//void hint(void){
-//    /**
-//     * .\brief 游戏过程中的提示函数
-//     */
-//    //todo : 提示函数，还没想好怎么写
-//}
+

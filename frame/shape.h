@@ -3,6 +3,7 @@
 
 
 #define M_PI       3.14159265358979323846   // pi
+
 #include <stdbool.h>
 
 #include "genlib.h"
@@ -17,6 +18,12 @@ typedef struct Line {
 	node start, end;
 	char lineColor[20];	//线的颜色
 }line;
+typedef struct tangram {
+	bool isvisible;
+	node vertex[20];
+	line edge[20];
+	char color[20];
+}sub_tangram;
 typedef struct Tangram {
 	bool isFilled;		// 0-not filled 1-filled
 	int shape;			// 0-triangle  1-box  2-parallelogram 3-map
@@ -36,8 +43,10 @@ typedef struct Tangram {
 	struct Tangram* next, * last;	//指向下一个和上一个图形的指针
 	int vertexNum;					//顶点数
 	int map_number;					//地图编号
+	sub_tangram graphics[7];
 }Shape;//存储图形的结构体
 extern Shape* tangramshape[7];
+
 
 void DrawShape(Shape* t);//画图形
 Shape *inventShape(bool fill, int shapetype, char * _color,

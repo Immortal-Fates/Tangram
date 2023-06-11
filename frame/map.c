@@ -169,25 +169,25 @@ void getContourCoordinates(const node* allVertices, int totalVertices, node* con
 	contourCoords[contourIndex] = allVertices[currentIndex];
 }
 
-void DIYMap() {
-	/**
-	 * \brief 自定义地图
-	 */
-
-	// 从链表中提取所有顶点到新数组中
-	extractVertices(head, allVertices, &totalVertices);
-	// 获得逆时针方向轮廓上的坐标
-	getContourCoordinates(allVertices, totalVertices, contourCoords);
-
-	
-	// 打印轮廓坐标
-	for (int i = 0; i < totalVertices; i++) {
-		printf("Coordinate %d: (%lf, %lf)\n", i + 1, contourCoords[i].x, contourCoords[i].y);
-	}
-	MapNumber_MAX++;
-
-
-	return 0;
-}
+//void DIYMap() {
+//	/**
+//	 * \brief 自定义地图
+//	 */
+//
+//	// 从链表中提取所有顶点到新数组中
+//	extractVertices(head, allVertices, &totalVertices);
+//	// 获得逆时针方向轮廓上的坐标
+//	getContourCoordinates(allVertices, totalVertices, contourCoords);
+//
+//	
+//	// 打印轮廓坐标
+//	for (int i = 0; i < totalVertices; i++) {
+//		printf("Coordinate %d: (%lf, %lf)\n", i + 1, contourCoords[i].x, contourCoords[i].y);
+//	}
+//	MapNumber_MAX++;
+//
+//
+//	return 0;
+//}
 
 

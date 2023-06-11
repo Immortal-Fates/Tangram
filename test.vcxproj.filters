@@ -157,5 +157,6 @@
     <Text Include="file\ranklist.txt" />
     <Text Include="file\userinfo.txt" />
     <Text Include="file\Errorsnap.txt" />
+    <Text Include="file\submap_info.txt" />
   </ItemGroup>
 </Project>

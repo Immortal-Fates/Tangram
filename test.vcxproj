@@ -186,6 +186,7 @@
     <Text Include="file\map1.txt" />
     <Text Include="file\map_info.txt" />
     <Text Include="file\ranklist.txt" />
+    <Text Include="file\submap_info.txt" />
     <Text Include="file\userinfo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -98,7 +98,40 @@ void GenerateMap(void){
 	fclose(fp);
 	fclose(pp);
 }
+
+
+void Generate_subMap(void) {
+	FILE* fp;
+	if (fp = fopen("./file/submap_info.txt", "r") == NULL) {
+		fclose(fp);
+	}
+	int mapnumber;
+	fscanf(fp, "%d\n", &mapnumber);
+	for (int i = 0; i < mapnumber; i++) {
+		Shape* temp = Map_head;
+		while (temp) {
+			if (temp->map_number == mapnumber) {
+				for (int j = 1; j <= 7; j++) {
+					int index;
+					fscanf(fp, "%d\n", &index);
+					for (int k = 0; k <= temp->graphics[index].vertex_number; k++) {
+						fscanf(fp, "%lf %lf\n", &temp->graphics[index].vertex[k].x, &temp->graphics[index].vertex[k].y);
+					}
+				}
+				break;
+			}
+			temp = temp->next;
+		}
+	}
+
+	fclose(fp);
+}
+
 void SaveMap(void) {
+	/**
+	 * .\brief 自定义地图的存储
+	 * 
+	 */
 
 }
 

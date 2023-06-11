@@ -47,10 +47,15 @@ void MouseEventProcess(int x, int y, int button, int event){
 				{
 					if (isInShape(temp, mouseX, mouseY) && !game_status)
 					{
+						
 						MouseisMove = TRUE;
 						temp->isSelected = TRUE;		//选中的时候改变该图形的状态，防止移动的时候影响其他图形
+						
 						strcpy(temp->fix_color, temp->color);//记录原来的颜色
 						strcpy(temp->color, "Green");		//选中的时候改变颜色
+						if (Is_Hint) {
+							DrawSubmap(&mapShape->graphics[temp->index]);
+						}
 						break;
 					}
 					temp = temp->next;

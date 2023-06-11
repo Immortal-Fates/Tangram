@@ -9,8 +9,8 @@
 #include "Header.h"
 
 int icurrent_time = 0;
-
 int game_status = 3;
+int MapNumber_MAX;
 double score;
 double current_time = 0.0;
 double WindowWidth = 14;
@@ -22,11 +22,10 @@ void MouseEventProcess(int x, int y, int button, int event);
 
 
 void Main() {
-	
-	//message box 函数
-	//MessageBox("Hello, world!");
+
 	current_time = TIME_LEFT;//给定60s的游戏时间
-	game_status = -2;
+	game_status = 0;
+	MapNumber_MAX = 6;
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
@@ -34,7 +33,7 @@ void Main() {
 	//timer -> timer.c
 	registerTimerEvent(timer);
 	startTimer(0, 100);
-	startTimer(1, 100);
+
 	//keyboard -> keyboardEvent.c
 	registerKeyboardEvent(KeyboardEventProcess);
 	
@@ -175,13 +174,8 @@ void display() {
 			break;
 		case 6: //createMap
 			InitButton();
-			Shape* temp = head;
-			while (temp) {
-				DrawShape(temp);
-				temp = temp->next;
-			}
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "save")) {
-				
+				//DIY_map();
 			}
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 				game_status = 7;
