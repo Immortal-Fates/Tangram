@@ -4,37 +4,37 @@ D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning 
 D:\MyUni\Class\Pgm-C\test\test\include\boolean.h(23,1): message : 参见“bool”的前一个定义
 D:\MyUni\Class\Pgm-C\test\test\interaction\mouseEvent.h(6,1): warning C4005: “ERROR”: 宏重定义
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(118,1): message : 参见“ERROR”的前一个定义
-D:\MyUni\Class\Pgm-C\test\test\main.c(64,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(67,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(70,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(73,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(96,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(112,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(76,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(99,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(115,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(120,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(146,49): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(146,46): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(157,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(157,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(159,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(160,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(166,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(180,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(118,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(123,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(149,49): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(149,46): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(160,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(160,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(162,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(163,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(169,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(183,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(190,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(190,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(192,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(197,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(201,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(205,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(209,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(213,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(217,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(221,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(225,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(186,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(193,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(193,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(195,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(200,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(204,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(208,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(212,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(216,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(220,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(224,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test\test\main.c(228,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(236,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(236,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
-D:\MyUni\Class\Pgm-C\test\test\main.c(238,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test\test\main.c(240,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(231,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(239,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(239,47): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test\test\main.c(241,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test\test\main.c(243,15): warning C4311: “类型强制转换”: 从“char (*)[38]”到“long”的指针截断
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test\test\x64\Debug\Tangram.exe

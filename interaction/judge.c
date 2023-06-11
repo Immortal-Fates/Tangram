@@ -196,36 +196,6 @@ bool judge_point_in_map(node point)
 
 
 
-void finish_animation() {
-
-    //    if (game_win == TRUE)
-    //    {
-            //让所有tangram颜色改变
-            //todo:动画显示需要延时？
-    color_change_all("Green");
-
-    color_change_all("Blue");
-
-    color_change_all("White");
-
-    //显示win!
-    MovePen(1, 1);
-    DrawTextString("Win!");
-    //    }
-        //game_status = 1;  //重置game_status
-    return;
-}
-void color_change_all(string color)     //让所有tangram颜色改变
-{
-    Shape* temp = head;
-    while (temp)
-    {
-        strcpy(temp->color, color);		//选中的时候改变颜色
-        temp = temp->next;
-    }
-    display();
-}
-
 ////todo:判断是否完成拼图
 //MessageBox();
 // bool Game_win(void)

@@ -24,4 +24,8 @@ typedef enum {
 	gameTimer, boxTimer, buttonTimer, rankTimer, infoTimer, solveTimer£¬
 }Mytimer;
 
+
+extern int icurrent_time ;
+extern int iicurrent_time ;
+
 #endif // !_MAIN_H_

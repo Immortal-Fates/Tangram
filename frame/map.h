@@ -2,14 +2,14 @@
 #ifndef _MAP_H_
 #define MAP_H
 #include "shape.h"
-
+#include "../Header.h"
 
 typedef struct MAP {
 	int vertexNum;
 	double vertex[100][2];
 }mymap;
 
-extern int MapNumber_MAX;		//µØÍ¼ÊıÁ¿
+
 extern int current_map;
 extern Shape* Map_head, * Map_tail;
 mymap map[20];

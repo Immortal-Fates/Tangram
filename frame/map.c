@@ -8,14 +8,15 @@
  * \author
  * \date   May 2023
  *********************************************************************/
-#include "../Header.h"
 #include "map.h"
-MapNumber_MAX = 6;  //地图数量
+
 current_map = 0;	//当前地图编号
 mymap map[20];		//地图数据
 Shape* Map_head = NULL, * Map_tail = NULL;
 Shape* mapShape = NULL;//指向当前地图的指针
-
+int totalVertices;
+node allVertices[140];
+node contourCoords[140];
 
 Shape* CreateMap(int MapNumber) {
 	/**
@@ -94,46 +95,99 @@ void DrawMap(int MapNumber) {
 	}
 }
 
-void DIY_map(void){
+
+void extractVertices(const Shape* head, node* allVertices, int* totalVertices) {
 	/**
-	 * .\brief 用户自定义地图
-	 * 
+	 * \brief 从链表中提取所有顶点到新数组中
+	 * \param head: 链表的头指针
+	 * \param allVertices: 存储所有顶点的数组
+	 * \param totalVertices: 存储顶点数量的变量的指针
 	 */
-	//int numVertices = t->vertexNum;
-	//int startIndex = 0;
-	//int currentIndex = startIndex;
-	//int nextIndex;
+	Shape* current = head;
+	int vertexIndex = 0;
 
-	//// 寻找最左下角的顶点作为起始点
-	//for (int i = 1; i < numVertices; i++) {
-	//	if (t->vertex[i].y < t->vertex[startIndex].y ||
-	//		(t->vertex[i].y == t->vertex[startIndex].y && t->vertex[i].x < t->vertex[startIndex].x)) {
-	//		startIndex = i;
-	//	}
-	//}
+	while (current) {
+		for (int i = 0; i < current->vertexNum; i++) {
+			allVertices[vertexIndex] = current->vertex[i];
+			vertexIndex++;
+		}
+		current = current->next;
+	}
 
-	//int contourIndex = 0;
-	//do {
-	//	contour[contourIndex++] = t->vertex[currentIndex];
-	//	nextIndex = (currentIndex + 1) % numVertices;
-
-	//	for (int i = 0; i < numVertices; i++) {
-	//		if (i != currentIndex && i != nextIndex) {
-	//			double crossProduct = (t->vertex[i].x - t->vertex[currentIndex].x) * (t->vertex[nextIndex].y - t->vertex[currentIndex].y) -
-	//				(t->vertex[nextIndex].x - t->vertex[currentIndex].x) * (t->vertex[i].y - t->vertex[currentIndex].y);
-
-	//			if (crossProduct < 0) {
-	//				nextIndex = i;
-	//			}
-	//		}
-	//	}
-
-	//	currentIndex = nextIndex;
-	//} while (currentIndex != startIndex);
-
-	//// 输出轮廓上的坐标
-	//printf("Contour coordinates (in counter-clockwise order):\n");
-	//for (int i = 0; i < contourIndex; i++) {
-	//	printf("(%f, %f)\n", contour[i].x, contour[i].y);
-	//}
+	*totalVertices = vertexIndex;
 }
+
+
+bool isLeftTurn(const node* p1, const node* p2, const node* p3) {
+	/**
+	 * \brief 判断三个点是否形成逆时针方向
+	 * \param p1, p2, p3: 待判断的三个点
+	 * \return true：逆时针方向，false：顺时针方向或共线
+	 */
+	double crossProduct = (p2->x - p1->x) * (p3->y - p1->y) - (p2->y - p1->y) * (p3->x - p1->x);
+	return crossProduct > 0;
+}
+
+
+void getContourCoordinates(const node* allVertices, int totalVertices, node* contourCoords) {
+	/**
+	 * \brief 生成逆时针方向轮廓上的坐标
+	 * \param allVertices: 所有顶点的数组
+	 * \param totalVertices: 顶点的总数
+	 * \param contourCoords: 存储轮廓上坐标的数组
+	 */
+	int contourIndex = 0;
+
+	// 找到最左边的顶点作为轮廓的起点
+	int startIndex = 0;
+	for (int i = 1; i < totalVertices; i++) {
+		if (allVertices[i].x < allVertices[startIndex].x) {
+			startIndex = i;
+		}
+	}
+
+	// 按逆时针方向生成轮廓上的坐标
+	int currentIndex = startIndex;
+	int nextIndex;
+
+	do {
+		contourCoords[contourIndex] = allVertices[currentIndex];
+		contourIndex++;
+
+		nextIndex = (currentIndex + 1) % totalVertices;
+
+		for (int i = 0; i < totalVertices; i++) {
+			if (isLeftTurn(&allVertices[currentIndex], &allVertices[i], &allVertices[nextIndex])) {
+				nextIndex = i;
+			}
+		}
+
+		currentIndex = nextIndex;
+	} while (currentIndex != startIndex);
+
+	// 将最后一个顶点加入轮廓坐标
+	contourCoords[contourIndex] = allVertices[currentIndex];
+}
+
+void DIYMap() {
+	/**
+	 * \brief 自定义地图
+	 */
+
+	// 从链表中提取所有顶点到新数组中
+	extractVertices(head, allVertices, &totalVertices);
+	// 获得逆时针方向轮廓上的坐标
+	getContourCoordinates(allVertices, totalVertices, contourCoords);
+
+	
+	// 打印轮廓坐标
+	for (int i = 0; i < totalVertices; i++) {
+		printf("Coordinate %d: (%lf, %lf)\n", i + 1, contourCoords[i].x, contourCoords[i].y);
+	}
+	MapNumber_MAX++;
+
+
+	return 0;
+}
+
+

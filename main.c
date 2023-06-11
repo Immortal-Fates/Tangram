@@ -8,6 +8,8 @@
 
 #include "Header.h"
 
+int icurrent_time = 0;
+
 int game_status = 3;
 double score;
 double current_time = 0.0;
@@ -20,10 +22,11 @@ void MouseEventProcess(int x, int y, int button, int event);
 
 
 void Main() {
+	
 	//message box 函数
 	//MessageBox("Hello, world!");
 	current_time = TIME_LEFT;//给定60s的游戏时间
-	game_status = 0;
+	game_status = -2;
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
@@ -31,7 +34,7 @@ void Main() {
 	//timer -> timer.c
 	registerTimerEvent(timer);
 	startTimer(0, 100);
-
+	startTimer(1, 100);
 	//keyboard -> keyboardEvent.c
 	registerKeyboardEvent(KeyboardEventProcess);
 	
@@ -79,7 +82,7 @@ void display() {
 			InitButton();	//画出整体界面 button.c
 			EchoInfo();		//显示分数和时间	button.c
 			//输出结束信息
-			SetPenColor("red");
+			SetPenColor("black");
 			SetPenSize(1);
 			MovePen(0, 0);
 			StartFilledRegion(1);
@@ -88,7 +91,7 @@ void display() {
 			DrawLine(-14, 0);
 			DrawLine(0, -9);
 			EndFilledRegion();
-			SetPenColor("black");
+			SetPenColor("RED");
 			SetPenSize(1);
 			SetPointSize(30);
 			MovePen(4.6, 5);
@@ -244,3 +247,5 @@ void display() {
 			break;
 	}
 }
+
+
