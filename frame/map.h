@@ -24,7 +24,7 @@ void MapData(void);
 void DIY_map(void);
 
 /*Part3 用户提示*/
-void DrawSubmap(sub_tangram* temp);
+void DrawSubmap();
 #endif // !_MAP_H_
 
 

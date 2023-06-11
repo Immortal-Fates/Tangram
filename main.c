@@ -8,9 +8,9 @@
 
 #include "Header.h"
 
-int icurrent_time = 0;
 int game_status = 3;
 int MapNumber_MAX;
+int Is_Hint = 0;
 double score;
 double current_time = 0.0;
 double WindowWidth = 14;
@@ -26,6 +26,7 @@ void Main() {
 	current_time = TIME_LEFT;//给定60s的游戏时间
 	game_status = 0;
 	MapNumber_MAX = 6;
+	
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
@@ -49,7 +50,6 @@ void Main() {
 
 	//初始化用户
 	user_init();
-
 	display();
 }
 
@@ -111,6 +111,12 @@ void display() {
 				temp = temp->next;
 			}
 			DrawMap(current_map);
+
+			Generate_subMap();
+			if (button(GenUIID(0), 10, 2, WindowWidth / 10, 0.4, "hint")) {
+				if (Is_Hint) Is_Hint = 0;
+				else Is_Hint = 1;
+			}
 			if (button(GenUIID(0), 14, 2, WindowWidth / 10, 0.4, "返回")) {
 				game_status = 3;
 			}

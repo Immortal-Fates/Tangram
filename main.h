@@ -10,6 +10,7 @@ extern double current_time;		//当前时间
 extern double score;				//当前分数
 extern double WindowWidth;		//窗口宽度
 extern double window_height;		//窗口高度
+extern int Is_Hint;
 
 extern int MapNumber_MAX;		//地图数量
 
@@ -25,8 +26,5 @@ typedef enum {
 	gameTimer, boxTimer, buttonTimer, rankTimer, infoTimer, solveTimer，
 }Mytimer;
 
-
-extern int icurrent_time ;
-extern int iicurrent_time ;
 
 #endif // !_MAIN_H_

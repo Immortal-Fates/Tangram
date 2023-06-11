@@ -12,7 +12,10 @@
 * these two values.  Designing a portable representation, however,
 * is surprisingly hard, because many libraries and some compilers
 * define these names.  The definitions are usually compatible but
-* may still be flagged as errors.
+* may still be flagged as error
+* 
+* 
+* s.
 */
 
 #ifdef THINK_C

@@ -62,6 +62,7 @@ Shape* CreateMap(int MapNumber) {
 		Map_tail = t;
 	}
 	return t;
+
 }
 void InitMap(int t) {
 	for (int i = 0; i <= MapNumber_MAX-1; i++) {
@@ -190,4 +191,34 @@ void getContourCoordinates(const node* allVertices, int totalVertices, node* con
 //	return 0;
 //}
 
+void DrawSubmap(){
+	score = 1000;
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	SetPenColor("Red");
+	SetPenSize(3);
 
+	
+	FILE* fp;
+	fp = fopen("./file/error.txt", "w");
+
+	StartFilledRegion(1);
+	for (int i = 1; i <= 7; i++) {
+		if (mapShape->graphics[i].isvisible == 0) return;
+		sub_tangram* temp = &mapShape->graphics[i];
+		int vertexcount = 3;
+		if (i > 5) vertexcount = 4;
+		MovePen(temp->vertex[0].x, temp->vertex[0].y);
+		for (int i = 0; i < vertexcount - 1; i++) {
+			fprintf(fp, "%lf %lf\n", temp->vertex[i].x, temp->vertex[i].y);
+			DrawLine(temp->vertex[i + 1].x - temp->vertex[i].x, temp->vertex[i + 1].y - temp->vertex[i].y);
+		}
+		DrawLine(temp->vertex[0].x - temp->vertex[vertexcount - 1].x, temp->vertex[0].y - temp->vertex[vertexcount - 1].y);
+
+	}
+	EndFilledRegion();
+
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+	fclose(fp);
+}

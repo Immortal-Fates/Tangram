@@ -20,11 +20,15 @@ typedef struct Line {
 }line;
 typedef struct tangram {
 	bool isvisible;
+	int vertex_number;
 	node vertex[20];
 	line edge[20];
 	char color[20];
 }sub_tangram;
+
+
 typedef struct Tangram {
+	int index;			//图形编号
 	bool isFilled;		// 0-not filled 1-filled
 	int shape;			// 0-triangle  1-box  2-parallelogram 3-map
 	char color[20];		// 图形的颜色
@@ -46,6 +50,7 @@ typedef struct Tangram {
 	sub_tangram graphics[7];
 }Shape;//存储图形的结构体
 extern Shape* tangramshape[7];
+
 
 
 void DrawShape(Shape* t);//画图形

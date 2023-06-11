@@ -60,10 +60,13 @@ Shape *inventShape(bool fill, int shapetype, string _color,
 	 * \return					返回一个指向图形的结构体指针 
 	 */
 	
-	//处理可变参数
-	va_list arg_ptr;
+	//处理可变参数Pensize和index
+
+
+
+	va_list arg_ptr; 
 	va_start(arg_ptr, Pensize);
-	int vertexNum = va_arg(arg_ptr, int);
+	int index = va_arg(arg_ptr, int);
 	va_end(arg_ptr);
 	
 	//创建图形，把数据初始化到结构体中
@@ -78,6 +81,7 @@ Shape *inventShape(bool fill, int shapetype, string _color,
 	t->angle = angle-1;
 	t->isSelected = FALSE;
 	t->Pensize = Pensize;
+	t->index = index;
 	t->next = t->last = NULL;
 	
 
@@ -366,13 +370,13 @@ void Initshape(void) {
 	 */
 	
 	int penwidth = 1;
-	tangramshape[0] = inventShape(1, 0, "Brown", 1, 6.5, 2, 2, 1, penwidth);
-	tangramshape[1] = inventShape(1, 0, "Orange", 1, 4, 2, 2, 1, penwidth);					//最大三角形
-	tangramshape[2] = inventShape(1, 0, "Blue", 11, 6, sqrt(2), sqrt(2), 1, penwidth);		//2nd 三角形
-	tangramshape[3] = inventShape(1, 0, "Red", 1, 2.5, 1, 1, 1, penwidth);					//3rd 三角形
-	tangramshape[4] = inventShape(1, 0, "Black", 1, 1, 1, 1, 1, penwidth);					//3rd 三角形
-	tangramshape[5] = inventShape(1, 1, "Yellow", 12, 4, sqrt(2), 1, 1, penwidth);			//box
-	tangramshape[6] = inventShape(1, 2, "Gray", 11, 2, sqrt(2), 1, 1, penwidth);			//平行四边形
+	tangramshape[0] = inventShape(1, 0, "Brown", 1, 6.5, 2, 2, 1, penwidth,1);
+	tangramshape[1] = inventShape(1, 0, "Orange", 1, 4, 2, 2, 1, penwidth,2);					//最大三角形
+	tangramshape[2] = inventShape(1, 0, "Blue", 11, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形
+	tangramshape[3] = inventShape(1, 0, "Red", 1, 2.5, 1, 1, 1, penwidth,4);					//3rd 三角形
+	tangramshape[4] = inventShape(1, 0, "Black", 1, 1, 1, 1, 1, penwidth,5);					//3rd 三角形
+	tangramshape[5] = inventShape(1, 1, "Yellow", 12, 4, sqrt(2), 1, 1, penwidth,6);			//box
+	tangramshape[6] = inventShape(1, 2, "Gray", 11, 2, sqrt(2), 1, 1, penwidth,7);			//平行四边形
 }
 
 

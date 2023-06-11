@@ -102,19 +102,24 @@ void GenerateMap(void){
 
 void Generate_subMap(void) {
 	FILE* fp;
-	if (fp = fopen("./file/submap_info.txt", "r") == NULL) {
+	if ((fp = fopen("./file/submap_info.txt", "r")) == NULL) {
 		fclose(fp);
 	}
 	int mapnumber;
-	fscanf(fp, "%d\n", &mapnumber);
-	for (int i = 0; i < mapnumber; i++) {
+	char _;
+	
+	for (int i = 0; i < 1; i++) {
+		fscanf(fp, "%c", &_);
+		fscanf(fp, "%d\n", &mapnumber);
 		Shape* temp = Map_head;
 		while (temp) {
 			if (temp->map_number == mapnumber) {
 				for (int j = 1; j <= 7; j++) {
 					int index;
 					fscanf(fp, "%d\n", &index);
-					for (int k = 0; k <= temp->graphics[index].vertex_number; k++) {
+					int vertexcount = 3;
+					if (index > 5) vertexcount = 4;
+					for (int k = 0; k < vertexcount; k++) {
 						fscanf(fp, "%lf %lf\n", &temp->graphics[index].vertex[k].x, &temp->graphics[index].vertex[k].y);
 					}
 				}
@@ -123,7 +128,6 @@ void Generate_subMap(void) {
 			temp = temp->next;
 		}
 	}
-
 	fclose(fp);
 }
 

@@ -54,7 +54,10 @@ void MouseEventProcess(int x, int y, int button, int event){
 						strcpy(temp->fix_color, temp->color);//记录原来的颜色
 						strcpy(temp->color, "Green");		//选中的时候改变颜色
 						if (Is_Hint) {
-							DrawSubmap(&mapShape->graphics[temp->index]);
+							for (int i = 1; i <= 7; i++) {
+								mapShape->graphics[i].isvisible = 0;
+							}
+							mapShape->graphics[temp->index].isvisible = 1;
 						}
 						break;
 					}
@@ -138,9 +141,9 @@ int isequal(double a, double b) {
 	 * \brief 判断两个浮点数是否相等
 	 * \param a 浮点数1
 	 * \param b	浮点数2
-	 * \relates ERROR 精确度 设置为0.0001
+	 * \relates CALERROR 精确度 设置为0.0001
 	 */
-	if (fabs(a - b) < ERROR)
+	if (fabs(a - b) < CALERROR)
 		return 1;
 	else
 		return 0;

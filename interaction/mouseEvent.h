@@ -3,7 +3,7 @@
 #define MOUSEEVENT_H
 #include "../Header.h"
 #define THRESHOLD 0.3	//吸附阈值
-#define ERROR 0.001		//判定浮点数相等时候的误差
+#define CALERROR 0.001		//判定浮点数相等时候的误差
 
 void MouseEventProcess(int x, int y, int button, int event);
 
