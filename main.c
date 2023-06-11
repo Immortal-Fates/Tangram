@@ -49,7 +49,7 @@ void Main() {
 	GenerateMap();
 	InitMap();
 	
-	//Generate_subMap();
+	Generate_subMap();
 
 	//初始化用户
 	user_init();
@@ -65,6 +65,7 @@ void display() {
 		case -1: //change
 		{
 			InitButton();
+			background();
 			SetPointSize(30);
 			if (button(GenUIID(0), 4.6, 5, WindowWidth / 3, 1, "continue")) {
 				game_status = 0;
@@ -113,8 +114,10 @@ void display() {
 		}
 		case 0: case 1: //running //pause
 		{	
+			
 			InitButton();	//画出整体界面 button.c
 			EchoInfo();		//显示分数和时间	button.c
+			menu();
 			Shape* temp = head;
 			while (temp) {
 				DrawShape(temp);
@@ -122,7 +125,7 @@ void display() {
 			}
 			DrawMap(current_map);
 			
-			if (button(GenUIID(0), 10, 2, WindowWidth / 10, 0.4, "hint")) {
+			if (button(GenUIID(0), 10, 0, WindowWidth / 10, 0.4, "hint")) {
 				if (Is_Hint) {
 					for (int i = 1; i <= 7; i++) {
 						mapShape->graphics[i].isvisible = 0;
@@ -133,10 +136,10 @@ void display() {
 				score = Is_Hint;
 			}
 			DrawSubmap(current_map);
-			if (button(GenUIID(0), 14, 2, WindowWidth / 10, 0.4, "返回")) {
+			if (button(GenUIID(0), 14, 0, WindowWidth / 10, 0.4, "返回")) {
 				game_status = 3;
 			}
-			if (button(GenUIID(0), 6.3, 1, WindowWidth / 10, 0.4, "change map")) {
+			if (button(GenUIID(0), 6.3, 0, WindowWidth / 10, 0.4, "change map")) {
 				current_map += 1;
 				current_map %= MapNumber_MAX;
 				display();
@@ -159,39 +162,12 @@ void display() {
 
 			int pensize = GetPenSize();
 			string pencolor = GetPenColor();
-			MovePen(0, 0);
-			SetPenColor("white");
-
-			StartFilledRegion(1);
-			DrawLine(14, 0);
-			DrawLine(0, 9);
-			DrawLine(-14, 0);
-			DrawLine(0, -9);
-			EndFilledRegion();
-
-			SetPenSize(1);
-			MovePen(0, 0);
-			SetPointSize(100);
-			drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "blue");
-			/*icurrent_time = ((int)current_time) % 5;
-
-			switch (icurrent_time) {
-			case 0: drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "blue"); break;
-			case 1: drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "yellow"); break;
-			case 2: drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "green"); break;
-			case 3: drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "black"); break;
-			case 4: drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "read"); break;
-			}*/
-			SetPointSize(1);
-			drawBox(0, 0, 1.0, 1.0, 0, "制作组", "S", "blue");
-
-			if (button(GenUIID(0), 6.3, 3.0, WindowWidth / 10, 0.4, "EXIT"))exit(-1);
-			if (button(GenUIID(0), 6.3, 3.5, WindowWidth / 10, 0.4, "PLAY"))
-				game_status = -1;
+			welcome();
 			SetPenSize(pensize);	//back to system pensize
 			SetPenColor(pencolor);	//back to system pencolor
 			break;
 		case 4: //ranklist
+			background();
 			echo_ranklist();
 			
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
@@ -199,9 +175,10 @@ void display() {
 			}
 			break;
 		case 5: //solve
-
+			background();
 			break;
 		case 6: //createMap
+			background();
 			InitButton();
 			SetPointSize(80);
 			drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
@@ -217,6 +194,7 @@ void display() {
 			}
 			break;
 		case 7: //new game
+			background();
 			InitButton();
 			SetPointSize(80);
 			drawBox(7.0, 8, 0, 0, 0, "Select The Map", "0", "blue");
@@ -224,7 +202,7 @@ void display() {
 			char button_num[20];
 			double px[5] = { 2.1,5.1,8.1,11.1 };
 			double py[3] = { 5,2 };
-			for (int i = page*8; i < page*8+8; i++) {
+			for (int i = page*8; i < min(page*8+8,(MapNumber_MAX-1)); i++) {
 				sprintf(button_num, "%d", i+1);
 				if (button(GenUIID(i), px[i%4], py[i%8/4], WindowWidth / 10, 0.4, button_num)) {
 					game_status = 2;

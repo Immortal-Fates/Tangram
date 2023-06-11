@@ -7,5 +7,9 @@ void InitButton(void);
 //"INFO","HOME","RESTART","MUSIC","RANK"
 
 void EchoInfo(void);
+void background(void);
+void menu(void);
+void welcome(void);
+
 
 #endif // !_BUTTON_H_
