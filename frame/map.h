@@ -12,9 +12,9 @@ typedef struct MAP {
 
 extern int current_map;
 extern Shape* Map_head, * Map_tail;
-mymap map[20];
+mymap map[100];
 
-void InitMap(int MapNumber_MAX);
+void InitMap();
 Shape* CreateMap(int MapNumber);
 void DrawMap(int MapNumber);
 void MapData(void);

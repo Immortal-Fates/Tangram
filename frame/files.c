@@ -83,7 +83,8 @@ void GenerateMap(void){
 	for (int i = 0; i <= MapNumber_MAX-1; i++) {
 		fscanf(fp, "%c%c\n",&_,&_);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
-		fprintf(pp, "%d\n", map[i].vertexNum);
+		fprintf(pp, "num = %d\n", map[i].vertexNum);
+
 		for(int j = 0;j <= map[i].vertexNum-1;j++){
 			char temp[100],tempx[100],tempy[100];
 			fscanf(fp, "%[^\n]%*c\n",temp);
@@ -91,9 +92,10 @@ void GenerateMap(void){
 			EVIC_Eval(tempx,&map[i].vertex[j][0]);//利用EVIC_Eval函数将表达式计算出来，并且转换为double
 			EVIC_Eval(tempy,&map[i].vertex[j][1]);
 			fprintf(pp,"%lf %lf\n",map[i].vertex[j][0],map[i].vertex[j][1]);
+			//fprintf(pp, "%%%\n");
 		}
 	}
-	fscanf(fp, "%c%c\n", &_, &_);
+	//fscanf(fp, "%c%c\n", &_, &_);
 	fprintf(pp, "##");
 	fclose(fp);
 	fclose(pp);

@@ -15,6 +15,7 @@ double score;
 double current_time = 0.0;
 double WindowWidth = 14;
 double window_height = 9;
+int page;
 
 void timer(int timerID);
 void KeyboardEventProcess(int key, int event);
@@ -46,9 +47,9 @@ void Main() {
 
 	//初始化地图 map.c
 	GenerateMap();
-	InitMap(6);
+	InitMap();
 	
-	Generate_subMap();
+	//Generate_subMap();
 
 	//初始化用户
 	user_init();
@@ -155,8 +156,10 @@ void display() {
 			break;
 		case 3: //welcome
 			DisplayClear();
-			MovePen(0, 0);
 
+			int pensize = GetPenSize();
+			string pencolor = GetPenColor();
+			MovePen(0, 0);
 			SetPenColor("white");
 
 			StartFilledRegion(1);
@@ -185,6 +188,8 @@ void display() {
 			if (button(GenUIID(0), 6.3, 3.0, WindowWidth / 10, 0.4, "EXIT"))exit(-1);
 			if (button(GenUIID(0), 6.3, 3.5, WindowWidth / 10, 0.4, "PLAY"))
 				game_status = -1;
+			SetPenSize(pensize);	//back to system pensize
+			SetPenColor(pencolor);	//back to system pencolor
 			break;
 		case 4: //ranklist
 			echo_ranklist();
@@ -198,6 +203,12 @@ void display() {
 			break;
 		case 6: //createMap
 			InitButton();
+			SetPointSize(80);
+			drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
+			SetPointSize(30);
+			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+				game_status = 7;
+			}
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "save")) {
 				//DIY_map();
 			}
@@ -210,57 +221,31 @@ void display() {
 			SetPointSize(80);
 			drawBox(7.0, 8, 0, 0, 0, "Select The Map", "0", "blue");
 			SetPointSize(30);
-			if (button(GenUIID(0), 2.1, 5, WindowWidth / 10, 0.4, "1")) {
-				game_status = 2;
-				current_map = 0;
-			}
-				
-			if (button(GenUIID(0), 5.1, 5, WindowWidth / 10, 0.4, "2")) {
-				game_status = 2;
-				current_map = 1;
-			}
-			if (button(GenUIID(0), 8.1, 5, WindowWidth / 10, 0.4, "3")) {
-				game_status = 2;
-				current_map = 2;
-			}
-			if (button(GenUIID(0), 11.1, 5, WindowWidth / 10, 0.4, "4")) {
-				game_status = 2;
-				current_map = 3;
-			}
-			if (button(GenUIID(0), 2.1, 2, WindowWidth / 10, 0.4, "5")) {
-				game_status = 2;
-				current_map = 4;
-			}
-			if (button(GenUIID(0), 5.1, 2, WindowWidth / 10, 0.4, "6")) {
-				game_status = 2;
-				current_map = 5;
-			}
-			if (button(GenUIID(0), 8.1, 2, WindowWidth / 10, 0.4, "7")) {
-				game_status = 2;
-				current_map = 0;
-			}
-			if (button(GenUIID(0), 11.1, 2, WindowWidth / 10, 0.4, "8")) {
-				game_status = 2;
-				current_map = 0;
+			char button_num[20];
+			double px[5] = { 2.1,5.1,8.1,11.1 };
+			double py[3] = { 5,2 };
+			for (int i = page*8; i < page*8+8; i++) {
+				sprintf(button_num, "%d", i+1);
+				if (button(GenUIID(i), px[i%4], py[i%8/4], WindowWidth / 10, 0.4, button_num)) {
+					game_status = 2;
+					current_map = i;
+				}
 			}
 			if (button(GenUIID(0), 0, 0, WindowWidth / 10, 0.4, "next")) {
-				game_status = 16;
+				page++;
+				page = min(page,(MapNumber_MAX-1)/8);
 			}
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+			if (button(GenUIID(1), 3, 0, WindowWidth / 10, 0.4, "before")) {
+				page--;
+				page = max(page, 0);
+			}
+			if (button(GenUIID(2), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 				game_status = -1;
 			}
-
-			break;
-		case 16://next page
-			InitButton();
-			SetPointSize(80);
-			drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
-			SetPointSize(30);
-			if (button(GenUIID(0), 2.1, 5, WindowWidth / 10, 0.4, "createMap"))
+			if (button(GenUIID(3), 6, 0, WindowWidth / 10, 0.4, "createMap"))
 				game_status = 6;
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = 7;
-			}
+			break;
+			
 		default:
 			break;
 	}

@@ -11,7 +11,7 @@ extern double score;				//当前分数
 extern double WindowWidth;		//窗口宽度
 extern double window_height;		//窗口高度
 extern int Is_Hint;
-
+extern int page;
 extern int MapNumber_MAX;		//地图数量
 
 extern char colorList[100][100];

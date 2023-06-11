@@ -11,9 +11,10 @@
 #include "map.h"
 
 current_map = 0;	//当前地图编号
-mymap map[20];		//地图数据
+mymap map[100];		//地图数据
 Shape* Map_head = NULL, * Map_tail = NULL;
 Shape* mapShape = NULL;//指向当前地图的指针
+
 int totalVertices;
 node allVertices[140];
 node contourCoords[140];
@@ -67,7 +68,7 @@ Shape* CreateMap(int MapNumber) {
 	return t;
 
 }
-void InitMap(int t) {
+void InitMap() {
 	for (int i = 0; i <= MapNumber_MAX-1; i++) {
 		CreateMap(i);
 	}
