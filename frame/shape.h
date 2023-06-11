@@ -28,7 +28,7 @@ typedef struct tangram {
 
 
 typedef struct Tangram {
-	int index;			//图形编号
+	int num;			//图形编号
 	bool isFilled;		// 0-not filled 1-filled
 	int shape;			// 0-triangle  1-box  2-parallelogram 3-map
 	char color[20];		// 图形的颜色

@@ -12,6 +12,7 @@
 
 void InitButton(void) {
 	SetPenColor("Black");
+	SetPenSize(1);
 	MovePen(0, 9);
 	DrawLine(WindowWidth, 0);
 	MovePen(0, 8.55);

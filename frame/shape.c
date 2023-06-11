@@ -81,7 +81,7 @@ Shape *inventShape(bool fill, int shapetype, string _color,
 	t->angle = angle-1;
 	t->isSelected = FALSE;
 	t->Pensize = Pensize;
-	t->index = index;
+	t->num = index;
 	t->next = t->last = NULL;
 	
 
@@ -376,7 +376,8 @@ void Initshape(void) {
 	tangramshape[3] = inventShape(1, 0, "Red", 1, 2.5, 1, 1, 1, penwidth,4);					//3rd 三角形
 	tangramshape[4] = inventShape(1, 0, "Black", 1, 1, 1, 1, 1, penwidth,5);					//3rd 三角形
 	tangramshape[5] = inventShape(1, 1, "Yellow", 12, 4, sqrt(2), 1, 1, penwidth,6);			//box
-	tangramshape[6] = inventShape(1, 2, "Gray", 11, 2, sqrt(2), 1, 1, penwidth,7);			//平行四边形
+	tangramshape[6] = inventShape(1, 2, "Gray", 11, 2, sqrt(2), 1, 1, penwidth,7);				
+	//平行四边形
 }
 
 

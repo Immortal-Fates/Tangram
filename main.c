@@ -47,6 +47,8 @@ void Main() {
 	//初始化地图 map.c
 	GenerateMap();
 	InitMap(6);
+	
+	Generate_subMap();
 
 	//初始化用户
 	user_init();
@@ -111,12 +113,18 @@ void display() {
 				temp = temp->next;
 			}
 			DrawMap(current_map);
-
-			Generate_subMap();
+			
 			if (button(GenUIID(0), 10, 2, WindowWidth / 10, 0.4, "hint")) {
-				if (Is_Hint) Is_Hint = 0;
+				if (Is_Hint) {
+					for (int i = 1; i <= 7; i++) {
+						mapShape->graphics[i].isvisible = 0;
+					}
+					Is_Hint = 0;
+				}
 				else Is_Hint = 1;
+				score = Is_Hint;
 			}
+			DrawSubmap(current_map);
 			if (button(GenUIID(0), 14, 2, WindowWidth / 10, 0.4, "返回")) {
 				game_status = 3;
 			}

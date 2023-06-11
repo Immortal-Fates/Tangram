@@ -39,6 +39,9 @@ Shape* CreateMap(int MapNumber) {
 	t->shape = 3;//地图
 	t->map_number = MapNumber;
 	t->next = t->last = NULL;
+	for (int i = 1; i <= 7; i++) {
+		t->graphics[i].isvisible = 0;
+	}
 
 	//从存储的地图数据中读取顶点坐标，计算出边的数据
 	for(int i = 0;i <= t->vertexNum-1;i++){				
@@ -97,7 +100,7 @@ void DrawMap(int MapNumber) {
 }
 
 
-void extractVertices(const Shape* head, node* allVertices, int* totalVertices) {
+void extractVertices( Shape* head, node* allVertices, int* totalVertices) {
 	/**
 	 * \brief 从链表中提取所有顶点到新数组中
 	 * \param head: 链表的头指针
@@ -191,34 +194,49 @@ void getContourCoordinates(const node* allVertices, int totalVertices, node* con
 //	return 0;
 //}
 
-void DrawSubmap(){
-	score = 1000;
-	int pensize = GetPenSize();
-	string pencolor = GetPenColor();
-	SetPenColor("Red");
-	SetPenSize(3);
+void DrawSubmap(int MapNumber){
+	/**
+	 * \brief 画出提示图形
+	 * \relates Is_Hint = 1 进入提示模式； Is_Hint = 0 关闭提示模式（mouseevent.c中改变Is_Hint）
+	 * 
+	 * 
+	 * \param MapNumber
+	 */
+	if (Is_Hint == 0) return;
 
-	
-	FILE* fp;
-	fp = fopen("./file/error.txt", "w");
+	Shape* ttemp = Map_head;
+	while (ttemp) {
+		if (ttemp->map_number == MapNumber) {
+			mapShape = ttemp;
+			//FILE* fp;
+			//fp = fopen("./file/error.txt", "w");
+			//fprintf(fp, "%d\n", mapShape->vertexNum);
 
-	StartFilledRegion(1);
-	for (int i = 1; i <= 7; i++) {
-		if (mapShape->graphics[i].isvisible == 0) return;
-		sub_tangram* temp = &mapShape->graphics[i];
-		int vertexcount = 3;
-		if (i > 5) vertexcount = 4;
-		MovePen(temp->vertex[0].x, temp->vertex[0].y);
-		for (int i = 0; i < vertexcount - 1; i++) {
-			fprintf(fp, "%lf %lf\n", temp->vertex[i].x, temp->vertex[i].y);
-			DrawLine(temp->vertex[i + 1].x - temp->vertex[i].x, temp->vertex[i + 1].y - temp->vertex[i].y);
+			int pensize = GetPenSize();
+			string pencolor = GetPenColor();
+
+			SetPenColor("Red");
+			SetPenSize(3);
+			//StartFilledRegion(1);
+			for (int i = 1; i <= 7; i++) {
+				if (mapShape->graphics[i].isvisible == 0) continue;
+				sub_tangram* temp = &mapShape->graphics[i];
+				int vertexcount = 3;
+				if (i > 5) vertexcount = 4;
+				MovePen(temp->vertex[0].x, temp->vertex[0].y);
+				for (int i = 0; i < vertexcount - 1; i++) {
+					//fprintf(fp, "%lf %lf\n", temp->vertex[i].x, temp->vertex[i].y);
+					DrawLine(temp->vertex[i + 1].x - temp->vertex[i].x, temp->vertex[i + 1].y - temp->vertex[i].y);
+				}
+				DrawLine(temp->vertex[0].x - temp->vertex[vertexcount - 1].x, temp->vertex[0].y - temp->vertex[vertexcount - 1].y);
+			}
+			//EndFilledRegion();
+			SetPenSize(pensize);	//back to system pensize
+			SetPenColor(pencolor);	//back to system pencolor
+
+			//fclose(fp);
 		}
-		DrawLine(temp->vertex[0].x - temp->vertex[vertexcount - 1].x, temp->vertex[0].y - temp->vertex[vertexcount - 1].y);
-
+		ttemp = ttemp->next;
 	}
-	EndFilledRegion();
-
-	SetPenSize(pensize);	//back to system pensize
-	SetPenColor(pencolor);	//back to system pencolor
-	fclose(fp);
+	
 }

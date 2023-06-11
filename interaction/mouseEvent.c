@@ -57,7 +57,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 							for (int i = 1; i <= 7; i++) {
 								mapShape->graphics[i].isvisible = 0;
 							}
-							mapShape->graphics[temp->index].isvisible = 1;
+							mapShape->graphics[temp->num].isvisible = 1;
 						}
 						break;
 					}
