@@ -22,14 +22,14 @@ void MouseEventProcess(int x, int y, int button, int event);
 
 
 void Main() {
-
 	current_time = TIME_LEFT;//给定60s的游戏时间
 	game_status = 3;
 	MapNumber_MAX = 7;
+
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, window_height);
 	InitGraphics();
-	InitColor();
+	InitColor(); //初始化颜色 shape.c
 	//timer -> timer.c
 	registerTimerEvent(timer);
 	startTimer(0, 100);
@@ -85,7 +85,7 @@ void display() {
 	/*Part 画出整体界面*/
 	switch (game_status)
 	{
-		case -1: //page one
+		case -1:		//page one
 		{
 			InitButton();
 			background();
@@ -106,7 +106,7 @@ void display() {
 			}
 			break;
 		}
-		case -2: //game win
+		case -2:		//game win
 		{
 			InitButton();	//画出整体界面	button.c
 			EchoInfo();		//显示分数和时间	button.c
@@ -118,7 +118,7 @@ void display() {
 			SetPointSize(1);
 			break;
 		}
-		case -3: //game lose
+		case -3:		//game lose
 		{
 			InitButton();	//画出整体界面 button.c
 			EchoInfo();		//显示分数和时间	button.c
@@ -138,39 +138,17 @@ void display() {
 			menu();			//显示菜单栏	ui.c
 			mciSendString("open ./file/game_music.mp3 alias bkmusic", NULL, 0, NULL);
 			mciSendString("play bkmusic repeat", NULL, 0, NULL);     //循环播放音乐
-			
+			/*Part 形状和地图的绘制*/
 			Shape* temp = head;
 			while (temp) {
 				DrawShape(temp);
 				temp = temp->next;
 			}
 			DrawMap(current_map);
-			//todo:hint 的bug
-			/*if (button(GenUIID(0), 10, 0, WindowWidth / 10, 0.4, "hint")) {
-				if (Is_Hint) {
-					for (int i = 1; i <= 7; i++) {
-						mapShape->graphics[i].isvisible = 0;
-					}
-					Is_Hint = 0;
-				}
-				else Is_Hint = 1;
-				score = Is_Hint;
-			}*/
 			DrawSubmap(current_map);
-			/*if (button(GenUIID(0), 14, 0, WindowWidth / 10, 0.4, "返回")) {
-				game_status = 3;
-			}
-			if (button(GenUIID(0), 6.3, 0, WindowWidth / 10, 0.4, "change map")) {
-				current_map += 1;
-				current_map %= MapNumber_MAX;
-				display();
-			}
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = 7;
-			}*/
 			break; 
 		}//end of case 1
-		case 2: //restart
+		case 2:			//restart 重启游戏，重新生成地图和形状，重新开始计时
 		{
 			current_time = TIME_LEFT;
 			delete_shape();
@@ -179,33 +157,33 @@ void display() {
 			game_status = 0;
 			break;
 		}
-		case 3: //page zero
+		case 3:			//page zero
 		{
 			DisplayClear();
-
 			int pensize = GetPenSize();
 			string pencolor = GetPenColor();
-			welcome();
+			welcome();				//显示欢迎界面	ui.c
 			SetPenSize(pensize);	//back to system pensize
 			SetPenColor(pencolor);	//back to system pencolor
 			break; 
 		}
-		case 4: //ranklist
+		case 4:			//ranklist
 		{
-			background();
-			echo_ranklist();
+			background();		//画出背景图形	ui.c
+			echo_ranklist();	//显示排行榜		ranklist.c
 			
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 				game_status = -1;
 			}
 			break; 
 		}
-		case 5: //solve
+		case 5:			//solve
 		{
-			background();
+			background();	//画出背景图形	ui.c
+			//solve();		//自动求解		solve.c
 			break;
 		}
-		case 6: //createMap
+		case 6:			//createMap
 		{
 			background();
 			InitButton();
@@ -225,7 +203,7 @@ void display() {
 			}
 			break;
 		}
-		case 7: //new game
+		case 7:			//new game
 		{
 			background();
 			InitButton();
@@ -257,11 +235,11 @@ void display() {
 				game_status = 6;
 			break;
 		}
-		case 8:	//game intro 信息提示界面
+		case 8:			//game intro 信息提示界面
 		{
-			InitButton();	//画出整体界面 button.c
-			background();
-			echo_intro();
+			InitButton();	//画出按钮	  ui.c
+			background();	//画出背景图形 ui.c
+			echo_intro();	//显示信息提示 ui.c
 		}
 		default:
 			break;
