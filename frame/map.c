@@ -27,11 +27,14 @@ Shape* CreateMap(int MapNumber) {
 	 * \return : 以shape结构体返回地图的形状
 	 */
 	Shape* t = (Shape*)malloc(sizeof(Shape));
+	double x_[9] = { 4.3,6.5,6.15,4.9,5.5,4.5,6.5,5.5 };
+	double y_[9] = { 4,4,2.9,4,4.2,4,3,3 };
 
 	//初始化地图的数据
 	t->vertexNum = map[MapNumber].vertexNum;
-	t->pX = 4.5;
-	t->pY = 4;
+	t->pX = x_[MapNumber];
+	t->pY = y_[MapNumber];
+
 	t->angle = 1;
 	strcpy(t->color, "Black");
 	t->isFilled = 0;
@@ -69,7 +72,7 @@ Shape* CreateMap(int MapNumber) {
 
 }
 void InitMap() {
-	for (int i = 0; i <= MapNumber_MAX-1; i++) {
+	for (int i = 0; i < MapNumber_MAX; i++) {
 		CreateMap(i);
 	}
 }

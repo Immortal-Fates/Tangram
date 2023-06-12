@@ -7,7 +7,7 @@
  *				3.按下Ctrl+P		暂停/继续游戏；
  *				4.按下Ctrl+R		重置游戏；
  *				5.按下Ctrl+S		保存游戏；
- *				6.
+ *				6.按下Ctrl+N		载入已经保存的游戏
  * 
  * \author Philfan
  * \date   May 2023
@@ -83,8 +83,8 @@ void KeyboardEventProcess(int key, int event){
 			isN = !event;
 			if (isN && isCtrl) {
 
-				current_time = 0;
-				Read_File("map1.txt");
+				current_time = TIME_LEFT;
+				Read_File();
 			}
 			break;
 		case VK_LCONTROL: case VK_RCONTROL: case VK_CONTROL: //按下Ctrl键
@@ -97,10 +97,11 @@ void KeyboardEventProcess(int key, int event){
 				else if (game_status == 1)	game_status = 2;
 			if (isS && isCtrl)
 				Save_File(current_map);
-			if (isN && isCtrl) {
 
-				current_time = 0;
-				Read_File("map1.txt");
+			if (isN && isCtrl) {
+				current_time = TIME_LEFT;
+				Read_File();
+				game_status = 0;
 			}				
 			break;
 

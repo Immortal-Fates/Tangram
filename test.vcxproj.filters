@@ -60,9 +60,6 @@
     <ClCompile Include="interaction\solve.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="frame\music.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="frame\map.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -149,14 +146,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="file\error.txt" />
     <Text Include="file\map_info.txt" />
-    <Text Include="file\map1.txt" />
     <Text Include="file\ranklist.txt" />
     <Text Include="file\userinfo.txt" />
     <Text Include="file\Errorsnap.txt" />
     <Text Include="file\submap_info.txt" />
+    <Text Include="file\map_continue.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="file\game_music.mp3" />
+    <Media Include="file\game_win.mp3" />
+    <Media Include="file\game_lose.mp3" />
   </ItemGroup>
 </Project>

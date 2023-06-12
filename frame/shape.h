@@ -47,7 +47,7 @@ typedef struct Tangram {
 	struct Tangram* next, * last;	//指向下一个和上一个图形的指针
 	int vertexNum;					//顶点数
 	int map_number;					//地图编号
-	sub_tangram graphics[7];
+	sub_tangram graphics[10];		
 }Shape;//存储图形的结构体
 extern Shape* tangramshape[7];
 

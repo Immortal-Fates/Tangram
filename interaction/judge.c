@@ -7,11 +7,11 @@
   *********************************************************************/
 #include "../Header.h"
 #include "judge.h"
-
+double eps = 1e-6;
 bool IsParallel(line* line1, line* line2);				//from mouseevent.c
 double DistanceBetweenLines(line* line1, line* line2);	//from mouseevent.c
 
-//todo:判断是否完成拼图(还没debug)
+
 void judge_complishment()
 {
     /**
@@ -36,10 +36,14 @@ void judge_complishment()
         }
         temp = temp->next;
     }
+
+    save_subMap(current_map);
     game_status= -2;
+    mciSendString("open ./file/game_win.mp3 alias game_win", NULL, 0, NULL);
+    mciSendString("play game_win", NULL, 0, NULL);     //播放成功的音乐
+
     return;
 }
-
 
 bool judge_point_in_tangram(node point)
 {
@@ -56,17 +60,19 @@ bool judge_point_in_tangram(node point)
         int vertexNum = temp->vertexNum;
         int lineNum = temp->vertexNum;//边数=顶点数
         int count = 0;
+        // score = 3;
         for (int i = 0; i < lineNum; i++)//边记录start和end  
         {
             node p1 = temp->edge[i].start;
             node p2 = temp->edge[i].end;
-            if ((p1.x == point.x && p1.y == point.y) || (p2.x == point.x && p2.y == point.y) || (point.y == p1.y && point.y == p2.y))  //与顶点重合不算在tangram内，判断下一个tangram;解决一点与一条边水平
+
+            if ((dcmp(point.x - p1.x) && dcmp(point.y - p1.y)) || (dcmp(point.x - p2.x) && dcmp(point.y - p2.y)) || (dcmp(point.y - p1.y) && dcmp(point.y - p2.y)))  //与顶点重合不算在tangram内，判断下一个tangram;解决一点与一条边水平
             {
                 intersection = 0;
                 break;
             }
-            //和边(or边的延长线)重合
-            if (((point.y <= p2.y && point.y >= p1.y) || (point.y <= p1.y && point.y >= p2.y)) && ((point.x <= p2.x && point.x >= p1.x) || (point.x <= p1.x && point.x >= p2.x)) && ((((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) < 0.1) && (((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) > -0.1)))//点在边上
+            //和边重合
+            if (((point.y <= p2.y + eps && point.y >= p1.y - eps) || (point.y <= p1.y + eps && point.y >= p2.y - eps)) && ((point.x <= p2.x + eps && point.x >= p1.x - eps) || (point.x <= p1.x + eps && point.x >= p2.x - eps)) && ((((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) < 0.1) && (((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) > -0.1)))//点在边上
             {
                 //进入下一条边的判断
                 intersection = 0;
@@ -111,11 +117,14 @@ bool judge_point_in_tangram(node point)
         {
             if (count != 1)   //解决一点与一点水平
             {
+                //score = count;
                 return FALSE;
             }
+            //  score = 2;
         }
         temp = temp->next;
     }
+    //score = 1;
     return TRUE;      //全部通过，返回TRUE
 }
 //射线法,
@@ -132,22 +141,27 @@ bool judge_point_in_map(node point)
     int intersection = 0;
     int vertexNum = temp->vertexNum;
     int lineNum = temp->vertexNum;//边数=顶点数
+    int count = 0;   //记录与point水平的点的个数（不包括线平行）
     for (int i = 0; i < lineNum; i++)//边记录start和end  
     {
         node p1 = temp->edge[i].start;
         node p2 = temp->edge[i].end;
-        int count = 0;
+        //score = ((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y));
 
-        if ((point.x == p1.x && point.y == p1.y) || (point.x == p2.x && point.y == p2.y)) //点与点重合
+        if ((dcmp(point.x - p1.x) && dcmp(point.y - p1.y)) || (dcmp(point.x - p2.x) && dcmp(point.y - p2.y)))   //点与点重合
         {
+            // score = 4;
             return TRUE;//算在多边形内
         }
 
         //点在边上
-        if (((point.y <= p2.y && point.y >= p1.y) || (point.y <= p1.y && point.y >= p2.y)) && ((point.x <= p2.x && point.x >= p1.x) || (point.x <= p1.x && point.x >= p2.x)) && ((((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) < 0.1) && (((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) > -0.1)))//点在边上
+        //score = (point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y);
+        if (((point.y <= p2.y + eps && point.y >= p1.y - eps) || (point.y <= p1.y + eps && point.y >= p2.y - eps)) && ((point.x <= p2.x + eps && point.x >= p1.x - eps) || (point.x <= p1.x && point.x >= p2.x)) && ((((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) < 0.1) && (((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) > -0.1)))//点在边上
         {
+            //  score = 3;
             return TRUE;
         }
+
         //点与边延长线上
         if (point.y == p1.y && point.y == p2.y)
         {
@@ -161,10 +175,10 @@ bool judge_point_in_map(node point)
                 if ((point.y - p1.y) * (p2.x - p1.x) > (point.x - p1.x) * (p2.y - p1.y))//斜率判断,在P1和P2之间且在P1P2右侧,在与边有交点的情况下且y相等再+1（满足奇数）；解决一点与两点水平
                 {
                     intersection++;
-                    if (point.y == p1.y)  //只与p1进行判断，保证仅+1
+                    if (point.y == p1.y)  //只与p1进行判断，保证仅+1(如果有2个这样的情况就不行了)
                     {
                         intersection++;
-
+                        count++;
                     }
                 }
             }
@@ -180,20 +194,41 @@ bool judge_point_in_map(node point)
                     if (point.y == p1.y)
                     {
                         intersection++;
+                        count++;
                     }
                 }
             }
         }
     }
+    if (count % 2 == 0 && count != 0)       //偶数个个这样使count++的点，会使intersection变成偶数
+    {
+        intersection++;
+    }
+    // score = (int)intersection;
     if (intersection % 2 == 1)  //为奇数，在map内
     {
+        //   score = 1;
         return TRUE;
+
     }
     else {
+        // score = 2;
         return FALSE;      //为偶数，在map外
     }
 }
 
+bool dcmp(double x)
+{
+    /**
+     * \brief//三态函数，判断两个double在eps精度下的大小关系.
+     *
+     * \param x
+     * \return
+     */
+    if (fabs(x) < eps) return TRUE;
+    else
+        return FALSE;
+}
 
 
 ////todo:判断是否完成拼图

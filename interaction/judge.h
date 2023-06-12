@@ -15,7 +15,7 @@ void judge_complishment();
 
 bool judge_point_in_tangram(node point);    //射线法,
 bool judge_point_in_map(node point);   //传入地图（不知道地图的用处？）
-
+bool dcmp(double x);
 
 
 #endif // !_JUDGE_H_

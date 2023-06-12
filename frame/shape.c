@@ -14,6 +14,8 @@ char colorList[100][100] = {
 const int colorNumber = 14;
 
 Shape* tangramshape[7];
+
+//todo:地图3坐标
 void InitColor() {
 	/**
 	 * \brief: 初始化颜色
@@ -30,12 +32,12 @@ void InitColor() {
 	DefineColor("Green", 0, 1, 0);
 	DefineColor("Blue", 0, 0, 1);
 	DefineColor("Violet", .93, .5, .93);
-	//todo: define color
+
 	DefineColor("Magenta", 1, 0, 1); //洋红色
 	DefineColor("Cyan", 0, 1, 1); //青色
-	DefineColor("Tan", 0.2,0.2,0.2); //#3b4383
-	DefineColor("Tan2", 230.0 / 250.0, 76.0 / 250.0, 50.0 / 250.0); //#e64c32
-	DefineColor("Tan3", 251.0 / 250.0, 243.0 / 250.0, 20.0 / 250.0); //#fbf314
+	DefineColor("Tan", 0.2, 0.2, 0.2); //#3b4383
+	DefineColor("Tan2", 0.92, 0.304, 0.2); //粉红
+	DefineColor("Tan3", 25.0 / 250.0, 243.0 / 250.0, 20.0 / 250.0);
 	DefineColor("Tan4", 4.0 / 250.0, 156.0 / 250.0, 212.0 / 250.0); //#049cd4
 	DefineColor("Tan5", 148.0 / 250.0, 44.0 / 250.0, 124.0 / 250.0); //#942c7c
 	DefineColor("Tan6", 140.0 / 250.0, 187.0 / 250.0, 59.0 / 250.0); //#8cbb3b

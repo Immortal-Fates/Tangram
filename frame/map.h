@@ -25,6 +25,8 @@ void DIY_map(void);
 
 /*Part3 用户提示*/
 void DrawSubmap(int MapNumber);
+
+//todo: 坐标的更新
 #endif // !_MAP_H_
 
 

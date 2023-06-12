@@ -14,6 +14,8 @@
 #include <string.h>
 #include <time.h>
 #include <windows.h>
+#include<mmsystem.h>
+#pragma comment(lib,"Winmm.lib")
 
 #include "./frame/file.h"
 #include "./frame/map.h"

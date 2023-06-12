@@ -17,6 +17,12 @@ void timer(int timerID) {
 		if (game_status != 0 ) return;
 
 		current_time -= 0.1;
+		if (current_time <= 0)
+		{
+			game_status = -3;
+			mciSendString("open ./file/game_lose.mp3 alias game_lose", NULL, 0, NULL);
+			mciSendString("play game_lose", NULL, 0, NULL);     //播放成功的音乐
+		}
 		
 		display();
 		/*int i = (int)(current_time * 10) % 5;

@@ -134,7 +134,6 @@
     <ClCompile Include="frame\user.c" />
     <ClCompile Include="lib\eval.c" />
     <ClCompile Include="frame\map.c" />
-    <ClCompile Include="frame\music.c" />
     <ClCompile Include="interaction\ui.c" />
     <ClCompile Include="frame\files.c" />
     <ClCompile Include="interaction\judge.c" />
@@ -178,16 +177,23 @@
     <ClInclude Include="frame\map.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="file\error.txt" />
     <Text Include="file\Errorsnap.txt" />
-    <Text Include="file\map1.txt" />
+    <Text Include="file\map_continue.txt" />
     <Text Include="file\map_info.txt" />
     <Text Include="file\ranklist.txt" />
     <Text Include="file\submap_info.txt" />
     <Text Include="file\userinfo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="file\game_lose.mp3" />
+    <Media Include="file\game_music.mp3" />
+    <Media Include="file\game_win.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
