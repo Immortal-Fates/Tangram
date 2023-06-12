@@ -36,10 +36,10 @@ Shape* CreateMap(int MapNumber) {
 	t->pY = y_[MapNumber];
 
 	t->angle = 1;
-	strcpy(t->color, "Black");
+	strcpy(t->color, "#232946");
 	t->isFilled = 0;
 	t->isSelected = FALSE;
-	t->Pensize = 1;
+	t->Pensize = 2;
 	t->shape = 3;//µØÍ¼
 	t->map_number = MapNumber;
 	t->next = t->last = NULL;

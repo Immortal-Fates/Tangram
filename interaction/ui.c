@@ -73,6 +73,8 @@ void echo_intro(void) {
 
 /*Part 按钮*/
 void menu(void) {//显示菜单
+	setMenuColors("#004643", "#fffffe", "#f9bc60", "#001e1d", 1);
+
 
 	char* menuListFile[] = { "menu","Change Map","hint" };
 	int selection;
@@ -93,8 +95,8 @@ void menu(void) {//显示菜单
 		}
 		else Is_Hint = 1;
 	}
-
-	if (button(GenUIID(0), WindowWidth / 10, 8.6, WindowWidth / 10, 0.4, "return")) {
+	setButtonColors("#004643", "#fffffe", "#f9bc60", "#001e1d", 1);
+	if (button(GenUIID(1), WindowWidth / 10, 8.6, WindowWidth / 10, 0.4, "return")) {
 		game_status = -1;
 	}
 }
@@ -102,7 +104,7 @@ void menu(void) {//显示菜单
 void InitButton(void) {
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
-	SetPenColor("Black");
+	SetPenColor("White");
 	SetPenSize(1);
 	MovePen(0, 9);
 	DrawLine(WindowWidth, 0);
@@ -121,6 +123,7 @@ void welcome(void){
 /**
  * \brief 欢迎界面的生成
  */
+	setButtonColors("#004643", "#fffffe", "#f9bc60", "#001e1d",1);
 	background();
 	MovePen(6.0, 5.9);
 	SetPenColor("red");
@@ -252,7 +255,7 @@ void _background(void) {//游戏界面背景
 
 	MovePen(0, 0);
 	DefineColor("line", 1, 0.9, 0.6);
-	SetPenColor("line");
+	SetPenColor("#eebbc3");
 	StartFilledRegion(1);
 	DrawLine(14, 0);
 	DrawLine(0, 9);
@@ -261,8 +264,7 @@ void _background(void) {//游戏界面背景
 	EndFilledRegion();
 
 	MovePen(0, 0.45);
-	DefineColor("deep blue", 0.1, 0.1, 0.4);
-	SetPenColor("deep blue");
+	SetPenColor("#a786df");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
 	DrawLine(0, 8.1);
@@ -271,8 +273,7 @@ void _background(void) {//游戏界面背景
 	EndFilledRegion();
 
 	MovePen(10.5, 0.45);
-	DefineColor("deep blue", 0.1, 0.1, 0.4);
-	SetPenColor("deep blue");
+	SetPenColor("#a786df");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
 	DrawLine(0, 8.1);
@@ -288,8 +289,7 @@ void lose_page(void){
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
-	DefineColor("deep blue", 0.1, 0.1, 0.41);
-	SetPenColor("deep blue");
+	SetPenColor("#55423d");
 	SetPenSize(1);
 	MovePen(0, 0);
 	StartFilledRegion(1);
@@ -299,8 +299,8 @@ void lose_page(void){
 	DrawLine(0, -9);
 	EndFilledRegion();
 
-	SetPenColor("RED");
-	SetPenSize(1);
+	SetPenColor("#ffc0ad");
+	SetPenSize(2);
 	SetPointSize(40);
 	MovePen(6.4, 5);
 	DrawTextString("You lost");
@@ -316,7 +316,7 @@ void win_page(void) {
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 
-	SetPenColor("Tan4");
+	SetPenColor("#004643");
 	SetPenSize(1);
 
 	MovePen(0, 0);
@@ -327,8 +327,8 @@ void win_page(void) {
 	DrawLine(0, -9);
 	EndFilledRegion();
 
-	SetPenColor("Red");
-	SetPenSize(1);
+	SetPenColor("#f9bc60");
+	SetPenSize(2);
 	SetPointSize(40);
 	MovePen(6.4, 5);
 	DrawTextString("You Win!!!");

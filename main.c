@@ -51,6 +51,7 @@ void Main() {
 	//初始化用户
 	user_init();
 	display();
+	
 }
 void display() {
 	/**

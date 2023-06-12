@@ -15,34 +15,8 @@ const int colorNumber = 14;
 
 Shape* tangramshape[7];
 
-//todo:地图3坐标
-void InitColor() {
-	/**
-	 * \brief: 初始化颜色
-	 */
-	DefineColor("Black", 0, 0, 0);
-	DefineColor("Dark Gray", .35, .35, .35);
-	DefineColor("Gray", .6, .6, .6);
-	DefineColor("Light Gray", .75, .75, .75);
-	DefineColor("White", 1, 1, 1);
-	DefineColor("Brown", .35, .20, .05);
-	DefineColor("Red", 1, 0, 0);
-	DefineColor("Orange", 1, .40, .1);
-	DefineColor("Yellow", 1, 1, 0);
-	DefineColor("Green", 0, 1, 0);
-	DefineColor("Blue", 0, 0, 1);
-	DefineColor("Violet", .93, .5, .93);
 
-	DefineColor("Magenta", 1, 0, 1); //洋红色
-	DefineColor("Cyan", 0, 1, 1); //青色
-	DefineColor("Tan", 0.2, 0.2, 0.2); //#3b4383
-	DefineColor("Tan2", 0.92, 0.304, 0.2); //粉红
-	DefineColor("Tan3", 25.0 / 250.0, 243.0 / 250.0, 20.0 / 250.0);
-	DefineColor("Tan4", 4.0 / 250.0, 156.0 / 250.0, 212.0 / 250.0); //#049cd4
-	DefineColor("Tan5", 148.0 / 250.0, 44.0 / 250.0, 124.0 / 250.0); //#942c7c
-	DefineColor("Tan6", 140.0 / 250.0, 187.0 / 250.0, 59.0 / 250.0); //#8cbb3b
-	DefineColor("Tan6", 203.0 / 250.0, 67.0 / 250.0, 72.0 / 250.0); //#cb4348
-}
+
 Shape *inventShape(bool fill, int shapetype, string _color,
 	double px, double py, double w, double h,int angle,int Pensize, ... ) {
 	/**
@@ -371,14 +345,14 @@ void Initshape(void) {
 	 * \brief 初始化七巧板图形
 	 */
 	
-	int penwidth = 1;
-	tangramshape[0] = inventShape(1, 0, "Brown", 1, 6.5, 2, 2, 1, penwidth,1);
-	tangramshape[1] = inventShape(1, 0, "Orange", 1, 4, 2, 2, 1, penwidth,2);					//最大三角形
-	tangramshape[2] = inventShape(1, 0, "Blue", 11, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形
-	tangramshape[3] = inventShape(1, 0, "Red", 1, 2.5, 1, 1, 1, penwidth,4);					//3rd 三角形
-	tangramshape[4] = inventShape(1, 0, "Black", 1, 1, 1, 1, 1, penwidth,5);					//3rd 三角形
-	tangramshape[5] = inventShape(1, 1, "Yellow", 12, 4, sqrt(2), 1, 1, penwidth,6);			//box
-	tangramshape[6] = inventShape(1, 2, "Gray", 11, 2, sqrt(2), 1, 1, penwidth,7);				
+	int penwidth = 2;
+	tangramshape[0] = inventShape(1, 0, "#9656a1", 1, 6.5, 2, 2, 1, penwidth,1);
+	tangramshape[1] = inventShape(1, 0, "#f9bc60", 1, 4, 2, 2, 1, penwidth,2);					//最大三角形
+	tangramshape[2] = inventShape(1, 0, "#3da9fc", 11, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形
+	tangramshape[3] = inventShape(1, 0, "#ef4565", 1, 2.5, 1, 1, 1, penwidth,4);					//3rd 三角形
+	tangramshape[4] = inventShape(1, 0, "#232946", 1, 1, 1, 1, 1, penwidth,5);					//3rd 三角形
+	tangramshape[5] = inventShape(1, 1, "#ff8e3c", 12, 4, sqrt(2), 1, 1, penwidth,6);			//box
+	tangramshape[6] = inventShape(1, 2, "#ffc0ad", 11, 2, sqrt(2), 1, 1, penwidth,7);				
 	//平行四边形
 }
 

@@ -9,7 +9,7 @@
 #include "genlib.h"
 
 
-void InitColor(void);							//innitialize color
+
 
 typedef struct Node {
 	double x, y;

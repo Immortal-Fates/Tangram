@@ -38,6 +38,7 @@
 #include "imgui.h"
 
 
+
 #define KMOD_SHIFT 0x01
 #define KMOD_CTRL  0x02
 
@@ -68,7 +69,34 @@ void InitGUI()
 {
 	// doing nothing now
 }
+void InitColor() {
+	/**
+	 * \brief: ³õÊ¼»¯ÑÕÉ«
+	 */
+	DefineColor("Tan", 0.2, 0.2, 0.2); //#3b4383
+	DefineColor("Tan2", 0.92, 0.304, 0.2); //·Ûºì
+	DefineColor("Tan3", 25.0 / 250.0, 243.0 / 250.0, 20.0 / 250.0);
+	DefineColor("Tan4", 4.0 / 250.0, 156.0 / 250.0, 212.0 / 250.0); //#049cd4
+	DefineColor("Tan5", 148.0 / 250.0, 44.0 / 250.0, 124.0 / 250.0); //#942c7c
+	DefineColor("#8cbb3b", 140.0 / 250.0, 187.0 / 250.0, 59.0 / 250.0); //
+	DefineColor("#cb4348", 203.0 / 250.0, 67.0 / 250.0, 72.0 / 250.0); //
+	DefineColor("#d4d8f0", 212.0 / 250.0, 216 / 250.0, 240 / 250.0);//Ç³À¶
+	DefineColor("#232946", 35.0 / 250.0, 41.0 / 250.0, 70.0 / 250.0);//ÉîÀ¶
+	DefineColor("#eebbc3", 238.0 / 250.0, 187.0 / 250.0, 195.0 / 250.0);//Ç³·Û
+	DefineColor("#a786df", 167.0 / 250.0, 134.0 / 250.0, 233.0 / 250.0);//Ç³×Ï
+	DefineColor("#3da9fc", 0.239, 0.663, 0.988);//ÁÁÀ¶
+	DefineColor("#ef4565", 239.0 / 250.0, 69.0 / 250.0, 101.0 / 250.0);//Ñóºì
+	DefineColor("#f9bc60", 249.0 / 250.0, 188.0 / 250.0, 96.0 / 250.0);//ÍÁ»Æ
+	DefineColor("#004643", 0 / 250.0, 70.0 / 250.0, 67.0 / 250.0);//°µÂÌ
+	DefineColor("#55423d", 85 / 250.0, 66.0 / 250.0, 61.0 / 250.0);//Éî×ØÉ«
+	DefineColor("#ffc0ad", 250 / 250.0, 192 / 250.0, 173 / 250.0);//ÑÅ·Û
+	DefineColor("#9656a1", 150 / 255.0, 86 / 255.0, 161 / 250.0);//×ÏÉ«
+	DefineColor("#2cb67d", 44 / 255.0,182/ 255.0, 125 / 255.0);//green
+	DefineColor("#001e1d", 0 / 250.0, 30 / 250.0, 29 / 250.0);//dark text color
+	DefineColor("#fffffe", 250 / 250.0, 250 / 250.0, 249 / 250.0);//bright text color
+	DefineColor("#ff8e3c", 255 / 255.0, 142/ 255.0, 60 / 255.0);//bright text color
 
+}
 void mySetPenColor(char *color)
 {
 	if( color && strlen(color)>0 ) SetPenColor(color);
@@ -91,6 +119,27 @@ void mySetPenColor(char *color)
  *  DefineColor("Violet", .93, .5, .93);
  *  DefineColor("Magenta", 1, 0, 1);
  *  DefineColor("Cyan", 0, 1, 1);
+ *
+ *	DefineColor("Tan", 0.2, 0.2, 0.2); //#3b4383
+ *	DefineColor("Tan2", 0.92, 0.304, 0.2); //·Ûºì
+ *	DefineColor("Tan3", 25.0 / 250.0, 243.0 / 250.0, 20.0 / 250.0);
+ *	DefineColor("Tan4", 4.0 / 250.0, 156.0 / 250.0, 212.0 / 250.0); //#049cd4
+ *	DefineColor("Tan5", 148.0 / 250.0, 44.0 / 250.0, 124.0 / 250.0); //#942c7c
+ *	DefineColor("#8cbb3b", 140.0 / 250.0, 187.0 / 250.0, 59.0 / 250.0); //
+ *	DefineColor("#cb4348", 203.0 / 250.0, 67.0 / 250.0, 72.0 / 250.0); //
+ *	DefineColor("#d4d8f0", 212.0 / 250.0, 216 / 250.0, 240 / 250.0);//Ç³À¶
+ *	DefineColor("#232946", 35.0 / 250.0, 41.0 / 250.0, 70.0 / 250.0);//ÉîÀ¶
+ *	DefineColor("#eebbc3", 238.0 / 250.0, 187.0 / 250.0, 195.0 / 250.0);//Ç³·Û
+ *	DefineColor("#a786df", 167.0 / 250.0, 134.0 / 250.0, 233.0 / 250.0);//Ç³×Ï
+ *	DefineColor("#3da9fc", 0.239, 0.663, 0.988);//ÁÁÀ¶
+ *	DefineColor("#ef4565", 239.0 / 250.0, 69.0 / 250.0, 101.0 / 250.0);//Ñóºì
+ *	DefineColor("#f9bc60", 249.0 / 250.0, 188.0 / 250.0, 96.0 / 250.0);//ÍÁ»Æ
+ *	DefineColor("#004643", 0 / 250.0, 70.0 / 250.0, 67.0 / 250.0);//°µÂÌ
+ *	DefineColor("#55423d", 85 / 250.0, 66.0 / 250.0, 61.0 / 250.0);//Éî×ØÉ«
+ *	DefineColor("#ffc0ad", 250 / 250.0, 192 / 250.0, 173 / 250.0);//ÑÅ·Û
+ *	DefineColor("#001e1d", 0 / 250.0, 30 / 250.0, 29 / 250.0);//dark text color
+ *	DefineColor("#fffffe", 255 / 250.0, 255 / 250.0, 254 / 250.0);//bright text color
+
  */
 
 /* 

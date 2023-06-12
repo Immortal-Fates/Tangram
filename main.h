@@ -4,7 +4,7 @@
 #include "./frame/shape.h"
 
 #define MAX_GAME_STATUS 8
-#define TIME_LEFT 80
+#define TIME_LEFT 1000
 extern int game_status;				//游戏状态，用于控制游戏流程
 extern double current_time;			//当前时间
 extern double WindowWidth;			//窗口宽度

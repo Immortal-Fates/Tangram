@@ -80,12 +80,17 @@ void echo_ranklist(void) {
 	/**
 	 * .\brief 输出前八名的用户的基本信息
 	 */
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	SetPenColor("Black");
 	char ranklist_content[200];
 	for (int i = 0; i <= min(8,playerNumber); i++) {
+		
 		sprintf(ranklist_content, "User Name: %s  Score:%lf  TimeUsed:%d\n", player[i].name,player[i].score,player[i].time);
 		MovePen(4, 10-i);
 		DrawTextString(ranklist_content);
 	}
-	
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor	
 }
 
