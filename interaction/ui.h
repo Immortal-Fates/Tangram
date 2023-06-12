@@ -4,10 +4,12 @@
 /*Part ÎÄ×Ö*/
 void EchoInfo(void);
 void echo_intro(void);
+
 /*Part °´Å¥*/
 void InitButton(void);
 void menu(void);
 void welcome(void);
+
 /*Part ±³¾°*/
 void background(void);
 void _background(void);

@@ -40,7 +40,4 @@
 #include <random.h>
 #include <eval.h>
 
-
-
-
 #endif // !_Header_H_

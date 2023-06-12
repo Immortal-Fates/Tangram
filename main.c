@@ -46,7 +46,6 @@ void Main() {
 	//初始化地图 map.c
 	GenerateMap();
 	InitMap();
-	
 	Generate_subMap();
 
 	//初始化用户
@@ -54,8 +53,21 @@ void Main() {
 	display();
 }
 void display() {
-	//game_status: 0->running 1->pause 2->exit 3->info/help 4->ranklist 5->solve 6->createMap
+	/**
+	 * \brief 显示游戏界面函数，用于控制不同页面的跳转和图形绘制
+	 * 
+	 * \param game_status 游戏状态
+	 *						-1 : 第二个界面 -2 : 游戏胜利界面 -3 : 游戏失败界面
+	 *						0,1: 游戏界面	2 : 重启游戏		 3 : 开始界面
+	 *						4  : 排行榜		5 : 自动求解七巧板 6 : 自定义七巧板界面
+	 *						7  : 选择地图界面8 : 信息提示界面
+	 * \relates 需要注意的是，游戏界面的显示是通过不断的刷新来实现的，因此在每次刷新时都会调用display函数
+	 *			在display函数中，会根据game_status的值来判断当前应该显示哪个界面
+	 *			
+	 *			在更改画笔粗细、画笔颜色、填充颜色、字体大小等时，需要注意的是，这些属性的改变是全局的，所以需要及时还原避免出现问题
+	 */
 	DisplayClear();
+	/*Part 背景音乐的设置*/
 	if (game_status != 0 && game_status != 1 && game_status != 6)
 	{
 		mciSendString("close bkmusic", NULL, 0, NULL);		//停止播放BGM
@@ -69,6 +81,8 @@ void display() {
 	{
 		mciSendString("close game_lose", NULL, 0, NULL);
 	}
+
+	/*Part 画出整体界面*/
 	switch (game_status)
 	{
 		case -1: //page one
@@ -94,10 +108,9 @@ void display() {
 		}
 		case -2: //game win
 		{
-			InitButton();	//画出整体界面 button.c
+			InitButton();	//画出整体界面	button.c
 			EchoInfo();		//显示分数和时间	button.c
-			//输出结束信息
-			win_page();
+			win_page();		//显示成功界面	ui.c
 			SetPointSize(20);
 			if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
 				game_status = 7;
@@ -109,7 +122,7 @@ void display() {
 		{
 			InitButton();	//画出整体界面 button.c
 			EchoInfo();		//显示分数和时间	button.c
-			lose_page();
+			lose_page();	//显示失败界面	ui.c
 			SetPointSize(20);
 			if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
 				game_status = 7;
@@ -119,12 +132,13 @@ void display() {
 		}
 		case 0: case 1: //running //pause
 		{	
-			_background();
-			InitButton();	//画出整体界面 button.c
+			_background();	//画出背景图形	ui.c
+			InitButton();	//画出整体界面	button.c
 			EchoInfo();		//显示分数和时间	button.c
+			menu();			//显示菜单栏	ui.c
 			mciSendString("open ./file/game_music.mp3 alias bkmusic", NULL, 0, NULL);
 			mciSendString("play bkmusic repeat", NULL, 0, NULL);     //循环播放音乐
-			menu();
+			
 			Shape* temp = head;
 			while (temp) {
 				DrawShape(temp);
@@ -243,7 +257,7 @@ void display() {
 				game_status = 6;
 			break;
 		}
-		case 8:	//game introduction
+		case 8:	//game intro 信息提示界面
 		{
 			InitButton();	//画出整体界面 button.c
 			background();

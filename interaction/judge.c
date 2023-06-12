@@ -37,7 +37,7 @@ void judge_complishment()
         temp = temp->next;
     }
 
-    save_subMap(current_map);
+    //save_subMap(current_map);
     game_status= -2;
     mciSendString("open ./file/game_win.mp3 alias game_win", NULL, 0, NULL);
     mciSendString("play game_win", NULL, 0, NULL);     //播放成功的音乐
@@ -117,14 +117,11 @@ bool judge_point_in_tangram(node point)
         {
             if (count != 1)   //解决一点与一点水平
             {
-                //score = count;
                 return FALSE;
             }
-            //  score = 2;
         }
         temp = temp->next;
     }
-    //score = 1;
     return TRUE;      //全部通过，返回TRUE
 }
 //射线法,
