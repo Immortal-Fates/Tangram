@@ -5,10 +5,11 @@
 
 #define MAX_GAME_STATUS 8
 #define TIME_LEFT 1000
+#define WindowWidth 14
+#define WindowHeight 9
+
 extern int game_status;				//游戏状态，用于控制游戏流程
 extern double current_time;			//当前时间
-extern double WindowWidth;			//窗口宽度
-extern double window_height;		//窗口高度
 extern int Is_Hint;
 extern int page;
 extern int MapNumber_MAX;			//地图数量

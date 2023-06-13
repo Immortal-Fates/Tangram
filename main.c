@@ -12,8 +12,6 @@ int game_status = 3;
 int MapNumber_MAX;
 int Is_Hint = 0;
 double current_time = 0.0;
-double WindowWidth = 14;
-double window_height = 9;
 int page;
 
 void timer(int timerID);
@@ -32,7 +30,7 @@ void Main() {
 	MapNumber_MAX = 7;
 
 	SetWindowTitle("Tangram");
-	SetWindowSize(WindowWidth, window_height);
+	SetWindowSize(WindowWidth, WindowHeight);
 	InitGraphics();
 	InitColor(); //初始化颜色 shape.c
 	//timer -> timer.c
@@ -58,7 +56,6 @@ void Main() {
 	//初始化用户
 	user_init();
 	display();
-	
 }
 void display() {
 	/**
@@ -185,9 +182,21 @@ void display() {
 		}
 		case 4:			//ranklist
 		{
-			background();		//画出背景图形	ui.c
-			echo_ranklist();	//显示排行榜		ranklist.c
-			
+			background();				//画出背景图形	ui.c
+			echo_ranklist(current_map);	//显示排行榜		ranklist.c
+			int pensize = GetPenSize();
+			string pencolor = GetPenColor();
+			char scoreDisplay[100];
+			sprintf(scoreDisplay, "current_map: %d", current_map + 1);
+			MovePen(7, 8.70);
+			DrawTextString(scoreDisplay);
+			SetPenSize(pensize);	//back to system pensize
+			SetPenColor(pencolor);	//back to system pencolor
+			if (button(GenUIID(1), 12.5, 5, WindowWidth / 10, 0.4, "page")) {
+				current_map += 1;
+				current_map %= MapNumber_MAX;
+				display();
+			}
 			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 				game_status = -1;
 			}

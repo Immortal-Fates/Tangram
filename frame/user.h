@@ -22,5 +22,5 @@ void user_register(char* name, char* password);
 void rank(int temp);//Í°ÅÅĞò or ¿ìËÙÅÅĞò
 void rank_by_index();
 inline void swap(user* a, user* b);
-void echo_ranklist(void);
+void echo_ranklist(int temp);
 #endif // !_USER_H_

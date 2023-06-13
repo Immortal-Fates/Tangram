@@ -20,7 +20,7 @@ void user_login_button()
 	double h = fH * 2; // 控件高度
 	double w = WindowWidth / 4; // 控件宽度
 	double x = WindowWidth / 3.5;
-	double y = window_height / 2 - h;
+	double y = WindowHeight / 2 - h;
 
 	SetPenColor("#001e1d");
 	SetPointSize(3);
@@ -124,18 +124,21 @@ inline void swap(user *a, user *b) {
 	*b = temp;
 }
 
-void echo_ranklist(void) {
+void echo_ranklist(int temp) {
 	/**
-	 * .\brief 输出前八名的用户的基本信息
+	 * .\brief 输出指定地图的排行榜
 	 */
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	SetPenColor("Black");
+	SetPointSize(12);
+	double fH = GetFontHeight();
 	char ranklist_content[200];
+	rank(temp);
 	for (int i = 0; i < min(8,playerNumber); i++) {
-		
-		//todo:sprintf(ranklist_content, "User Name: %s  Score:%lf  TimeUsed:%d\n", player[i].name,player[i].score,player[i].time);
-		MovePen(4, 10-i);
+		if (player[i].name, player[i].time[temp] == 0 || player[i].name, player[i].time[temp] == TIME_LEFT) continue;
+		sprintf(ranklist_content, "User Name: %s TimeUsed:%lf\n", player[i].name,player[i].time[temp]);
+		MovePen(4, 8-2*fH*i);
 		DrawTextString(ranklist_content);
 	}
 	SetPenSize(pensize);	//back to system pensize
