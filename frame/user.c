@@ -21,7 +21,9 @@ void user_login_button()
 	double w = WindowWidth / 4; // ¿Ø¼þ¿í¶È
 	double x = WindowWidth / 3.5;
 	double y = WindowHeight / 2 - h;
-
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	SetPenColor("#001e1d");
 	SetPointSize(3);
 	MovePen(3, 7);
@@ -55,6 +57,9 @@ void user_login_button()
 		}
 		game_status = -1;
 	}
+	SetPointSize(size);
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor	
 }
 void user_register(char* name, char* password) {
 	/**
@@ -130,6 +135,7 @@ void echo_ranklist(int temp) {
 	 */
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	SetPenColor("Black");
 	SetPointSize(12);
 	double fH = GetFontHeight();
@@ -141,6 +147,7 @@ void echo_ranklist(int temp) {
 		MovePen(4, 8-2*fH*i);
 		DrawTextString(ranklist_content);
 	}
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor	
 }
