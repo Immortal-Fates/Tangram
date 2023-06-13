@@ -19,7 +19,12 @@ int page;
 void timer(int timerID);
 void KeyboardEventProcess(int key, int event);
 void MouseEventProcess(int x, int y, int button, int event);
-
+// 用户的字符事件响应函数
+void CharEventProcess(char ch)
+{
+	uiGetChar(ch); // GUI字符输入
+	display(); //刷新显示
+}
 
 void Main() {
 	current_time = TIME_LEFT;//给定60s的游戏时间
@@ -39,6 +44,8 @@ void Main() {
 	
 	//mouse	-> mouseEvent.c
 	registerMouseEvent(MouseEventProcess);
+
+	registerCharEvent(CharEventProcess);
 	
 	//初始化七巧板 shape.c
 	Initshape();
@@ -112,6 +119,7 @@ void display() {
 			InitButton();	//画出整体界面	button.c
 			EchoInfo();		//显示分数和时间	button.c
 			win_page();		//显示成功界面	ui.c
+			user_save();	//保存用户信息	user.c
 			SetPointSize(20);
 			if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
 				game_status = 7;
@@ -129,6 +137,13 @@ void display() {
 				game_status = 7;
 			}
 			SetPointSize(1);
+			break;
+		}
+		case -4:		//user register
+		{
+
+			background();
+			user_login_button();
 			break;
 		}
 		case 0: case 1: //running //pause

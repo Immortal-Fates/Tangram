@@ -4,20 +4,23 @@
 
 #define PlayerNumber_MAX 20
 typedef struct User {
+	int index;
 	char name[20];
 	char password[20];
-	double score;
-	int time;
-	int index;
+	double time[100];	//每个地图的时间
 }user;
 user player[PlayerNumber_MAX];
 extern int playerNumber;
 extern int current_player;
 
-void user_register(char* name, char* password);
-bool user_login(char* name, char* password);
+
 void user_init(void);
-void rank();//桶排序 or 快速排序
+void user_save(void);
+void user_login_button();
+void user_register(char* name, char* password);
+
+void rank(int temp);//桶排序 or 快速排序
+void rank_by_index();
 inline void swap(user* a, user* b);
 void echo_ranklist(void);
 #endif // !_USER_H_

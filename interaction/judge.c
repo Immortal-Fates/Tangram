@@ -39,6 +39,7 @@ void judge_complishment()
 
     //save_subMap(current_map);
     game_status= -2;
+    player[current_player].time[current_map] = TIME_LEFT - current_time;
     mciSendString("open ./file/game_win.mp3 alias game_win", NULL, 0, NULL);
     mciSendString("play game_win", NULL, 0, NULL);     //播放成功的音乐
 

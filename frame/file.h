@@ -13,10 +13,10 @@ void Generate_subMap(void);
 void save_subMap(void);
 
 /*Part 3 ranklist存取*/
-void Save_Ranklist(void);
+void Save_Ranklist();
 void Read_Ranklist(void);
 void Save_Userinfo(void);
-
+void Read_Userinfo(void);
 
 /*Part exit 退出时候清除所有链表与数组 防止内存泄露*/
 void delete_ALL(void);

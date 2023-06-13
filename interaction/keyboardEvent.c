@@ -25,7 +25,7 @@ void KeyboardEventProcess(int key, int event){
 	 */
 	double mouseX = GetCurrentX();//pixel -> inches
 	double mouseY = GetCurrentY();
-	
+	uiGetKeyboard(key, event);
 	switch (key)
 	{
 		case VK_ESCAPE: //按下ESC键退出程序；

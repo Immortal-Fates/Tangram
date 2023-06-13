@@ -10,7 +10,52 @@
 
 user player[PlayerNumber_MAX];
 int playerNumber;
+int current_player;
+void user_login_button()
+{
+	static char userName[80] = "";
+	static char userPasswd[80] = "";
+	static char results[200] = "";
+	double fH = GetFontHeight();
+	double h = fH * 2; // 控件高度
+	double w = WindowWidth / 4; // 控件宽度
+	double x = WindowWidth / 3.5;
+	double y = window_height / 2 - h;
 
+	SetPenColor("#001e1d");
+	SetPointSize(3);
+	MovePen(3, 7);
+	DrawTextString("请输入用户名和密码，未在用户库当中会新建用户");
+	SetPenColor("Brown");
+	drawLabel(x - fH / 2 - TextStringWidth("用户名"), (y -= h * 1.2) + fH * 0.7, "用户名");
+	textbox(GenUIID(0), x, y, w, h, userName, sizeof(userName));
+
+	SetPenColor("Brown");
+	drawLabel(x - fH / 2 - TextStringWidth("密码"), (y -= h * 1.2) + fH * 0.7, "密码");
+	textbox(GenUIID(0), x, y, w, h, userPasswd, sizeof(userPasswd));
+	if (button(GenUIID(0), 6.3, 1.5, WindowWidth / 10, 0.4, "Login")) {
+		for (int i = 0; i <= playerNumber; i++)
+		{
+			if (strcmp(userName, player[i].name) == 0) {
+				if (strcmp(userPasswd, player[i].password) == 0) {
+					game_status = -1;
+					current_player = i;
+					return;
+				}
+				else {
+					SetPenColor("Gray");
+					drawLabel(x, y -= fH * 1.2, "密码错误");
+					return;
+				}
+			}
+		}
+		if (strlen(userName) != 0)
+		{
+			user_register(userName, userPasswd);
+		}
+		game_status = -1;
+	}
+}
 void user_register(char* name, char* password) {
 	/**
 	 * \brief 注册用户
@@ -19,40 +64,43 @@ void user_register(char* name, char* password) {
 	 */
 	player[playerNumber].index = playerNumber;
 	strcpy(player[playerNumber].name, name);
-	player[playerNumber].score = 0;
-	player[playerNumber].time = 0;
-	strcpy(player[playerNumber].password, password);
-	playerNumber += 1;
-}
-bool user_login(char* name, char* password) {
-	/**
-	 * .\brief 用户登录
-	 * \param name 用户名
-	 * \param password	用户密码
-	 * \return 
-	 */
-	for (int i = 0; i < playerNumber; i++) {
-		if(strcmp(name,player[i].name) == 0){
-			if (strcmp(password, player[i].password) == 0) {
-				return TRUE;
-			}
-		}
+	for(int i = 0; i < MapNumber_MAX;i++)
+	{
+		player[playerNumber].time[i] = TIME_LEFT;
 	}
-	return FALSE;
+	strcpy(player[playerNumber].password, password);
+	current_player = playerNumber;
+	playerNumber += 1;
 }
 void user_init(void) {
 	/**
 	 * \brief 从文件中读取用户信息，初始化user数组
 	 * 
 	 */
-	Read_Ranklist();
-	//user_register("admin", "admin");
-	rank();
-	Save_Ranklist();
-	Save_Userinfo();
-	
+	Read_Userinfo();
 }
-void rank(){
+void user_save(void) {
+	/**
+	 * \brief 将user数组中的用户信息保存到文件中
+	 * 
+	 */
+	Save_Ranklist();
+	rank_by_index();
+	Save_Userinfo();
+}
+void rank_by_index(void)
+{
+	//根据用户的index对user数组进行排序
+	for (int i = 0; i < playerNumber; i++) {
+		for (int j = 0; j < playerNumber; j++) {
+			if (player[i].index < player[j].index) {
+				//交换两个结构体的数据
+				swap(&player[i], &player[j]);
+			}
+		}
+	}
+}
+void rank(int temp){
 	/**
 	 * .\brief 桶排序 or 快速排序 实现对于user数组的排序，为了输出排行榜功能做准备
 	 * 
@@ -60,7 +108,7 @@ void rank(){
 	//桶排序
 	for (int i = 0; i < playerNumber; i++) {
 		for (int j = 0; j < playerNumber; j++) {
-			if (player[i].score > player[j].score) {
+			if (player[i].time[temp] < player[j].time[temp]) {
 				//交换两个结构体的数据
 				swap(&player[i], &player[j]);
 			}
@@ -84,9 +132,9 @@ void echo_ranklist(void) {
 	string pencolor = GetPenColor();
 	SetPenColor("Black");
 	char ranklist_content[200];
-	for (int i = 0; i <= min(8,playerNumber); i++) {
+	for (int i = 0; i < min(8,playerNumber); i++) {
 		
-		sprintf(ranklist_content, "User Name: %s  Score:%lf  TimeUsed:%d\n", player[i].name,player[i].score,player[i].time);
+		//todo:sprintf(ranklist_content, "User Name: %s  Score:%lf  TimeUsed:%d\n", player[i].name,player[i].score,player[i].time);
 		MovePen(4, 10-i);
 		DrawTextString(ranklist_content);
 	}

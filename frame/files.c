@@ -153,7 +153,7 @@ void save_subMap(int MapNumber)
 
 
 
-void Save_Ranklist(void) {
+void Save_Ranklist() {
 	//输出排行榜数据到./file/ranklist.txt
 	FILE* fp;
 	if ((fp = fopen("./file/ranklist.txt", "w")) == NULL) {
@@ -161,23 +161,15 @@ void Save_Ranklist(void) {
 		fclose(fp); // 关闭文件指针
 		return;
 	}
-	fprintf(fp, "%d\n", playerNumber);
-	for (int i = 0; i < playerNumber; i++) {
-		fprintf(fp, "%d %s %lf %d\n",player[i].index, player[i].name, player[i].score, player[i].time);
+	for(int j = 0 ; j <MapNumber_MAX; j ++)
+	{
+		fprintf(fp, "map = %d\n", j);
+		rank(j);
+		for (int i = 0; i < playerNumber; i++) {
+			fprintf(fp, "%s %lf\n", player[i].name, player[i].time[j]);
+		}
 	}
-	fclose(fp);
-}
-void Read_Ranklist(void) {
-	FILE* fp;
-	if ((fp = fopen("./file/ranklist.txt", "r")) == NULL) {
-		printf("Can't open file\n"); //错误处理，返回错误代码
-		fclose(fp); // 关闭文件指针
-		return;
-	}
-	fscanf(fp, "%d\n", &playerNumber);
-	for (int i = 0; i < playerNumber; i++) {
-		fscanf(fp, "%d %s %lf %d\n", &player[i].index, player[i].name, &player[i].score, &player[i].time);
-	}
+	
 	fclose(fp);
 }
 
@@ -185,13 +177,37 @@ void Save_Userinfo(void) {
 	//输出用户数据到./file/userinfo.txt
 	FILE* fp;
 	if ((fp = fopen("./file/userinfo.txt", "w")) == NULL) {
-		printf("Can't open map info\n"); //错误处理，返回错误代码
+		printf("Can't open userinfo\n"); //错误处理，返回错误代码
 		fclose(fp); // 关闭文件指针
 		return;
 	}
 	fprintf(fp, "%d\n", playerNumber);
 	for (int i = 0; i < playerNumber; i++) {
-		fprintf(fp, "%d %s %s\n", i, player[i].name,player[i].password);
+		fprintf(fp, "%d %s %s\n", player[i].index, player[i].name, player[i].password);
+		for(int j = 0;j < MapNumber_MAX; j ++)
+		{
+			fprintf(fp, "%lf ", player[i].time[j]);
+		}
+		fprintf(fp, "\n");
+	}
+	fclose(fp);
+}
+void Read_Userinfo(void) {
+	//输出用户数据到./file/userinfo.txt
+	FILE* fp;
+	if ((fp = fopen("./file/userinfo.txt", "r")) == NULL) {
+		fclose(fp); // 关闭文件指针
+		return;
+	}
+	char _;
+	fscanf(fp, "%d\n", &playerNumber);
+	for (int i = 0; i < playerNumber; i++) {
+		fscanf(fp, "%d %s %s\n", &player[i].index, player[i].name, player[i].password);
+		for (int j = 0; j < MapNumber_MAX; j++)
+		{
+			fscanf(fp, "%lf ", &player[i].time[j]);
+		}
+		fscanf(fp, "\n");
 	}
 	fclose(fp);
 }

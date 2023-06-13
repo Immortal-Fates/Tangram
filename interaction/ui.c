@@ -21,13 +21,16 @@ void EchoInfo(void) {
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	SetPenColor("Black");
-	char timeDisplay[100], scoreDisplay[100],cu_map[100];
+	char timeDisplay[100], scoreDisplay[100], userDisplay[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
 	MovePen(4, 8.70);
 	DrawTextString(timeDisplay);
 	sprintf(scoreDisplay, "current_map: %d", current_map+1);
 	MovePen(7, 8.70);
 	DrawTextString(scoreDisplay);
+	sprintf(userDisplay, "current_player: %s", player[current_player].name);
+	MovePen(8, 8.70);
+	DrawTextString(userDisplay);
 
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
@@ -112,8 +115,6 @@ void InitButton(void) {
 	DrawLine(WindowWidth, 0);
 	MovePen(0, 0);
 	DrawLine(WindowWidth, 0);
-	MovePen(0, 0.45);
-	DrawLine(WindowWidth, 0);
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 
@@ -183,7 +184,10 @@ void welcome(void){
 	if (button(GenUIID(0), 6.3, 1.5, WindowWidth / 10, 0.4, "EXIT"))exit(-1);
 	if (button(GenUIID(0), 6.3, 2.0, WindowWidth / 10, 0.4, "INTRODUCTION"))game_status=8;
 	if (button(GenUIID(0), 6.3, 2.5, WindowWidth / 10, 0.4, "PLAY"))
-		game_status = -1;
+	{
+		game_status = -4;
+	}
+		
 }
 
 
@@ -263,22 +267,22 @@ void _background(void) {//”Œœ∑ΩÁ√Ê±≥æ∞
 	DrawLine(0, -9);
 	EndFilledRegion();
 
-	MovePen(0, 0.45);
+	MovePen(0, 0);
 	SetPenColor("#a786df");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
-	DrawLine(0, 8.1);
+	DrawLine(0, 8.55);
 	DrawLine(-3.6, 0);
-	DrawLine(0, -8.1);
+	DrawLine(0, -8.55);
 	EndFilledRegion();
 
-	MovePen(10.5, 0.45);
+	MovePen(10.5, 0);
 	SetPenColor("#a786df");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
-	DrawLine(0, 8.1);
+	DrawLine(0, 8.55);
 	DrawLine(-3.6, 0);
-	DrawLine(0, -8.1);
+	DrawLine(0, -8.55);
 	EndFilledRegion();
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
