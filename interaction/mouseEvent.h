@@ -1,8 +1,8 @@
 #pragma once
 #ifndef _MOUSEEVENT_H_
 #define MOUSEEVENT_H
-#include "../Header.h"
-#define THRESHOLD 0.2	//吸附阈值
+
+#define THRESHOLD 0.15	//吸附阈值
 #define CALERROR 0.001		//判定浮点数相等时候的误差
 
 void MouseEventProcess(int x, int y, int button, int event);

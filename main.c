@@ -23,8 +23,7 @@ void CharEventProcess(char ch)
 	uiGetChar(ch); // GUI字符输入
 	display(); //刷新显示
 }
-
-void Main() {
+void main() {
 	current_time = TIME_LEFT;//给定60s的游戏时间
 	game_status = 3;
 	MapNumber_MAX = 7;
@@ -187,6 +186,7 @@ void display() {
 			int pensize = GetPenSize();
 			string pencolor = GetPenColor();
 			char scoreDisplay[100];
+			SetPenColor("#001e1d");
 			sprintf(scoreDisplay, "current_map: %d", current_map + 1);
 			MovePen(7, 8.70);
 			DrawTextString(scoreDisplay);

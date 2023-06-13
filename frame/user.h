@@ -1,6 +1,5 @@
 #ifndef _USER_H_
 #define USER_H
-#include <../Header.h>
 
 #define PlayerNumber_MAX 20
 typedef struct User {

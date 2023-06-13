@@ -1,7 +1,6 @@
 #ifndef _FILE_H_
 #define _FILE_H_
-#include <../Header.h>
-#include <extgraph.h>
+
 
 /*Part 1 µØÍ¼µÄ´æÈ¡*/
 void Read_File(void); 

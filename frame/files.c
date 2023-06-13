@@ -10,7 +10,6 @@
 #include "file.h"
 
 
-
 void Read_File(void) {
 	/**
 	 * \brief: 读取已经保存的游戏状态 
@@ -50,6 +49,7 @@ void Save_File(int MapNumber)
 	if ((fp = fopen("./file/map_continue.txt", "w+")) == NULL)
 	{
 		fclose(fp);
+		return;
 	}
 	fprintf(fp, "%d\n", MapNumber);//将地图编号写入文件
 
@@ -66,11 +66,10 @@ void GenerateMap(void){
 	/**
 	 * \brief 生成地图
 	 */
-	FILE* fp,* pp; 
-	pp = fopen("./file/error.txt", "w");
+	FILE* fp; 
 	if ((fp = fopen("./file/map_info.txt", "r")) == NULL ) {
 		printf("Can't open map info\n"); //错误处理，返回错误代码
-		fclose(pp); // 关闭文件指针
+		fclose(fp);
 		return;
 	}
 	fscanf(fp, "%d\n", &MapNumber_MAX);
@@ -78,7 +77,6 @@ void GenerateMap(void){
 	for (int i = 0; i < MapNumber_MAX; i++) {
 		fscanf(fp, "%c%c\n",&_,&_);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
-		fprintf(pp, "num = %d\n", map[i].vertexNum);
 
 		for(int j = 0;j <= map[i].vertexNum-1;j++){
 			char temp[100],tempx[100],tempy[100];
@@ -86,14 +84,9 @@ void GenerateMap(void){
 			sscanf(temp, "%s %s", tempx, tempy);
 			EVIC_Eval(tempx,&map[i].vertex[j][0]);//利用EVIC_Eval函数将表达式计算出来，并且转换为double
 			EVIC_Eval(tempy,&map[i].vertex[j][1]);
-			fprintf(pp,"%lf %lf\n",map[i].vertex[j][0],map[i].vertex[j][1]);
-			//fprintf(pp, "%%%\n");
 		}
 	}
-	//fscanf(fp, "%c%c\n", &_, &_);
-	fprintf(pp, "##");
 	fclose(fp);
-	fclose(pp);
 }
 
 
@@ -101,6 +94,7 @@ void Generate_subMap(void) {
 	FILE* fp;
 	if ((fp = fopen("./file/submap_info.txt", "r")) == NULL) {
 		fclose(fp);
+		return;
 	}
 	int mapnumber;
 	char _;
@@ -134,6 +128,7 @@ void save_subMap(int MapNumber)
 	FILE* fp;
 	if ((fp = fopen("./file/aaa.txt", "a+")) == NULL)
 	{
+		fclose(fp);
 		return;
 	}
 	fprintf(fp, "#%d\n", MapNumber);//将地图编号写入文件
@@ -199,7 +194,6 @@ void Read_Userinfo(void) {
 		fclose(fp); // 关闭文件指针
 		return;
 	}
-	char _;
 	fscanf(fp, "%d\n", &playerNumber);
 	for (int i = 0; i < playerNumber; i++) {
 		fscanf(fp, "%d %s %s\n", &player[i].index, player[i].name, player[i].password);

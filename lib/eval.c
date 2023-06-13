@@ -4,7 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "eval.h"
+#include <eval.h>
 
 /* 创建表达式对象 */
 EVIC_expr* NewExpr();

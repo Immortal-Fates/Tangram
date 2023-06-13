@@ -2,7 +2,6 @@
 #ifndef _MAP_H_
 #define MAP_H
 #include "shape.h"
-#include "../Header.h"
 /*Part 地图的生成*/
 typedef struct MAP {
 	int vertexNum;
@@ -25,6 +24,7 @@ void DIY_map(void);
 
 /*Part3 用户提示*/
 void DrawSubmap(int MapNumber);
+void save_subMap(int MapNumber);
 
 //todo: 坐标的更新
 #endif // !_MAP_H_

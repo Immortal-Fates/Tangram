@@ -6,11 +6,6 @@
 
 #include <stdbool.h>
 
-#include "genlib.h"
-
-
-
-
 typedef struct Node {
 	double x, y;
 }node;

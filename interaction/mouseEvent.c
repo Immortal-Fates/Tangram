@@ -10,9 +10,8 @@
  * \author PhilFan
  * \date   May 2023
  *********************************************************************/
-#include "extgraph.h"
 #include "../Header.h"
-#include "mouseEvent.h"
+#include "./mouseEvent.h"
 
 
 void MouseEventProcess(int x, int y, int button, int event){
@@ -114,6 +113,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 				dx = mouseX - lastX;
 				dy = mouseY - lastY;//计算鼠标移动的距离
 				Shape* temp = head;
+				//todo: 更改链表，更新时间较近的图形在链表的前面
+
 				while (temp)
 				{
 					if (isInShape(temp, mouseX, mouseY) && temp->isSelected == TRUE && !game_status)//选中的时候才能移动
@@ -160,7 +161,8 @@ int isequal(double a, double b) {
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		
 		line* shapeLine = &(shape->edge[j]);
-		//fprintf(ErrorFile, "##\n\n %d\n", j);
+		//fprintf(
+		// File, "##\n\n %d\n", j);
 		//fprintf(ErrorFile, "%lf %lf\n",shapeLine->start.x, shapeLine->start.y);
 		//fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
 		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条

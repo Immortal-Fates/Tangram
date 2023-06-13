@@ -1998,7 +1998,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
 {
     MSG messages;            /* Here messages to the application are saved */
     
-    Main();
+    main();
 
     /* Run the message loop. It will run until GetMessage() returns 0 */
     while (GetMessage (&messages, NULL, 0, 0))

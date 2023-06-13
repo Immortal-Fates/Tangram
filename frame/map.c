@@ -9,6 +9,7 @@
  * \date   May 2023
  *********************************************************************/
 #include "map.h"
+#include "../Header.h"
 
 current_map = 0;	//当前地图编号
 mymap map[100];		//地图数据
@@ -115,7 +116,9 @@ void DrawSubmap(int MapNumber) {
 		if (ttemp->map_number == MapNumber) {
 			mapShape = ttemp;
 			//FILE* fp;
-			//fp = fopen("./file/error.txt", "w");
+			//fp = fopen("./file/
+			//
+			// .txt", "w");
 			//fprintf(fp, "%d\n", mapShape->vertexNum);
 
 			int pensize = GetPenSize();
@@ -157,6 +160,6 @@ void DIYMap() {
 	//
 
 
-	return 0;
+	return;
 }
 

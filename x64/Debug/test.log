@@ -1,13 +1,77 @@
 ﻿D:\Code\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(test.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  user.c
+D:\MyUni\Class\Pgm-C\test2\frame\user.c(33,10): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\frame\user.c(37,10): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\frame\user.c(38,13): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
+  eval.c
+D:\MyUni\Class\Pgm-C\test2\lib\eval.c(100,12): warning C4101: “p_tk”: 未引用的局部变量
+D:\MyUni\Class\Pgm-C\test2\lib\eval.c(737,45): warning C4101: “cptk”: 未引用的局部变量
+D:\MyUni\Class\Pgm-C\test2\lib\eval.c(738,18): warning C4101: “c”: 未引用的局部变量
+  map.c
+D:\MyUni\Class\Pgm-C\test2\frame\map.c(163,10): warning C4098: “DIYMap”:“void”函数返回值
+  ui.c
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(51,11): warning C4087: “GetStyle”: 用“void”参数列表声明
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(66,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(73,11): warning C4087: “GetStyle”: 用“void”参数列表声明
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(84,23): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(102,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(181,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(181,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(183,45): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(183,42): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(184,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(185,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(186,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+  files.c
+D:\MyUni\Class\Pgm-C\test2\frame\files.c(127,1): warning C4027: 未用形参表声明的函数
+D:\MyUni\Class\Pgm-C\test2\frame\files.c(197,7): warning C4101: “_”: 未引用的局部变量
+  judge.c
+  keyboardEvent.c
+  solve.c
+  exceptio.c
+D:\MyUni\Class\Pgm-C\test2\lib\exceptio.c(70,18): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  genlib.c
+D:\MyUni\Class\Pgm-C\test2\lib\genlib.c(123,14): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  graphics.c
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(737,36): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(754,36): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(876,24): warning C4133: “=”: 从“LONG (__cdecl *)(HWND,UINT,WPARAM,LPARAM)”到“WNDPROC”的类型不兼容
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(832,18): warning C4101: “consoleRect”: 未引用的局部变量
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1059,23): warning C4133: “=”: 从“LONG (__cdecl *)(HWND,UINT,WPARAM,LPARAM)”到“WNDPROC”的类型不兼容
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1171,16): warning C4244: “函数”: 从“WPARAM”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1178,20): warning C4244: “return”: 从“LRESULT”转换到“LONG”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1335,50): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1336,54): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1337,52): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1475,79): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1668,41): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(1723,49): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(2001,5): warning C4013: “main”未定义；假设外部返回 int
+D:\MyUni\Class\Pgm-C\test2\lib\graphics.c(2012,20): warning C4244: “return”: 从“WPARAM”转换到“int”，可能丢失数据
+  imgui.c
+D:\MyUni\Class\Pgm-C\test2\lib\imgui.c(428,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\imgui.c(429,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\imgui.c(492,18): warning C4311: “类型强制转换”: 从“char (*)[39]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\lib\imgui.c(533,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  linkedlist.c
+  random.c
+  simpio.c
+  strlib.c
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(50,12): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(51,12): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(63,11): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(76,11): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(100,13): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(108,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(168,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\MyUni\Class\Pgm-C\test2\lib\strlib.c(182,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
   main.c
-D:\Code\VisualStudio\VC\Tools\MSVC\14.35.32215\include\stdbool.h(15,1): warning C4005: “bool”: 宏重定义
-D:\MyUni\Class\Pgm-C\test2\include\boolean.h(26,1): message : 参见“bool”的前一个定义
-D:\MyUni\Class\Pgm-C\test2\main.c(98,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\main.c(103,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\main.c(106,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\main.c(109,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\main.c(121,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\main.c(133,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(97,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(102,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(105,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(108,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(120,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\main.c(132,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test2\main.c(195,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test2\main.c(200,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test2\main.c(218,50): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
@@ -22,4 +86,8 @@ D:\MyUni\Class\Pgm-C\test2\main.c(248,15): warning C4311: “类型强制转换�
 D:\MyUni\Class\Pgm-C\test2\main.c(252,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test2\main.c(256,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
 D:\MyUni\Class\Pgm-C\test2\main.c(259,15): warning C4311: “类型强制转换”: 从“char (*)[34]”到“long”的指针截断
+  mouseEvent.c
+  shape.c
+  timer.c
+  正在生成代码...
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test2\x64\Debug\Tangram.exe

@@ -23,13 +23,13 @@ void EchoInfo(void) {
 	SetPenColor("Black");
 	char timeDisplay[100], scoreDisplay[100], userDisplay[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
-	MovePen(4, 8.70);
+	MovePen(2.6, 8.70);
 	DrawTextString(timeDisplay);
 	sprintf(scoreDisplay, "current_map: %d", current_map+1);
-	MovePen(7, 8.70);
+	MovePen(5.8, 8.70);
 	DrawTextString(scoreDisplay);
 	sprintf(userDisplay, "current_player: %s", player[current_player].name);
-	MovePen(8, 8.70);
+	MovePen(8.2, 8.70);
 	DrawTextString(userDisplay);
 
 	SetPenSize(pensize);	//back to system pensize
@@ -87,6 +87,7 @@ void menu(void) {//œ‘ æ≤Àµ•
 		current_map += 1;
 		current_map %= MapNumber_MAX;
 		Is_Hint = 0;
+		game_status = 2;
 		display();
 	}
 	if (selection == 2) {

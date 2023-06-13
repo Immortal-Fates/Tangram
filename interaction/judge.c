@@ -202,15 +202,12 @@ bool judge_point_in_map(node point)
     {
         intersection++;
     }
-    // score = (int)intersection;
     if (intersection % 2 == 1)  //为奇数，在map内
     {
-        //   score = 1;
         return TRUE;
 
     }
     else {
-        // score = 2;
         return FALSE;      //为偶数，在map外
     }
 }

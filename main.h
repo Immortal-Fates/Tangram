@@ -4,7 +4,7 @@
 #include "./frame/shape.h"
 
 #define MAX_GAME_STATUS 8
-#define TIME_LEFT 1000
+#define TIME_LEFT 80
 #define WindowWidth 14
 #define WindowHeight 9
 
@@ -18,7 +18,7 @@ extern char colorList[100][100];
 extern const int colorNumber;
 
 void display();
-void Main();
+void main();
 
 extern Shape* head, * tail, * mapShape;
 extern Shape* Map_head, * Map_tail;

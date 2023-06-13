@@ -1,14 +1,21 @@
 map = 0
-PhilFan 4.200000
+PhilFan 5.500000
+wozhuinb 248.500000
 map = 1
 PhilFan 12.600000
+wozhuinb 93.800000
 map = 2
 PhilFan 36.200000
+wozhuinb 73.200000
 map = 3
 PhilFan 31.000000
+wozhuinb 64.100000
 map = 4
 PhilFan 18.900000
+wozhuinb 49.200000
 map = 5
 PhilFan 22.200000
+wozhuinb 31.800000
 map = 6
 PhilFan 29.800000
+wozhuinb 91.200000

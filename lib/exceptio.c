@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#include "genlib.h"
+#include <genlib.h>
 #include "gcalloc.h"
 #include "exception.h"
 
