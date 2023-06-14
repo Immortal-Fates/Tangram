@@ -50,7 +50,7 @@ void KeyboardEventProcess(int key, int event){
 			if (event) {
 				Shape* temp = head;
 				while (temp) {
-					if (isInShape(temp, mouseX, mouseY) && !game_status)
+					if (temp->isSelected == TRUE && !game_status)
 					{
 						temp->angle = (temp->angle + 1) % 8;
 						break;
@@ -64,9 +64,8 @@ void KeyboardEventProcess(int key, int event){
 
 				Shape* temp = head;
 				while (temp) {
-					if (isInShape(temp, mouseX, mouseY) && !game_status)
+					if (temp->isSelected == TRUE && !game_status)
 					{
-
 						temp->angle = (temp->angle + 7) % 8;
 						break;
 					}
