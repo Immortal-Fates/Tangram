@@ -111,23 +111,45 @@ void rank(int temp){
 	 * 
 	 */
 	//桶排序
-	for (int i = 0; i < playerNumber; i++) {
-		for (int j = 0; j < playerNumber; j++) {
-			if (player[i].time[temp] < player[j].time[temp]) {
-				//交换两个结构体的数据
-				swap(&player[i], &player[j]);
-			}
-		}
-	}
-	//todo:快速排序
-
-	//对结构体数组进行排序
+	//for (int i = 0; i < playerNumber; i++) {
+	//	for (int j = 0; j < playerNumber; j++) {
+	//		if (player[i].time[temp] < player[j].time[temp]) {
+	//			//交换两个结构体的数据
+	//			swap(&player[i], &player[j]);
+	//		}
+	//	}
+	//}
+	//快速排序，对结构体数组进行排序
+	quickSort(player, 0, playerNumber - 1, temp);
 }
 inline void swap(user *a, user *b) {
 	user temp = *a;
 	*a = *b;
 	*b = temp;
 }
+inline void quickSort(user* arr, int low, int high, int temp) {
+	if (low < high) {
+		int pivot = partition(arr, low, high, temp);
+		quickSort(arr, low, pivot - 1, temp);
+		quickSort(arr, pivot + 1, high, temp);
+	}
+}
+inline int partition(user* arr, int low, int high, int temp) {
+	user pivot = arr[high];
+	int i = low - 1;
+
+	for (int j = low; j < high; j++) {
+		if (arr[j].time[temp] < pivot.time[temp]) {
+			i++;
+			swap(&arr[i], &arr[j]);
+		}
+	}
+
+	swap(&arr[i + 1], &arr[high]);
+	return i + 1;
+}
+
+
 
 void echo_ranklist(int temp) {
 	/**

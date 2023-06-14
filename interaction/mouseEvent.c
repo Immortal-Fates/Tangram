@@ -41,13 +41,11 @@ void MouseEventProcess(int x, int y, int button, int event){
 			if (button == LEFT_BUTTON) {
 				lastX = mouseX;
 				lastY = mouseY;
-				Shape* temp = tail;
-				//todo:更换序，更新时间较近的图形在链表的前面
+				Shape* temp = tail;		//从尾部开始遍历，防止遮挡
 				while (temp)
 				{
 					if (isInShape(temp, mouseX, mouseY) && !game_status)
 					{
-						
 						MouseisMove = TRUE;
 						temp->isSelected = TRUE;		//选中的时候改变该图形的状态，防止移动的时候影响其他图形
 						
@@ -73,7 +71,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 			/* Part2: 旋转图形 */
 			if ((button == RIGHT_BUTTON || button == LEFT_BUTTON)
 				&& mouseY >= 0 && mouseY <= 9) {
-				//todo:更换顺序
 				Shape* temp = head;
 				while (temp)
 				{
