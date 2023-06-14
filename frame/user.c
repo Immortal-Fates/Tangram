@@ -144,7 +144,6 @@ inline int partition(user* arr, int low, int high, int temp) {
 			swap(&arr[i], &arr[j]);
 		}
 	}
-
 	swap(&arr[i + 1], &arr[high]);
 	return i + 1;
 }
