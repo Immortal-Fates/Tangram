@@ -54,4 +54,6 @@ Shape *inventShape(bool fill, int shapetype, char * _color,
 void Initshape(void);							//初始化七个七巧板图形
 void delete_shape(void);						//删除图形
 bool isInShape(Shape* t, double x, double y);	//判断点是否在图形内
+
+void movelinklist(Shape* temp);	//将图形指针shape移到链表末尾，实现最后画出的是最近修改的图形			
 #endif // !_SHAPE_H_

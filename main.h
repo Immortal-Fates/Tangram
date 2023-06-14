@@ -7,7 +7,7 @@
 #define TIME_LEFT 80
 #define WindowWidth 14
 #define WindowHeight 9
-
+#define TIME_INTERVAL 50
 extern int game_status;				//游戏状态，用于控制游戏流程
 extern double current_time;			//当前时间
 extern int Is_Hint;

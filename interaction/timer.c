@@ -15,7 +15,7 @@ void timer(int timerID) {
 	if(timerID == 0)
 	{
 		if (game_status != 0 ) return;
-		current_time -= 0.1;
+		current_time -= TIME_INTERVAL/1000;
 		if (current_time <= 0)
 		{
 			game_status = -3;

@@ -192,6 +192,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="file\color.txt" />
     <Text Include="file\error.txt" />
     <Text Include="file\Errorsnap.txt" />
     <Text Include="file\map_continue.txt" />

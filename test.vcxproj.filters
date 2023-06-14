@@ -157,6 +157,7 @@
     <Text Include="file\Errorsnap.txt" />
     <Text Include="file\submap_info.txt" />
     <Text Include="file\map_continue.txt" />
+    <Text Include="file\color.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="file\game_music.mp3" />

@@ -26,7 +26,6 @@ void DIY_map(void);
 void DrawSubmap(int MapNumber);
 void save_subMap(int MapNumber);
 
-//todo: 坐标的更新
 #endif // !_MAP_H_
 
 

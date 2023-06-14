@@ -87,7 +87,10 @@ void menu(void) {//œ‘ æ≤Àµ•
 		current_map += 1;
 		current_map %= MapNumber_MAX;
 		Is_Hint = 0;
-		game_status = 2;
+		current_time = TIME_LEFT;
+		delete_shape();
+		Initshape();
+		DrawMap(current_map);
 		display();
 	}
 	if (selection == 2) {

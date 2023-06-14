@@ -41,7 +41,8 @@ void MouseEventProcess(int x, int y, int button, int event){
 			if (button == LEFT_BUTTON) {
 				lastX = mouseX;
 				lastY = mouseY;
-				Shape* temp = head;
+				Shape* temp = tail;
+				//todo:更换序，更新时间较近的图形在链表的前面
 				while (temp)
 				{
 					if (isInShape(temp, mouseX, mouseY) && !game_status)
@@ -60,7 +61,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 						}
 						break;
 					}
-					temp = temp->next;
+					temp = temp->last;
 				}
 			}
 
@@ -72,13 +73,18 @@ void MouseEventProcess(int x, int y, int button, int event){
 			/* Part2: 旋转图形 */
 			if ((button == RIGHT_BUTTON || button == LEFT_BUTTON)
 				&& mouseY >= 0 && mouseY <= 9) {
+				//todo:更换顺序
 				Shape* temp = head;
 				while (temp)
 				{
 					if (isInShape(temp, mouseX, mouseY) && !game_status)
 					{
 						if (button == RIGHT_BUTTON) //右键顺时针
+						{
 							temp->angle = (temp->angle + 1) % 8;
+							movelinklist(temp);
+						}
+							
 						//if(button == LEFT_BUTTON) //左键逆时针
 						//	temp->angle = (temp->angle + 7) % 8;
 						break;
@@ -113,17 +119,18 @@ void MouseEventProcess(int x, int y, int button, int event){
 				dx = mouseX - lastX;
 				dy = mouseY - lastY;//计算鼠标移动的距离
 				Shape* temp = head;
-				//todo: 更改链表，更新时间较近的图形在链表的前面
 
-				while (temp)
-				{
-					if (isInShape(temp, mouseX, mouseY) && temp->isSelected == TRUE && !game_status)//选中的时候才能移动
-					{
+				while (temp) {
+					Shape* nextNode = temp->next; // 保存下一个节点的引用，以便在移动节点后继续遍历
+
+					if (isInShape(temp, mouseX, mouseY) && temp->isSelected == TRUE && !game_status) { // 选中的时候才能移动
 						temp->pX += dx;
 						temp->pY += dy;
+						movelinklist(temp);
 						break;
 					}
-					temp = temp->next;
+
+					temp = nextNode; // 继续遍历下一个节点
 				}
 				lastX = mouseX;
 				lastY = mouseY;//更新鼠标的位置
@@ -133,8 +140,6 @@ void MouseEventProcess(int x, int y, int button, int event){
 	}
 	//最后更新界面
 }
-
-
 
 /*对线的吸附*/
 int isequal(double a, double b) {

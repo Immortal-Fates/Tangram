@@ -367,3 +367,23 @@ void delete_shape(void){
 		free(temp);
 	}
 }
+void movelinklist(Shape *temp)
+{
+	if (temp != head && temp != tail) {
+		temp->last->next = temp->next;
+		temp->next->last = temp->last;
+	}
+	else if (temp == head)
+	{
+		temp->next->last = NULL;
+		head = temp->next;
+	}
+	if (temp != tail)
+	{
+		temp->last = NULL;
+		temp->next = NULL;
+		tail->next = temp;
+		temp->last = tail;
+		tail = temp;
+	}
+}

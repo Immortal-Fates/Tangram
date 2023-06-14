@@ -34,7 +34,7 @@ void main() {
 	InitColor(); //³õÊ¼»¯ÑÕÉ« shape.c
 	//timer -> timer.c
 	registerTimerEvent(timer);
-	startTimer(0, 100);
+	startTimer(0, TIME_INTERVAL);
 
 	//keyboard -> keyboardEvent.c
 	registerKeyboardEvent(KeyboardEventProcess);
