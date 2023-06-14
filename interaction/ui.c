@@ -52,7 +52,7 @@ void echo_intro(void) {
 	MovePen(3, 7);
 	DrawTextString("1.移动图形：		鼠标左键拖拽");
 	MovePen(3, 6.5);
-	DrawTextString("2.旋转图形：		右键单击");
+	DrawTextString("2.旋转图形：		右键单击 或者 点击图形按下q,e键旋转");
 	MovePen(3, 6);
 	DrawTextString("3.提示：			点击HINT按钮，再点击想要移动的七巧板，获取下一步的提示");
 	MovePen(3, 5.5);

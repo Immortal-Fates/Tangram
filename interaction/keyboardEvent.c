@@ -45,7 +45,7 @@ void KeyboardEventProcess(int key, int event){
 				else if (game_status == 1)	game_status = 2;
 				
 			break;
-		//todo: QE没有写好
+		//todo: QE按照鼠标位置旋转
 		case 'Q':		//按Q，判断鼠标是否在图形内，如果是就逆时针旋转七巧板
 			if (event) {
 				Shape* temp = head;
