@@ -248,7 +248,7 @@ void Save_mapCreate_File(void)
 		fprintf(fp, "%d\n", map[i].vertexNum);
 
 		for (int j = 0; j < map[i].vertexNum ; j++) {
-			fprintf(fp,"%lf %lf\n",  map[i].vertex[j][0], map[i].vertex[j][1]);
+			fprintf(fp,"%lf %lf\n",  map[i].vertex[j][0]- map[i].vertex[0][0], map[i].vertex[j][1]- map[i].vertex[0][1]);
 		}
 	}
 	fclose(fp);
