@@ -449,8 +449,31 @@ void select_game_page(void)
 		game_status = -1;
 	}
 	if (button(GenUIID(3), 12, 8, WindowWidth / 10, 0.4, "createMap"))
+	{
 		game_status = 6;
+		delete_shape();
+		Initshape();
+	}
+		
 
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+}
+void create_map_page(void)
+{
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
+	SetPointSize(80);
+	drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
+	SetPointSize(30);
+	if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+		game_status = 7;
+	}
+	if (button(GenUIID(1), 10, 0, WindowWidth / 10, 0.4, "save")) {
+		//DIY_map();
+	}
 	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor

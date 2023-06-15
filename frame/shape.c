@@ -344,8 +344,8 @@ void Initshape(void) {
 	/**
 	 * \brief 初始化七巧板图形
 	 */
-	
 	int penwidth = 2;
+	if (game_status == 6) penwidth = 1;
 	tangramshape[0] = inventShape(1, 0, "#9656a1", 1, 6.5, 2, 2, 1, penwidth,1);
 	tangramshape[1] = inventShape(1, 0, "#f9bc60", 1, 4, 2, 2, 1, penwidth,2);					//最大三角形
 	tangramshape[2] = inventShape(1, 0, "#3da9fc", 11, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形

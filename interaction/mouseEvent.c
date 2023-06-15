@@ -44,7 +44,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				Shape* temp = tail;		//从尾部开始遍历，防止遮挡
 				while (temp)
 				{
-					if (isInShape(temp, mouseX, mouseY) && !game_status)
+					if (isInShape(temp, mouseX, mouseY) && (game_status == 0 || game_status == 6))
 					{
 						MouseisMove = TRUE;
 						temp->isSelected = TRUE;		//选中的时候改变该图形的状态，防止移动的时候影响其他图形
@@ -74,7 +74,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				Shape* temp = head;
 				while (temp)
 				{
-					if (isInShape(temp, mouseX, mouseY) && !game_status)
+					if (isInShape(temp, mouseX, mouseY) && (game_status == 0 || game_status == 6))
 					{
 						if (button == RIGHT_BUTTON) //右键顺时针
 						{
@@ -103,7 +103,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
 					SnapToLine(temp, THRESHOLD);
 					SnaptoPoint(temp, THRESHOLD);
-					judge_complishment();
+					if(game_status== 0)judge_complishment();
 					break;
 				}
 				temp = temp->next;
@@ -120,7 +120,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 				while (temp) {
 					Shape* nextNode = temp->next; // 保存下一个节点的引用，以便在移动节点后继续遍历
 
-					if (isInShape(temp, mouseX, mouseY) && temp->isSelected == TRUE && !game_status) { // 选中的时候才能移动
+					if (isInShape(temp, mouseX, mouseY) && temp->isSelected == TRUE && (game_status == 0 || game_status == 6)) { // 选中的时候才能移动
 						temp->pX += dx;
 						temp->pY += dy;
 						movelinklist(temp);
@@ -167,31 +167,36 @@ int isequal(double a, double b) {
 		// File, "##\n\n %d\n", j);
 		//fprintf(ErrorFile, "%lf %lf\n",shapeLine->start.x, shapeLine->start.y);
 		//fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
-		for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
-			line* mapLine = &(mapShape->edge[i]);
-			// 判断线条是否平行
-			if (IsParallel(mapLine, shapeLine)) {
-				// 计算两条平行线之间的距离
-				double distance = DistanceBetweenLines(mapLine, shapeLine);
-				// 如果距离小于阈值，则将图形移动到平行线重合
-				if (distance < threshold) {
-					MoveToParallelLines(mapLine, shapeLine, distance, shape);
+		if(game_status == 0)
+		{
+			for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
+				line* mapLine = &(mapShape->edge[i]);
+				// 判断线条是否平行
+				if (IsParallel(mapLine, shapeLine)) {
+					// 计算两条平行线之间的距离
+					double distance = DistanceBetweenLines(mapLine, shapeLine);
+					// 如果距离小于阈值，则将图形移动到平行线重合
+					if (distance < threshold) {
+						MoveToParallelLines(mapLine, shapeLine, distance, shape);
 
-					/* 用于debug 
-					fprintf(ErrorFile, "distance:%lf\n", distance);
-					fprintf(ErrorFile, "shapeLine->start.x:%lf ", shapeLine->start.x);
-					fprintf(ErrorFile, "shapeLine->start.y:%lf ", shapeLine->start.y);
-					fprintf(ErrorFile, "shapeLine->end.x:%lf ", shapeLine->end.x);
-					fprintf(ErrorFile, "shapeLine->end.y:%lf\n", shapeLine->end.y);
-					fprintf(ErrorFile, "mapLine->start.x:%lf ", mapLine->start.x);
-					fprintf(ErrorFile, "mapLine->start.y:%lf ", mapLine->start.y);
-					fprintf(ErrorFile, "mapLine->end.x:%lf ", mapLine->end.x);
-					fprintf(ErrorFile, "mapLine->end.y:%lf\n", mapLine->end.y);
-					fprintf(ErrorFile, "i:%d j:%d\n", i, j);
-					*/
+						/* 用于debug
+						fprintf(ErrorFile, "distance:%lf\n", distance);
+						fprintf(ErrorFile, "shapeLine->start.x:%lf ", shapeLine->start.x);
+						fprintf(ErrorFile, "shapeLine->start.y:%lf ", shapeLine->start.y);
+						fprintf(ErrorFile, "shapeLine->end.x:%lf ", shapeLine->end.x);
+						fprintf(ErrorFile, "shapeLine->end.y:%lf\n", shapeLine->end.y);
+						fprintf(ErrorFile, "mapLine->start.x:%lf ", mapLine->start.x);
+						fprintf(ErrorFile, "mapLine->start.y:%lf ", mapLine->start.y);
+						fprintf(ErrorFile, "mapLine->end.x:%lf ", mapLine->end.x);
+						fprintf(ErrorFile, "mapLine->end.y:%lf\n", mapLine->end.y);
+						fprintf(ErrorFile, "i:%d j:%d\n", i, j);
+						*/
+					}
 				}
 			}
+
 		}
+		
 		Shape* t = head;
 		while (t)
 		{
@@ -337,13 +342,17 @@ int isequal(double a, double b) {
 	 for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		 node* shapeNode, * mapNode, * oshapeNode;
 		 shapeNode = &shape->vertex[j];
-		 for (int i = 0; i <= mapShape->vertexNum - 1; i++) {
-			 mapNode = &mapShape->vertex[i];
-			 double distance = DistanceBetweenPoints(shapeNode, mapNode);
-			 if (distance < threshold) {
-				 MoveToNearestPoint(shapeNode, mapNode, shape);
-			 }
-		 }
+		if(game_status == 0)
+		{
+			for (int i = 0; i <= mapShape->vertexNum - 1; i++) {
+				mapNode = &mapShape->vertex[i];
+				double distance = DistanceBetweenPoints(shapeNode, mapNode);
+				if (distance < threshold) {
+					MoveToNearestPoint(shapeNode, mapNode, shape);
+				}
+			}
+		}
+		 
 		 Shape* t = head;
 		 while (t)
 		 {

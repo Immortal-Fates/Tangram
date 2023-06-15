@@ -13,6 +13,7 @@ void menu(void);
 void welcome(void);
 void button_page_one(void);
 void select_game_page(void);
+void create_map_page(void);
 
 /*Part ±³¾°*/
 void background(void);

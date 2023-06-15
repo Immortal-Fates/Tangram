@@ -166,22 +166,18 @@ void display() {
 		}
 		case 6:			//createMap
 		{
-			background();
-			InitButton();
+			_background();	//画出背景图形	ui.c
+			InitButton();	//画出整体界面	button.c
+			create_map_page();
 			mciSendString("open ./file/game_music.mp3 alias bkmusic", NULL, 0, NULL);
 			mciSendString("play bkmusic repeat", NULL, 0, NULL);     //循环播放音乐
-			SetPointSize(80);
-			drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
-			SetPointSize(30);
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = 7;
+			/*Part 形状和地图的绘制*/
+			Shape* temp = head;
+			while (temp) {
+				DrawShape(temp);
+				temp = temp->next;
 			}
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "save")) {
-				//DIY_map();
-			}
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = 7;
-			}
+				
 			break;
 		}
 		case 7:			//new game
@@ -196,6 +192,7 @@ void display() {
 			InitButton();	//画出按钮	  ui.c
 			background();	//画出背景图形 ui.c
 			echo_intro();	//显示信息提示 ui.c
+			break;
 		}
 		default:
 			break;

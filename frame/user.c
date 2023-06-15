@@ -163,7 +163,7 @@ void echo_ranklist(int temp) {
 	char ranklist_content[200];
 	rank(temp);
 	for (int i = 0; i < min(8,playerNumber); i++) {
-		if (player[i].name, player[i].time[temp] == 0 || player[i].name, player[i].time[temp] == TIME_LEFT) continue;
+		if (player[i].time[temp] == 0 || player[i].time[temp] == TIME_LEFT) continue;
 		sprintf(ranklist_content, "User Name: %s TimeUsed:%.1lf\n", player[i].name,player[i].time[temp]);
 		MovePen(4, 8-2*fH*i);
 		DrawTextString(ranklist_content);
