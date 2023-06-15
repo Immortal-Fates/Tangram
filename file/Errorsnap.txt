@@ -1,155 +1,81 @@
-##
-
- 0
-1.857143 2.673469
-2.857143 2.673469
-#### 0 Brown 1.000000
-oshapeline line0 start = 1.000000 6.500000
-oshapeline line0 end = 3.000000 6.500000
-oshapeline line1 start = 3.000000 6.500000
-oshapeline line1 end = 1.000000 8.500000
-oshapeline line2 start = 1.000000 8.500000
-oshapeline line2 end = 1.000000 6.500000
-#### 0 Orange 1.234694
-oshapeline line0 start = 1.234694 2.469388
-oshapeline line0 end = 3.234694 2.469388
-#move Red to Orange
-oshapeline line1 start = 3.234694 2.469388
-oshapeline line1 end = 1.234694 4.469388
-oshapeline line2 start = 1.234694 4.469388
-oshapeline line2 end = 1.234694 2.469388
-#### 0 Blue 11.000000
-oshapeline line0 start = 11.000000 6.000000
-oshapeline line0 end = 12.414214 6.000000
-oshapeline line1 start = 12.414214 6.000000
-oshapeline line1 end = 11.000000 7.414214
-oshapeline line2 start = 11.000000 7.414214
-oshapeline line2 end = 11.000000 6.000000
-#### 0 Black 1.000000
-oshapeline line0 start = 1.000000 1.000000
-oshapeline line0 end = 2.000000 1.000000
-oshapeline line1 start = 2.000000 1.000000
-oshapeline line1 end = 1.000000 2.000000
-oshapeline line2 start = 1.000000 2.000000
-oshapeline line2 end = 1.000000 1.000000
-#### 1 Yellow 12.000000
-oshapeline line0 start = 12.707107 4.000000
-oshapeline line0 end = 12.000000 4.707107
-oshapeline line1 start = 12.000000 4.707107
-oshapeline line1 end = 11.292893 4.000000
-oshapeline line2 start = 11.292893 4.000000
-oshapeline line2 end = 12.000000 3.292893
-oshapeline line3 start = 12.000000 3.292893
-oshapeline line3 end = 12.707107 4.000000
-#### 2 Gray 11.000000
-oshapeline line0 start = 11.000000 2.000000
-oshapeline line0 end = 12.414214 2.000000
-oshapeline line1 start = 12.414214 2.000000
-oshapeline line1 end = 13.121320 2.707107
-oshapeline line2 start = 13.121320 2.707107
-oshapeline line2 end = 11.707107 2.707107
-oshapeline line3 start = 11.707107 2.707107
-oshapeline line3 end = 11.000000 2.000000
-##
-
- 1
-2.857143 2.469388
-1.857143 3.469388
-#### 0 Brown 1.000000
-oshapeline line0 start = 1.000000 6.500000
-oshapeline line0 end = 3.000000 6.500000
-oshapeline line1 start = 3.000000 6.500000
-oshapeline line1 end = 1.000000 8.500000
-oshapeline line2 start = 1.000000 8.500000
-oshapeline line2 end = 1.000000 6.500000
-#### 0 Orange 1.234694
-oshapeline line0 start = 1.234694 2.469388
-oshapeline line0 end = 3.234694 2.469388
-oshapeline line1 start = 3.234694 2.469388
-oshapeline line1 end = 1.234694 4.469388
-#move Red to Orange
-oshapeline line2 start = 1.234694 4.469388
-oshapeline line2 end = 1.234694 2.469388
-#### 0 Blue 11.000000
-oshapeline line0 start = 11.000000 6.000000
-oshapeline line0 end = 12.414214 6.000000
-oshapeline line1 start = 12.414214 6.000000
-oshapeline line1 end = 11.000000 7.414214
-oshapeline line2 start = 11.000000 7.414214
-oshapeline line2 end = 11.000000 6.000000
-#### 0 Black 1.000000
-oshapeline line0 start = 1.000000 1.000000
-oshapeline line0 end = 2.000000 1.000000
-oshapeline line1 start = 2.000000 1.000000
-oshapeline line1 end = 1.000000 2.000000
-oshapeline line2 start = 1.000000 2.000000
-oshapeline line2 end = 1.000000 1.000000
-#### 1 Yellow 12.000000
-oshapeline line0 start = 12.707107 4.000000
-oshapeline line0 end = 12.000000 4.707107
-oshapeline line1 start = 12.000000 4.707107
-oshapeline line1 end = 11.292893 4.000000
-oshapeline line2 start = 11.292893 4.000000
-oshapeline line2 end = 12.000000 3.292893
-oshapeline line3 start = 12.000000 3.292893
-oshapeline line3 end = 12.707107 4.000000
-#### 2 Gray 11.000000
-oshapeline line0 start = 11.000000 2.000000
-oshapeline line0 end = 12.414214 2.000000
-oshapeline line1 start = 12.414214 2.000000
-oshapeline line1 end = 13.121320 2.707107
-oshapeline line2 start = 13.121320 2.707107
-oshapeline line2 end = 11.707107 2.707107
-oshapeline line3 start = 11.707107 2.707107
-oshapeline line3 end = 11.000000 2.000000
-##
-
- 2
-2.045918 3.658163
-2.045918 2.658163
-#### 0 Brown 1.000000
-oshapeline line0 start = 1.000000 6.500000
-oshapeline line0 end = 3.000000 6.500000
-oshapeline line1 start = 3.000000 6.500000
-oshapeline line1 end = 1.000000 8.500000
-oshapeline line2 start = 1.000000 8.500000
-oshapeline line2 end = 1.000000 6.500000
-#### 0 Orange 1.234694
-oshapeline line0 start = 1.234694 2.469388
-oshapeline line0 end = 3.234694 2.469388
-oshapeline line1 start = 3.234694 2.469388
-oshapeline line1 end = 1.234694 4.469388
-oshapeline line2 start = 1.234694 4.469388
-oshapeline line2 end = 1.234694 2.469388
-#### 0 Blue 11.000000
-oshapeline line0 start = 11.000000 6.000000
-oshapeline line0 end = 12.414214 6.000000
-oshapeline line1 start = 12.414214 6.000000
-oshapeline line1 end = 11.000000 7.414214
-oshapeline line2 start = 11.000000 7.414214
-oshapeline line2 end = 11.000000 6.000000
-#### 0 Black 1.000000
-oshapeline line0 start = 1.000000 1.000000
-oshapeline line0 end = 2.000000 1.000000
-oshapeline line1 start = 2.000000 1.000000
-oshapeline line1 end = 1.000000 2.000000
-oshapeline line2 start = 1.000000 2.000000
-oshapeline line2 end = 1.000000 1.000000
-#### 1 Yellow 12.000000
-oshapeline line0 start = 12.707107 4.000000
-oshapeline line0 end = 12.000000 4.707107
-oshapeline line1 start = 12.000000 4.707107
-oshapeline line1 end = 11.292893 4.000000
-oshapeline line2 start = 11.292893 4.000000
-oshapeline line2 end = 12.000000 3.292893
-oshapeline line3 start = 12.000000 3.292893
-oshapeline line3 end = 12.707107 4.000000
-#### 2 Gray 11.000000
-oshapeline line0 start = 11.000000 2.000000
-oshapeline line0 end = 12.414214 2.000000
-oshapeline line1 start = 12.414214 2.000000
-oshapeline line1 end = 13.121320 2.707107
-oshapeline line2 start = 13.121320 2.707107
-oshapeline line2 end = 11.707107 2.707107
-oshapeline line3 start = 11.707107 2.707107
-oshapeline line3 end = 11.000000 2.000000
+####
+####
+!!!!!!
+beforestart = 4.520705 5.270485 4.520705 3.270485
+after start = 4.520705 3.270485 4.520705 5.270485
+!!!!!!
+beforestart = 4.520705 3.270485 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+####
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+!!!!!!
+beforestart = 3.726652 6.064537 4.520705 5.270485
+after start = 4.520705 5.270485 3.726652 6.064537
+!!!!!!
+beforestart = 4.520705 5.270485 3.726652 6.064537
+after start = 3.726652 6.064537 4.520705 5.270485
+5.726652 6.064537 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 4.520705 3.270485 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 3.726652 6.064537 
+ 4.520705 5.270485 
+ 

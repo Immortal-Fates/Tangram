@@ -16,6 +16,8 @@ mymap map[100];		//地图数据
 
 Shape* Map_head = NULL, * Map_tail = NULL;
 Shape* mapShape = NULL;//指向当前地图的指针
+linkedlistADT submap_line_link_head = NULL; //作为line链表的头结点
+linkedlistADT submap_line_link_tail = NULL; //作为line链表的尾结点
 
 
 Shape* CreateMap(int MapNumber) {
@@ -97,6 +99,7 @@ void DrawMap(int MapNumber) {
 			//EndFilledRegion();
 			SetPenSize(pensize);	//back to system pensize
 			SetPenColor(pencolor);	//back to system pencolor
+			break;
 		}
 		temp = temp->next;
 	}
@@ -116,11 +119,6 @@ void DrawSubmap(int MapNumber) {
 	while (ttemp) {
 		if (ttemp->map_number == MapNumber) {
 			mapShape = ttemp;
-			//FILE* fp;
-			//fp = fopen("./file/
-			//
-			// .txt", "w");
-			//fprintf(fp, "%d\n", mapShape->vertexNum);
 
 			int pensize = GetPenSize();
 			string pencolor = GetPenColor();
@@ -151,16 +149,172 @@ void DrawSubmap(int MapNumber) {
 
 }
 
-void DIYMap() {
+void DIY_map() {
 	/**
 	 * \brief 自定义地图
 	 */
-
-	//从head为头的链表当中提取出所有形状的line，并添加到DIY_head为头的链表当中
-
-	//
-
-
+	create_submap_line_link();//done
+	create_submap_line();
+	create_submap_vertex();
+	Save_mapCreate_File();
+	Map_head = NULL, Map_tail = NULL;
+	GenerateMap();
+	InitMap();
+	Generate_subMap();
+	game_status = 7;
+}
+void create_submap_line_link()
+{
+	/**
+	 * \brief:创建所有tangram的边形成的链表.
+	 *
+	 */
+	submap_line_link_head = NewLinkedList();  //创建好了头指针，不为null。头指针中补存放任何数据
+	submap_line_link_tail = submap_line_link_head->next;
+	Shape* temp = head;
+	while (temp)
+	{
+		int linenum = temp->vertexNum;
+		for (int i = 0; i < linenum; i++)
+		{
+			InsertNode(submap_line_link_head, NULL, &(temp->edge[i]));
+		}
+		temp = temp->next;
+	}
 	return;
 }
+void create_submap_line(void)
+{
+	/**
+	 * \brief:利用is_superposition生成最终map具有的边
+	 *
+	 */
+	linkedlistADT temp = submap_line_link_head->next;
+	linkedlistADT next_temp = temp->next;  //需要记录下一个结点，避免temp这个node被删去
+	//如果改变了则跳出内层循环
+
+	while (temp)
+	{
+		next_temp = temp->next;
+		linkedlistADT temp_in = temp->next;    //记录内层嵌套的循环
+		
+		while (temp_in)
+		{
+			if (Is_superposition(temp, temp_in))
+			{
+				add_line(temp, temp_in);//删除前面两个重合的两个结点
+				//if (next_temp == temp_in)      //todo:能直接比较吗?
+				//{
+				//	next_temp = temp_in->next;
+				//}
+				
+				/*DeleteNode(submap_line_link_head, temp->dataptr, (*Is_same_line));
+				DeleteNode(submap_line_link_head, temp_in->dataptr, (*Is_same_line));*/
+				break;
+			}
+			temp_in = temp_in->next;
+		}
+		temp = next_temp;
+		
+	}
+
+	/*FILE* fp;
+
+	if ((fp = fopen("./file/error.txt", "a+")) != NULL) {
+		linkedlistADT temp_adt = submap_line_link_head->next;
+		while (temp_adt)
+		{
+
+			fprintf(fp, "sx = %lf sy =%lf ", ((line*)(temp_adt->dataptr))->start.x, ((line*)(temp_adt->dataptr))->start.y);
+
+			fprintf(fp, "ex = %lf ey =%lf\n", ((line*)(temp_adt->dataptr))->end.x, ((line*)(temp_adt->dataptr))->end.y);
+
+			temp_adt = temp_adt->next;
+		}
+	fclose(fp);
+	}*/
+	
+	return;
+}
+void create_submap_vertex(void)
+{
+	/**
+	 * \brief:把所有的边转化为点记录在map[MapNumber_MAX]里面
+	 *
+	 */
+	 //先存入起始的一条边
+
+	/*FILE* fp;
+	if ((fp = fopen("./file/Errorsnap.txt", "w")) == NULL) {
+
+		fclose(fp);
+	}*/
+
+	linkedlistADT temp = submap_line_link_head->next;
+	linkedlistADT temp_line_next;
+	int vertexnum = 0;
+
+	map[MapNumber_MAX].vertex[vertexnum][0] = ((line*)(temp->dataptr))->start.x;
+	map[MapNumber_MAX].vertex[vertexnum][1] = ((line*)(temp->dataptr))->start.y;
+	vertexnum++;
+	map[MapNumber_MAX].vertex[vertexnum][0] = ((line*)(temp->dataptr))->end.x;
+	map[MapNumber_MAX].vertex[vertexnum][1] = ((line*)(temp->dataptr))->end.y;
+	vertexnum++;
+	DeleteNode(submap_line_link_head, temp->dataptr, (*Is_same_line));
+	//开始寻找一条与当前边有公共顶点的任一条边，找到一条边存入vertex中，并将这一条边从vertex中删去
+	while (submap_line_link_head->next)
+	{
+		
+		//找到有一个点相同,并将找到的边从链表中删除，每次都用end来判断，所以找到另一边的end相同，要将start和end互换
+		temp_line_next = SearchNode(submap_line_link_head, temp->dataptr, (*have_same_point));
+		if (temp_line_next == NULL) {
+			break;//没找到则跳出
+		}
+		else {
+			DeleteNode(submap_line_link_head, temp_line_next->dataptr, (*Is_same_line));
+		}
+		line* line1 = (line*)temp->dataptr;
+		line* line2 = (line*)temp_line_next->dataptr;
+
+		if ((dcmp(line1->end.x - line2->start.x) && dcmp(line1->end.y - line2->start.y)))//line2start == line1.end
+		{
+			map[MapNumber_MAX].vertex[vertexnum][0] = line2->end.x;
+			map[MapNumber_MAX].vertex[vertexnum][1] = line2->end.y;
+			vertexnum++;
+			temp = temp_line_next;
+
+		}
+		else 
+		{	//找到另一边的end相同，要将start和end互换
+			if (dcmp(line1->end.x - line2->end.x) && dcmp(line1->end.y - line2->end.y))
+			{
+				map[MapNumber_MAX].vertex[vertexnum][0] = line2->start.x;
+				map[MapNumber_MAX].vertex[vertexnum][1] = line2->start.y;
+				vertexnum++;
+				line* change_line;
+				//fprintf(fp, "beforestart = %lf %lf %lf %lf\n", ((line*)(temp->dataptr))->start.x, ((line*)(temp->dataptr))->start.y, ((line*)(temp->dataptr))->end.x, ((line*)(temp->dataptr))->end.y);
+				change_line = (line*)malloc(sizeof(line));
+				change_line->start.x = ((line*)(temp_line_next->dataptr))->end.x;
+				change_line->start.y = ((line*)(temp_line_next->dataptr))->end.y;
+				change_line->end.x = ((line*)(temp_line_next->dataptr))->start.x;
+				change_line->end.y = ((line*)(temp_line_next->dataptr))->start.y;
+				temp->dataptr = change_line;
+				
+				//fprintf(fp, "after start = %lf %lf %lf %lf\n", ((line*)(temp->dataptr))->start.x, ((line*)(temp->dataptr))->start.y, ((line*)(temp->dataptr))->end.x, ((line*)(temp->dataptr))->end.y);
+				
+			}
+		}
+	}
+	map[MapNumber_MAX].vertexNum = vertexnum-1;
+	MapNumber_MAX++;
+	
+	/*for (int i = 0; i < map[MapNumber_MAX].vertexNum; i++) {
+		fprintf(fp, "%lf %lf \n ",map[MapNumber_MAX].vertex[i][0], map[MapNumber_MAX].vertex[i][1]);
+	}
+	fclose(fp);*/
+	
+	return;
+}
+
+
 

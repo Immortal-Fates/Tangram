@@ -4,10 +4,10 @@
   *			主要思路：利用所有七巧板顶点全在map内，全在tangram外
   * \author
   * \date   May 2023
-  *********************************************************************/
+  **********************************************************5**********/
 #include "../Header.h"
 #include "judge.h"
-double eps = 1e-6;
+double eps = 1e-5;
 bool IsParallel(line* line1, line* line2);				//from mouseevent.c
 double DistanceBetweenLines(line* line1, line* line2);	//from mouseevent.c
 
@@ -224,6 +224,236 @@ bool dcmp(double x)
     else
         return FALSE;
 }
+
+bool Is_superposition(linkedlistADT node1, linkedlistADT node2) {
+    line* line1 = (line*)(node1->dataptr);
+    line* line2 = (line*)(node2->dataptr);
+
+    if (!IsParallel(line1, line2))   //两边不平行则一定不重合。
+    {
+        return FALSE;
+    }
+    if (!(DistanceBetweenLines(line1, line2) <= eps))          //j计算两条边之间的距离《=eps则平行
+    {
+        return FALSE;
+    }
+    return TRUE;
+}
+
+void add_line(linkedlistADT node1, linkedlistADT node2)
+{
+
+    
+
+    /**
+     * \brief:给两个边.判断是否重合，一点重合不算重合，重合后是否会创建新的边，！！！在该函数中仅创建新的node，不会删除原来的node
+     * \param:给出链表中的两个结点，因为我们在判断后要对链表进行修改,修改则会返回true
+     */
+    line* line1 = (line*)(node1->dataptr);
+    line* line2 = (line*)(node2->dataptr);
+    
+   
+    //现在两条边已经是重合了
+    //线是竖直的情况
+    if (dcmp(line1->start.x - line1->end.x))      //处理竖直情况
+    {
+        //对4个点排序
+        node point[4] = { line1->start,line1->end,line2->start,line2->end };
+        //从小到大
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = i + 1; j < 4; j++)
+            {
+                if (point[j].y < point[j - 1].y)
+                {
+                    node temp;
+                    temp = point[j];
+                    point[j] = point[j - 1];
+                    point[j - 1] = temp;
+                }
+            }
+        }
+        if (dcmp(point[1].y - point[2].y))
+        {
+            line* temp;
+            temp = (line*)malloc(sizeof(line));
+
+            temp->start.x = point[0].x;
+            temp->start.y = point[0].y;
+
+            temp->end.x = point[3].x;
+            temp->end.y = point[3].y;
+
+            InsertNode(submap_line_link_head, NULL, temp);
+        }
+        else {
+            if (!dcmp(point[0].y - point[1].y))
+            {
+                line* temp;
+                temp = (line*)malloc(sizeof(line));
+
+                temp->start.x = point[0].x;
+                temp->start.y = point[0].y;
+
+                temp->end.x = point[1].x;
+                temp->end.y = point[1].y;
+
+
+                InsertNode(submap_line_link_head, NULL, temp);
+            }
+            if (!dcmp(point[2].y - point[3].y))
+            {
+                line* temp;
+                temp = (line*)malloc(sizeof(line));
+
+                temp->start.x = point[2].x;
+                temp->start.y = point[2].y;
+
+                temp->end.x = point[3].x;
+                temp->end.y = point[3].y;
+
+                InsertNode(submap_line_link_head, NULL, temp);
+            }
+        }
+
+    }
+    else {
+        //线不竖直的情况(包括水平)
+        //对4个点排序
+        node point[4] = { line1->start,line1->end,line2->start,line2->end };
+        //从小到大
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = i + 1; j < 4; j++)
+            {
+                if (point[j].x < point[j - 1].x)
+                {
+                    node temp;
+                    temp = point[j];
+                    point[j] = point[j - 1];
+                    point[j - 1] = temp;
+                }
+            }
+        }
+
+        if (dcmp(point[1].x - point[2].x))
+        {
+            line* temp;
+            temp = (line*)malloc(sizeof(line));
+
+            temp->start.x = point[0].x;
+            temp->start.y = point[0].y;
+
+            temp->end.x = point[3].x;
+            temp->end.y = point[3].y;
+            InsertNode(submap_line_link_head, NULL, temp);
+        }
+        else
+        {
+            if (!dcmp(point[0].x - point[1].x))
+            {
+                line* temp;
+                temp = (line*)malloc(sizeof(line));
+
+                temp->start.x = point[0].x;
+                temp->start.y = point[0].y;
+
+                temp->end.x = point[1].x;
+                temp->end.y = point[1].y;
+
+                InsertNode(submap_line_link_head, NULL, temp);
+            }
+            if (!dcmp(point[2].x - point[3].x))
+            {
+                line* temp;
+                temp = (line*)malloc(sizeof(line));
+
+                temp->start.x = point[2].x;
+                temp->start.y = point[2].y;
+
+                temp->end.x = point[3].x;
+                temp->end.y = point[3].y;
+
+                InsertNode(submap_line_link_head, NULL, temp);
+            }
+        }
+
+    }
+    DeleteNode(submap_line_link_head, node1->dataptr, (*Is_same_line));
+    DeleteNode(submap_line_link_head, node2->dataptr, (*Is_same_line));
+    return;
+}
+bool Is_same_line(void* obj1, void* obj2)
+{
+    /**
+     * \brief:判断两条直线是否是同一根直线.
+     *
+     * \param obj1
+     * \param obj2
+     * \return
+     */
+    line* line1 = (line*)obj1;
+    line* line2 = (line*)obj2;
+    if (dcmp(line1->start.x - line2->start.x) && dcmp(line1->start.y - line2->start.y) && dcmp(line1->end.x - line2->end.x) && dcmp(line1->end.y - line2->end.y))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+bool Is_psame_line(void* obj1, void* obj2)
+{
+    /**
+     * \brief:判断两条直线是否是同一根直线.
+     *
+     * \param obj1
+     * \param obj2
+     * \return
+     */
+    line* line1 = (line*)obj1;
+    line* line2 = (line*)obj2;    //line2是我们需要比较的值
+    if (dcmp(line1->start.x - line2->start.x) && dcmp(line1->start.y - line2->start.y) && dcmp(line1->end.x - line2->end.x) && dcmp(line1->end.y - line2->end.y))
+    {
+        return TRUE;
+    }
+    else if (dcmp(line1->end.x - line2->start.x) && dcmp(line1->end.y - line2->start.y) && dcmp(line1->start.x - line2->end.x) && dcmp(line1->start.y - line2->end.y))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool have_same_point(void* obj1, void* obj2)
+{
+    /**
+     * \brief:判断一边是否与前一个边的end相同，两个相同不行.
+     *
+     * \param obj1
+     * \param obj2
+     * \return
+     */
+    line* line1 = (line*)obj1;
+    line* line2 = (line*)obj2;      //原来的边
+
+    if ((dcmp(line2->end.x - line1->start.x) && dcmp(line2->end.y - line1->start.y)) || 
+        (dcmp(line2->end.x - line1->end.x) && dcmp(line2->end.y - line1->end.y)))
+    {
+        return TRUE;
+    }
+
+    return FALSE;
+
+}
+
+
+
+
+
 
 
 ////todo:判断是否完成拼图

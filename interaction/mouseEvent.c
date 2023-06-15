@@ -158,7 +158,14 @@ int isequal(double a, double b) {
 	 * \param threshold: 吸附距离的阈值
 	 * \param mapShape: 当前地图的图形指针 Shape*类型
 	 */
-	
+	 Shape* temp;
+		temp = Map_head;
+	 while (temp) {
+		 if (temp->map_number == current_map) {
+			 mapShape = temp;
+			 break;
+		 }
+	 }
 	//FILE *ErrorFile = fopen("./file/Errorsnap.txt", "w+");
 	for (int j = 0; j <= shape->vertexNum - 1; j++) {
 		
@@ -169,6 +176,7 @@ int isequal(double a, double b) {
 		//fprintf(ErrorFile, "%lf %lf\n", shapeLine->end.x, shapeLine->end.y);
 		if(game_status == 0)
 		{
+			
 			for (int i = 0; i <= mapShape->vertexNum - 1; i++) {//遍历所有线条
 				line* mapLine = &(mapShape->edge[i]);
 				// 判断线条是否平行
@@ -177,6 +185,7 @@ int isequal(double a, double b) {
 					double distance = DistanceBetweenLines(mapLine, shapeLine);
 					// 如果距离小于阈值，则将图形移动到平行线重合
 					if (distance < threshold) {
+						
 						MoveToParallelLines(mapLine, shapeLine, distance, shape);
 
 						/* 用于debug

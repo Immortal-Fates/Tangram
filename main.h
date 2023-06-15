@@ -16,7 +16,8 @@ extern int MapNumber_MAX;			//地图数量
 
 extern char colorList[100][100];
 extern const int colorNumber;
-
+extern linkedlistADT submap_line_link_head; //作为line链表的头结点
+extern linkedlistADT submap_line_link_tail; //作为line链表的尾结点
 void display();
 void main();
 

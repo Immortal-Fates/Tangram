@@ -1,6 +1,8 @@
 #ifndef _JUDGE_H_
 #define JUDGE_H
+
 #include "../frame/shape.h"
+#include"../include/linkedlist.h"
 
 /*Part1 使用 面积法 判定游戏结束*/
 bool Game_win(void);
@@ -17,5 +19,10 @@ bool judge_point_in_tangram(node point);    //射线法,
 bool judge_point_in_map(node point);   //传入地图（不知道地图的用处？）
 bool dcmp(double x);
 
+bool Is_superposition(linkedlistADT node1, linkedlistADT node2);
+void add_line(linkedlistADT node1, linkedlistADT node2);
+bool Is_same_line(void* obj1, void* obj2);
+bool Is_psame_line(void* obj1, void* obj2);
+bool have_same_point(void* obj1, void* obj2);
 
 #endif // !_JUDGE_H_

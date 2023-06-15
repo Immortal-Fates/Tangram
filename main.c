@@ -168,6 +168,7 @@ void display() {
 		{
 			_background();	//画出背景图形	ui.c
 			InitButton();	//画出整体界面	button.c
+			EchoInfo();		//显示分数和时间	button.c
 			create_map_page();
 			mciSendString("open ./file/game_music.mp3 alias bkmusic", NULL, 0, NULL);
 			mciSendString("play bkmusic repeat", NULL, 0, NULL);     //循环播放音乐
@@ -177,6 +178,7 @@ void display() {
 				DrawShape(temp);
 				temp = temp->next;
 			}
+
 				
 			break;
 		}
@@ -197,6 +199,7 @@ void display() {
 		default:
 			break;
 	}
+	
 }
 
 

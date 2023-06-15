@@ -1,11 +1,8 @@
-﻿  user.c
-D:\MyUni\Class\Pgm-C\test2\frame\map.h(27,32): warning C4028: 形参 1 与声明不同
-D:\MyUni\Class\Pgm-C\test2\frame\user.c(33,10): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\frame\user.c(37,10): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
-D:\MyUni\Class\Pgm-C\test2\frame\user.c(38,13): warning C4311: “类型强制转换”: 从“char (*)[40]”到“long”的指针截断
+﻿  map.c
+E:\GitRepo\pro-C\tangram\test2\frame\file.h(12,23): warning C4028: 形参 1 与声明不同
   正在生成代码
-  3 of 195 functions ( 1.5%) were compiled, the rest were copied from previous compilation.
+  4 of 209 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
-  test.vcxproj -> D:\MyUni\Class\Pgm-C\test2\Tangram.exe
+  test.vcxproj -> E:\GitRepo\pro-C\tangram\test2\Tangram.exe
