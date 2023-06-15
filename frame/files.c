@@ -9,7 +9,29 @@
 #include "../Header.h"
 #include "file.h"
 
+void Read_color(void)
+{
+	FILE* fp,*pp;
+	if ((pp = fopen("./file/error.txt", "w")) == NULL) {
+		fclose(pp);
+		return;
+	}
+	if ((fp = fopen("./file/color.txt", "r")) == NULL) {
+		fclose(fp);
+		return;
+	}
 
+	for (int i = 1; i <= 20; i++) {
+		char temp[100],color_name[100];
+		double r, g, b;
+		fscanf(fp, "%[^\n]%*c\n", temp);
+		sscanf(temp, "%s rgb(%lf, %lf, %lf)",color_name, &r,&g,&b);
+		fprintf(pp, "DefineColor(%s, %.1lf / 255.0, %.1lf / 255.0, %.1lf/255.0);\n", color_name, r, g, b);
+		//DefineColor(color_name, r / 255.0, g / 255.0, b/255.0);
+	}
+	fclose(fp);
+	fclose(pp);
+}
 void Read_File(void) {
 	/**
 	 * \brief: 读取已经保存的游戏状态 

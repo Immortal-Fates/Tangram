@@ -1,7 +1,7 @@
 #ifndef _FILE_H_
 #define _FILE_H_
 
-
+void Read_color(void);
 /*Part 1 µØÍ¼µÄ´æÈ¡*/
 void Read_File(void); 
 void Save_File(int MapNumber);

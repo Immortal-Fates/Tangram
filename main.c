@@ -31,6 +31,7 @@ void main() {
 	SetWindowTitle("Tangram");
 	SetWindowSize(WindowWidth, WindowHeight);
 	InitGraphics();
+	Read_color();
 	InitColor(); //³õÊ¼»¯ÑÕÉ« shape.c
 	//timer -> timer.c
 	registerTimerEvent(timer);

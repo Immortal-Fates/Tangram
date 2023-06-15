@@ -48,6 +48,7 @@ void echo_intro(void) {
 	//6.读取游戏状态：	CTRL+N 或者 界面选择CONTINUE选项
 	//7.退出游戏：		ESC键 或者 点击退出
 
+	//todo: 提示信息位置的调整
 	GetStyle(2);
 	MovePen(3, 7);
 	DrawTextString("1.移动图形：		鼠标左键拖拽");
