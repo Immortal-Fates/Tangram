@@ -20,6 +20,7 @@ void EchoInfo(void) {
 	//实时显示游戏参数
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	SetPenColor("ocean");
 	char timeDisplay[100], scoreDisplay[100], userDisplay[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
@@ -32,6 +33,7 @@ void EchoInfo(void) {
 	MovePen(8.2, 8.70);
 	DrawTextString(userDisplay);
 
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }
@@ -68,7 +70,7 @@ void echo_intro(void) {
 		game_status = 3;
 	}
 
-	SetPointSize(size);
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 	GetStyle(0);
@@ -77,6 +79,9 @@ void echo_intro(void) {
 
 /*Part 按钮*/
 void menu(void) {//显示菜单
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	setMenuColors("grass", "#fffffe", "magenta", "#001e1d", 1);
 
 
@@ -107,11 +112,15 @@ void menu(void) {//显示菜单
 	if (button(GenUIID(1), WindowWidth / 10, 8.6, WindowWidth / 10, 0.4, "return")) {
 		game_status = -1;
 	}
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
 }
 
 void InitButton(void) {
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	SetPenColor("White");
 	SetPenSize(1);
 	MovePen(0, 9);
@@ -120,17 +129,43 @@ void InitButton(void) {
 	DrawLine(WindowWidth, 0);
 	MovePen(0, 0);
 	DrawLine(WindowWidth, 0);
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 
 }
 
+void button_page_one()
+{
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
+	SetPointSize(30);
+	if (button(GenUIID(0), 4.6, 5, WindowWidth / 3, 1, "continue")) {
+		current_time = TIME_LEFT;
+		Read_File();
+		game_status = 0;
+	}
+	if (button(GenUIID(0), 4.6, 4, WindowWidth / 3, 1, "new game")) {
+		game_status = 7;
+	}
+	if (button(GenUIID(0), 4.6, 3, WindowWidth / 3, 1, "ranklist")) {
+		game_status = 4;
+	}
+	if (button(GenUIID(0), 4.6, 2, WindowWidth / 3, 1, "return")) {
+		game_status = 3;
+	}
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+}
 void welcome(void){
 /**
  * \brief 欢迎界面的生成
  */
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 	setButtonColors("aqua", "#fffffe", "#f9bc60", "#001e1d", 1);
 	background();
 	MovePen(6.0, 5.9);
@@ -193,6 +228,7 @@ void welcome(void){
 	{
 		game_status = -4;
 	}
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }
@@ -206,6 +242,7 @@ void background(void) {//界面背景
 	DisplayClear();
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 
 	MovePen(0, 0);
 	DefineColor("line", 1, 0.9, 0.6);
@@ -252,6 +289,7 @@ void background(void) {//界面背景
 	EndFilledRegion();
 
 
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }
@@ -259,6 +297,7 @@ void background(void) {//界面背景
 void _background(void) {//游戏界面背景
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 
 	MovePen(0, 0);
 	DefineColor("line", 1, 0.9, 0.6);
@@ -287,6 +326,7 @@ void _background(void) {//游戏界面背景
 	DrawLine(-3.6, 0);
 	DrawLine(0, -8.55);
 	EndFilledRegion();
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }
@@ -313,7 +353,11 @@ void lose_page(void){
 	DrawTextString("You lost");
 	
 
-
+	SetPointSize(20);
+	if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
+		game_status = 7;
+	}
+	SetPointSize(1);
 	SetPointSize(size);
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
@@ -322,6 +366,7 @@ void lose_page(void){
 void win_page(void) {
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
+	int size = GetPointSize();
 
 	SetPenColor("#004643");
 	SetPenSize(1);
@@ -340,6 +385,73 @@ void win_page(void) {
 	MovePen(6.4, 5);
 	DrawTextString("You Win!!!");
 
+	SetPointSize(20);
+	if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
+		game_status = 7;
+	}
+	SetPointSize(1);
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+}
+
+void ranklist_ui(void)
+{
+	echo_ranklist(current_map);	//显示排行榜		ranklist.c
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
+	char scoreDisplay[100];
+	SetPenColor("#001e1d");
+	sprintf(scoreDisplay, "current_map: %d", current_map + 1);
+	MovePen(7, 8.70);
+	DrawTextString(scoreDisplay);
+	if (button(GenUIID(1), 12.5, 5, WindowWidth / 10, 0.4, "page")) {
+		current_map += 1;
+		current_map %= MapNumber_MAX;
+		display();
+	}
+	if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+		game_status = -1;
+	}
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+}
+
+void select_game_page(void)
+{
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
+	SetPointSize(80);
+	drawBox(7.0, 8, 0, 0, 0, "Select The Map", "0", "blue");
+	SetPointSize(30);
+	char button_num[20];
+	double px[5] = { 2.1,5.1,8.1,11.1 };
+	double py[3] = { 5,2 };
+	for (int i = page * 8; i < min(page * 8 + 8, MapNumber_MAX); i++) {
+		sprintf(button_num, "%d", i + 1);
+		if (button(GenUIID(i), px[i % 4], py[i % 8 / 4], WindowWidth / 10, 0.4, button_num)) {
+			game_status = 2;
+			current_map = i;
+		}
+	}
+	if (button(GenUIID(0), 7.3, 1, WindowWidth / 10, 0.4, "next")) {
+		page++;
+		page = min(page, (MapNumber_MAX - 1) / 8);
+	}
+	if (button(GenUIID(1), 5.9, 1, WindowWidth / 10, 0.4, "before")) {
+		page--;
+		page = max(page, 0);
+	}
+	if (button(GenUIID(2), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+		game_status = -1;
+	}
+	if (button(GenUIID(3), 12, 8, WindowWidth / 10, 0.4, "createMap"))
+		game_status = 6;
+
+	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }

@@ -4,11 +4,15 @@
 /*Part ÎÄ×Ö*/
 void EchoInfo(void);
 void echo_intro(void);
+void ranklist_ui(void);
+
 
 /*Part °´Å¥*/
 void InitButton(void);
 void menu(void);
 void welcome(void);
+void button_page_one(void);
+void select_game_page(void);
 
 /*Part ±³¾°*/
 void background(void);

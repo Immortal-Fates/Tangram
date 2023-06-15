@@ -18,5 +18,6 @@ bara rgb(237, 76, 103)
 berry rgb(181, 52, 113)
 hollyhock rgb(131, 52, 113)
 magenta rgb(111, 30, 81)
-
+darktextcolor rgb(0,30,29)
+brightextcolor rgb()
 

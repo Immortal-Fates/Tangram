@@ -92,55 +92,31 @@ void display() {
 	{
 		case -1:		//page one
 		{
-			InitButton();
-			background();
-			SetPointSize(30);
-			if (button(GenUIID(0), 4.6, 5, WindowWidth / 3, 1, "continue")) {
-				current_time = TIME_LEFT;
-				Read_File();
-				game_status = 0;
-			}
-			if (button(GenUIID(0), 4.6, 4, WindowWidth / 3, 1, "new game")) {
-				game_status = 7;
-			}
-			if (button(GenUIID(0), 4.6, 3, WindowWidth / 3, 1, "ranklist")) {
-				game_status = 4;
-			}
-			if (button(GenUIID(0), 4.6, 2, WindowWidth / 3, 1, "return")) {
-				game_status = 3;
-			}
+			InitButton();		//初始界面的button ui.c
+			background();		//画出背景页面 ui.c
+			button_page_one();	//button	ui.c
 			break;
 		}
 		case -2:		//game win
 		{
-			InitButton();	//画出整体界面	button.c
-			EchoInfo();		//显示分数和时间	button.c
+			InitButton();	//画出整体界面	ui.c
+			EchoInfo();		//显示分数和时间	ui.c
 			win_page();		//显示成功界面	ui.c
 			user_save();	//保存用户信息	user.c
-			SetPointSize(20);
-			if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
-				game_status = 7;
-			}
-			SetPointSize(1);
 			break;
 		}
 		case -3:		//game lose
 		{
-			InitButton();	//画出整体界面 button.c
-			EchoInfo();		//显示分数和时间	button.c
+			InitButton();	//画出整体界面	ui.c
+			EchoInfo();		//显示分数和时间	ui.c
 			lose_page();	//显示失败界面	ui.c
-			SetPointSize(20);
-			if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
-				game_status = 7;
-			}
-			SetPointSize(1);
 			break;
 		}
 		case -4:		//user register
 		{
 
-			background();
-			user_login_button();
+			background();	//背景 ui.c
+			user_login_button();	//button ui.c
 			break;
 		}
 		case 0: case 1: //running //pause
@@ -173,34 +149,13 @@ void display() {
 		case 3:			//page zero
 		{
 			DisplayClear();
-			int pensize = GetPenSize();
-			string pencolor = GetPenColor();
 			welcome();				//显示欢迎界面	ui.c
-			SetPenSize(pensize);	//back to system pensize
-			SetPenColor(pencolor);	//back to system pencolor
 			break; 
 		}
 		case 4:			//ranklist
 		{
 			background();				//画出背景图形	ui.c
-			echo_ranklist(current_map);	//显示排行榜		ranklist.c
-			int pensize = GetPenSize();
-			string pencolor = GetPenColor();
-			char scoreDisplay[100];
-			SetPenColor("#001e1d");
-			sprintf(scoreDisplay, "current_map: %d", current_map + 1);
-			MovePen(7, 8.70);
-			DrawTextString(scoreDisplay);
-			SetPenSize(pensize);	//back to system pensize
-			SetPenColor(pencolor);	//back to system pencolor
-			if (button(GenUIID(1), 12.5, 5, WindowWidth / 10, 0.4, "page")) {
-				current_map += 1;
-				current_map %= MapNumber_MAX;
-				display();
-			}
-			if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = -1;
-			}
+			ranklist_ui();				//显示排行榜的图形 ui.c
 			break; 
 		}
 		case 5:			//solve
@@ -231,34 +186,9 @@ void display() {
 		}
 		case 7:			//new game
 		{
-			background();
-			InitButton();
-			SetPointSize(80);
-			drawBox(7.0, 8, 0, 0, 0, "Select The Map", "0", "blue");
-			SetPointSize(30);
-			char button_num[20];
-			double px[5] = { 2.1,5.1,8.1,11.1 };
-			double py[3] = { 5,2 };
-			for (int i = page*8; i < min(page*8+8,MapNumber_MAX); i++) {
-				sprintf(button_num, "%d", i+1);
-				if (button(GenUIID(i), px[i%4], py[i%8/4], WindowWidth / 10, 0.4, button_num)) {
-					game_status = 2;
-					current_map = i;
-				}
-			}
-			if (button(GenUIID(0), 7.3, 1, WindowWidth / 10, 0.4, "next")) {
-				page++;
-				page = min(page, (MapNumber_MAX - 1) / 8);
-			}
-			if (button(GenUIID(1), 5.9, 1, WindowWidth / 10, 0.4, "before")) {
-				page--;
-				page = max(page, 0);
-			}
-			if (button(GenUIID(2), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
-				game_status = -1;
-			}
-			if (button(GenUIID(3), 12, 8, WindowWidth / 10, 0.4, "createMap"))
-				game_status = 6;
+			background();		//背景			ui.c
+			InitButton();		//基础button		ui.c
+			select_game_page();
 			break;
 		}
 		case 8:			//game intro 信息提示界面
