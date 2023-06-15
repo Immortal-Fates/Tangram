@@ -27,7 +27,7 @@ void Read_color(void)
 		fscanf(fp, "%[^\n]%*c\n", temp);
 		sscanf(temp, "%s rgb(%lf, %lf, %lf)",color_name, &r,&g,&b);
 		fprintf(pp, "DefineColor(%s, %.1lf / 255.0, %.1lf / 255.0, %.1lf/255.0);\n", color_name, r, g, b);
-		//DefineColor(color_name, r / 255.0, g / 255.0, b/255.0);
+		DefineColor(color_name, r / 255.0, g / 255.0, b/255.0);
 	}
 	fclose(fp);
 	fclose(pp);

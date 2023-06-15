@@ -20,7 +20,7 @@ void EchoInfo(void) {
 	//实时显示游戏参数
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
-	SetPenColor("Black");
+	SetPenColor("ocean");
 	char timeDisplay[100], scoreDisplay[100], userDisplay[100];
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
 	MovePen(2.6, 8.70);
@@ -77,7 +77,7 @@ void echo_intro(void) {
 
 /*Part 按钮*/
 void menu(void) {//显示菜单
-	setMenuColors("#004643", "#fffffe", "#f9bc60", "#001e1d", 1);
+	setMenuColors("grass", "#fffffe", "magenta", "#001e1d", 1);
 
 
 	char* menuListFile[] = { "menu","Change Map","hint" };
@@ -129,7 +129,9 @@ void welcome(void){
 /**
  * \brief 欢迎界面的生成
  */
-	setButtonColors("#004643", "#fffffe", "#f9bc60", "#001e1d",1);
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	setButtonColors("aqua", "#fffffe", "#f9bc60", "#001e1d", 1);
 	background();
 	MovePen(6.0, 5.9);
 	SetPenColor("red");
@@ -185,14 +187,14 @@ void welcome(void){
 	SetPenColor("line");
 	drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "blue");
 	SetPointSize(1);
-	drawBox(0, 0, 1.0, 1.0, 0, "制作组", "S", "blue");
 	if (button(GenUIID(0), 6.3, 1.5, WindowWidth / 10, 0.4, "EXIT"))exit(-1);
 	if (button(GenUIID(0), 6.3, 2.0, WindowWidth / 10, 0.4, "INTRODUCTION"))game_status=8;
 	if (button(GenUIID(0), 6.3, 2.5, WindowWidth / 10, 0.4, "PLAY"))
 	{
 		game_status = -4;
 	}
-		
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
 }
 
 
@@ -224,31 +226,27 @@ void background(void) {//界面背景
 	DefineColor("pink", 1, 0.5, 0.5);
 
 	MovePen(6, -1);
-	SetPenColor("wood");
+	SetPenColor("yellow");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
 
 	MovePen(9, -1);
-	SetPenColor("wood");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
 
 	MovePen(12, -1);
-	SetPenColor("wood");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
 
 	MovePen(14, -1);
-	SetPenColor("wood");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
 
 	MovePen(16, -1);
-	SetPenColor("wood");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
@@ -264,7 +262,7 @@ void _background(void) {//游戏界面背景
 
 	MovePen(0, 0);
 	DefineColor("line", 1, 0.9, 0.6);
-	SetPenColor("#eebbc3");
+	SetPenColor("rose");
 	StartFilledRegion(1);
 	DrawLine(14, 0);
 	DrawLine(0, 9);

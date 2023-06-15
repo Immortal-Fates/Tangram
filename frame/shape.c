@@ -352,7 +352,7 @@ void Initshape(void) {
 	tangramshape[3] = inventShape(1, 0, "#ef4565", 1, 2.5, 1, 1, 1, penwidth,4);					//3rd 三角形
 	tangramshape[4] = inventShape(1, 0, "#232946", 1, 1, 1, 1, 1, penwidth,5);					//3rd 三角形
 	tangramshape[5] = inventShape(1, 1, "#ff8e3c", 12, 4, sqrt(2), 1, 1, penwidth,6);			//box
-	tangramshape[6] = inventShape(1, 2, "black", 11, 2, sqrt(2), 1, 1, penwidth,7);				
+	tangramshape[6] = inventShape(1, 2, "purple", 11, 2, sqrt(2), 1, 1, penwidth,7);				
 	//平行四边形
 }
 

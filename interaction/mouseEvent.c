@@ -50,7 +50,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 						temp->isSelected = TRUE;		//选中的时候改变该图形的状态，防止移动的时候影响其他图形
 						
 						strcpy(temp->fix_color, temp->color);//记录原来的颜色
-						strcpy(temp->color, "Green");		//选中的时候改变颜色
+						strcpy(temp->color, "energos");		//选中的时候改变颜色
 						if (Is_Hint) {
 							for (int i = 1; i <= 7; i++) {
 								mapShape->graphics[i].isvisible = 0;
