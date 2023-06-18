@@ -190,6 +190,8 @@
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="README.md" />
+    <None Include="Tangram.exe" />
+    <None Include="Tangram.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="file\color.txt" />

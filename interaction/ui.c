@@ -87,10 +87,10 @@ void menu(void) {//显示菜单
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
-	setMenuColors("grass", "#fffffe", "magenta", "#001e1d", 1);
+	setMenuColors("aqua", "#fffffe", "#f9bc60", "#001e1d", 1);
 
-
-	char* menuListFile[] = { "menu","Change Map","hint" };
+	SetPointSize(15);
+	char* menuListFile[] = { "menu","ChangeMap","hint" };
 	int selection;
 	selection = menuList(GenUIID(0), 0, 8.6, WindowWidth / 5, WindowWidth / 10, 0.4, menuListFile,
 		sizeof(menuListFile) / sizeof(menuListFile[0]));
@@ -400,8 +400,9 @@ void _background(void) {//游戏界面背景
 	DrawLine(0, -9);
 	EndFilledRegion();
 
+	DefineColor("ack", 22.0 / 255, 160.0 / 255, 133.0 / 255);
 	MovePen(0, 0);
-	SetPenColor("energos");
+	SetPenColor("ack");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
 	DrawLine(0, 8.55);
@@ -410,9 +411,9 @@ void _background(void) {//游戏界面背景
 	EndFilledRegion();
 
 	MovePen(10.5, 0);
-	SetPenColor("#f9bc60");
+	SetPenColor("ack");
 	StartFilledRegion(1);
-	DrawLine(3.6, 0);
+	DrawLine(3.6, 0); 
 	DrawLine(0, 8.55);
 	DrawLine(-3.6, 0);
 	DrawLine(0, -8.55);

@@ -13,7 +13,7 @@ extern double current_time;			//当前时间
 extern int Is_Hint;					//是否提示
 extern int page;					//选择游戏界面的页数
 extern int MapNumber_MAX;			//地图数量
-extern int  colorindex;				//闪烁时颜色下标
+extern int colorindex;				//闪烁时颜色下标
 
 
 void display();						//刷新显示	

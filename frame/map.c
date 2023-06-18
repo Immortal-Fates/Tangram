@@ -14,10 +14,10 @@
 current_map = 0;	//当前地图编号
 mymap map[100];		//地图数据
 
-Shape* Map_head = NULL, * Map_tail = NULL;
-Shape* mapShape = NULL;//指向当前地图的指针
-linkedlistADT submap_line_link_head = NULL; //作为line链表的头结点
-linkedlistADT submap_line_link_tail = NULL; //作为line链表的尾结点
+Shape* Map_head , * Map_tail ;
+Shape* mapShape ;//指向当前地图的指针
+linkedlistADT submap_line_link_head ; //作为line链表的头结点
+linkedlistADT submap_line_link_tail ; //作为line链表的尾结点
 
 
 Shape* CreateMap(int MapNumber) {
@@ -113,6 +113,7 @@ void DrawSubmap(int MapNumber) {
 	 *
 	 * \param MapNumber
 	 */
+	//todo：submap的数据结构
 	if (Is_Hint == 0) return;
 
 	Shape* ttemp = Map_head;
