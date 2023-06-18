@@ -11,7 +11,7 @@ typedef struct Node {
 }node;
 typedef struct Line {
 	node start, end;
-	char lineColor[20];	//线的颜色
+	char lineColor[200];	//线的颜色
 }line;
 typedef struct tangram {
 	bool isvisible;

@@ -7,7 +7,7 @@
 /*Part 地图的生成*/
 typedef struct MAP {
 	int vertexNum;
-	double vertex[100][2];
+	double vertex[200][2];
 	double px;
 	double py;
 }mymap;

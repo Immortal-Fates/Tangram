@@ -1,8 +1,37 @@
-﻿  mouseEvent.c
+﻿  ui.c
 D:\MyUni\Class\Pgm-C\test2\frame\map.h(31,32): warning C4028: 形参 1 与声明不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(56,11): warning C4087: “GetStyle”: 用“void”参数列表声明
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(73,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(80,11): warning C4087: “GetStyle”: 用“void”参数列表声明
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(95,23): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(117,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(149,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(154,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(157,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(160,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(316,47): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(316,44): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(318,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(319,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(320,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(449,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(514,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(542,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(547,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(561,48): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(561,45): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(568,14): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(573,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(577,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(581,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(585,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(603,48): warning C4047: “函数”:“char”与“char [2]”的间接级别不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(603,45): warning C4024: “drawBox”: 形参和实参 7 的类型不同
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(605,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
+D:\MyUni\Class\Pgm-C\test2\interaction\ui.c(608,13): warning C4311: “类型强制转换”: 从“char (*)[44]”到“long”的指针截断
   正在生成代码
-  2 of 210 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+  0 of 210 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test2\Tangram.exe

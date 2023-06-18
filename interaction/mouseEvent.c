@@ -56,12 +56,14 @@ void MouseEventProcess(int x, int y, int button, int event){
 								mapShape->graphics[i].isvisible = 0;
 							}
 							mapShape->graphics[temp->num].isvisible = 1;
-							char tips[100] = "You've got a tip, time -1s";
+							
 							current_time -= 1;//使用提示-1秒
+							//todo:显示提示的次数
+							/*char tips[100] = "You've got a tip, time -1s";
 							SetPenColor("black");
 							SetPointSize(10);
 							MovePen(6.5, 2);
-							DrawTextString(tips);
+							DrawTextString(tips);*/
 						}
 						break;
 					}
