@@ -16,16 +16,17 @@ void user_login_button()
 	static char userName[80] = "";
 	static char userPasswd[80] = "";
 	static char results[200] = "";
-	double fH = GetFontHeight();
-	double h = fH * 2; // 控件高度
-	double w = WindowWidth / 4; // 控件宽度
-	double x = WindowWidth / 2.5;
-	double y = WindowHeight / 1.5 - h;
+	
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
 	SetPenColor("#001e1d");
-	SetPointSize(30);
+	SetPointSize(25);
+	double fH = GetFontHeight();
+	double h = fH * 3; // 控件高度
+	double w = WindowWidth / 4; // 控件宽度
+	double x = WindowWidth / 2.5;
+	double y = WindowHeight / 1.5 - h;
 	MovePen(3, 7);
 	DrawTextString("请输入用户名和密码，未在用户库当中会新建用户");
 	SetPenColor("Brown");
@@ -35,6 +36,7 @@ void user_login_button()
 	SetPenColor("Brown");
 	drawLabel(x - fH / 2 - TextStringWidth("密码"), (y -= h * 1.2) + fH * 0.7, "密码");
 	textbox(GenUIID(0), x, y, w, h, userPasswd, sizeof(userPasswd));
+	SetPointSize(10);
 	if (button(GenUIID(0), 6.3, 1.5, WindowWidth / 10, 0.4, "Login")) {
 		for (int i = 0; i <= playerNumber; i++)
 		{

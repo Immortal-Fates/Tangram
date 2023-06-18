@@ -128,8 +128,10 @@ void DrawSubmap(int MapNumber) {
 			SetPenColor("Red");
 			SetPenSize(3);
 			//StartFilledRegion(1);
+			
 			for (int i = 1; i <= 7; i++) {
 				if (mapShape->graphics[i].isvisible == 0) continue;
+				
 				sub_tangram* temp = &mapShape->graphics[i];
 				int vertexcount = 3;
 				if (i > 5) vertexcount = 4;

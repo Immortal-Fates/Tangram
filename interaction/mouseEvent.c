@@ -56,6 +56,12 @@ void MouseEventProcess(int x, int y, int button, int event){
 								mapShape->graphics[i].isvisible = 0;
 							}
 							mapShape->graphics[temp->num].isvisible = 1;
+							char tips[100] = "You've got a tip, time -1s";
+							current_time -= 1;//使用提示-1秒
+							SetPenColor("black");
+							SetPointSize(10);
+							MovePen(6.5, 2);
+							DrawTextString(tips);
 						}
 						break;
 					}
@@ -103,7 +109,7 @@ void MouseEventProcess(int x, int y, int button, int event){
 					strcpy(temp->color,temp->fix_color);//记录原来的颜色
 					SnapToLine(temp, THRESHOLD);
 					SnaptoPoint(temp, THRESHOLD);
-					if(game_status== 0)judge_complishment();
+					if(game_status== 0)			judge_complishment();
 					break;
 				}
 				temp = temp->next;
