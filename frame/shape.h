@@ -16,9 +16,9 @@ typedef struct Line {
 typedef struct tangram {
 	bool isvisible;
 	int vertex_number;
-	node vertex[20];
-	line edge[20];
-	char color[20];
+	node vertex[200];
+	line edge[200];
+	char color[200];
 }sub_tangram;
 
 
@@ -26,8 +26,8 @@ typedef struct Tangram {
 	int num;			//图形编号
 	bool isFilled;		// 0-not filled 1-filled
 	int shape;			// 0-triangle  1-box  2-parallelogram 3-map
-	char color[20];		// 图形的颜色
-	char fix_color[20];	// 固定的颜色
+	char color[200];		// 图形的颜色
+	char fix_color[200];	// 固定的颜色
 	double pX, pY, width, height;
 	/*
 		pX, pY is the left bottom point(triangle,parallelogram),middle point(box)
@@ -36,8 +36,8 @@ typedef struct Tangram {
 	*/
 	int Pensize;					//画笔粗细
 	int angle;						//旋转角度 0,45,90,135,180,225,270,315
-	node vertex[20];				//图形的顶点坐标
-	line edge[20];					//图形的边
+	node vertex[200];				//图形的顶点坐标
+	line edge[200];					//图形的边
 	bool isSelected;				//是否被选中
 	struct Tangram* next, * last;	//指向下一个和上一个图形的指针
 	int vertexNum;					//顶点数

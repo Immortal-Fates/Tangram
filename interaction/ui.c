@@ -606,7 +606,7 @@ void create_map_page(void)
 		game_status = 7;
 	}
 	if (button(GenUIID(1), 5.9, 0.5, WindowWidth / 10, 0.4, "save")) {
-		//DIY_map();
+		DIY_map();
 	}
 	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize

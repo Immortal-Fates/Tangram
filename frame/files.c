@@ -99,13 +99,13 @@ void GenerateMap(void){
 	for (int i = 0; i < MapNumber_MAX; i++) {
 		fscanf(fp, "%c%c\n",&_,&_);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
-
+		fscanf(fp, "%lf%lf\n", &map[i].px, &map[i].py);
 		for(int j = 0;j <= map[i].vertexNum-1;j++){
 			char temp[100],tempx[100],tempy[100];
 			fscanf(fp, "%[^\n]%*c\n",temp);
 			sscanf(temp, "%s %s", tempx, tempy);
-			EVIC_Eval(tempx,&map[i].vertex[j][0]);//利用EVIC_Eval函数将表达式计算出来，并且转换为double
-			EVIC_Eval(tempy,&map[i].vertex[j][1]);
+			EVIC_Eval(tempx,&map[i].vertex[j][0]);	//利用EVIC_Eval函数将表达式计算出来，并且转换为double
+			EVIC_Eval(tempy,&map[i].vertex[j][1]);	
 		}
 	}
 	fclose(fp);
@@ -235,7 +235,7 @@ void Save_mapCreate_File(void)
 	 * \brief:存储玩家自己创建的map，把每个tangram的信息写到./file/sub_map_info.txt中;把map的顶点信息写到./file/map_info.txt中
 	 *
 	 */
-		FILE* fp;
+	FILE* fp;
 	if ((fp = fopen("./file/map_info.txt", "w")) == NULL) {
 		printf("Can't open map info\n"); //错误处理，返回错误代码
 		fclose(fp);
@@ -246,14 +246,12 @@ void Save_mapCreate_File(void)
 	for (int i = 0; i < MapNumber_MAX; i++) {
 		fprintf(fp, "#%d\n",i+1);
 		fprintf(fp, "%d\n", map[i].vertexNum);
-
+		fprintf(fp, "%lf %lf\n", map[i].px, map[i].py);
 		for (int j = 0; j < map[i].vertexNum ; j++) {
 			fprintf(fp,"%lf %lf\n",  map[i].vertex[j][0]- map[i].vertex[0][0], map[i].vertex[j][1]- map[i].vertex[0][1]);
 		}
 	}
 	fclose(fp);
 
-	//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
-	save_subMap(MapNumber_MAX - 1);
 }
 

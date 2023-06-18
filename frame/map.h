@@ -8,6 +8,8 @@
 typedef struct MAP {
 	int vertexNum;
 	double vertex[100][2];
+	double px;
+	double py;
 }mymap;
 
 

@@ -343,7 +343,7 @@ void Initshape(void) {
 	if (game_status == 6) penwidth = 1;
 	tangramshape[0] = inventShape(1, 0, "#9656a1", 1, 6.5, 2, 2, 1, penwidth,1);
 	tangramshape[1] = inventShape(1, 0, "#f9bc60", 1, 4, 2, 2, 1, penwidth,2);							//最大三角形
-	tangramshape[2] = inventShape(1, 0, "#3da9fc", 12, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形
+	tangramshape[2] = inventShape(1, 0, "#3da9fc", 11.5, 6, sqrt(2), sqrt(2), 1, penwidth,3);		//2nd 三角形
 	tangramshape[3] = inventShape(1, 0, "#ef4565", 1, 2.5, 1, 1, 1, penwidth,4);						//3rd 三角形
 	tangramshape[4] = inventShape(1, 0, "#232946", 1, 1, 1, 1, 1, penwidth,5);							//3rd 三角形
 	tangramshape[5] = inventShape(1, 1, "#ff8e3c", 12, 4, sqrt(2), 1, 1, penwidth,6);				//box

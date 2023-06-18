@@ -1,8 +1,12 @@
-﻿  shape.c
-D:\MyUni\Class\Pgm-C\test2\frame\map.h(29,32): warning C4028: 形参 1 与声明不同
+﻿  files.c
+D:\MyUni\Class\Pgm-C\test2\frame\map.h(31,32): warning C4028: 形参 1 与声明不同
+D:\MyUni\Class\Pgm-C\test2\frame\files.c(245,7): warning C4101: “_”: 未引用的局部变量
+  map.c
+D:\MyUni\Class\Pgm-C\test2\frame\file.h(12,23): warning C4028: 形参 1 与声明不同
+D:\MyUni\Class\Pgm-C\test2\frame\map.c(163,28): warning C4087: “save_subMap”: 用“void”参数列表声明
   正在生成代码
-  1 of 196 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  3 of 210 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   test.vcxproj -> D:\MyUni\Class\Pgm-C\test2\Tangram.exe

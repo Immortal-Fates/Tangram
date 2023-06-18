@@ -28,13 +28,14 @@ Shape* CreateMap(int MapNumber) {
 	 * \return : 以shape结构体返回地图的形状
 	 */
 	Shape* t = (Shape*)malloc(sizeof(Shape));
-	double x_[9] = { 4.3,6.5,6.15,4.9,5.5,4.5,6.5,5.5 };
-	double y_[9] = { 4,4,2.9,4,4.2,4,3,3 };
+	double x_[19] = { 4.3,6.5,6.15,4.9,5.5,4.5,6.5};
+	double y_[19] = { 4,4,2.9,4,4.2,4,3};
 
 	//初始化地图的数据
 	t->vertexNum = map[MapNumber].vertexNum;
-	t->pX = x_[MapNumber];
-	t->pY = y_[MapNumber];
+	
+	t->pX = map[MapNumber].px;
+	t->pY = map[MapNumber].py;
 
 	t->angle = 1;
 	strcpy(t->color, "#232946");
@@ -157,7 +158,9 @@ void DIY_map() {
 	create_submap_line_link();//done
 	create_submap_line();
 	create_submap_vertex();
-	Save_mapCreate_File();
+
+	Save_mapCreate_File();				//保存地图
+	save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
 	Map_head = NULL, Map_tail = NULL;
 	GenerateMap();
 	InitMap();
@@ -257,6 +260,8 @@ void create_submap_vertex(void)
 
 	map[MapNumber_MAX].vertex[vertexnum][0] = ((line*)(temp->dataptr))->start.x;
 	map[MapNumber_MAX].vertex[vertexnum][1] = ((line*)(temp->dataptr))->start.y;
+	map[MapNumber_MAX].px = map[MapNumber_MAX].vertex[vertexnum][0];
+	map[MapNumber_MAX].py = map[MapNumber_MAX].vertex[vertexnum][1];
 	vertexnum++;
 	map[MapNumber_MAX].vertex[vertexnum][0] = ((line*)(temp->dataptr))->end.x;
 	map[MapNumber_MAX].vertex[vertexnum][1] = ((line*)(temp->dataptr))->end.y;
