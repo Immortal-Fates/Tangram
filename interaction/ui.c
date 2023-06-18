@@ -2,12 +2,12 @@
  * \file   ui.c
  * \brief  用于实现游戏界面的绘制，包括游戏的按钮、游戏信息的显示
  *			使用imgui.h库进行按钮的绘制
- * 
+ *
  *			具体功能：
  *				1.绘制按钮
  *				2.写入文字与提示信息
  *				3.各个页面背景的绘制
- * 
+ *
  * \author Philfan、郑远金
  * \date   May 2023
  *********************************************************************/
@@ -15,7 +15,9 @@
 #include "ui.h"
 
 
- /*Part 文字与提示信息*/
+void tangram(string color);
+/*Part 文字与提示信息*/
+
 void EchoInfo(void) {
 	//实时显示游戏参数
 	int pensize = GetPenSize();
@@ -26,7 +28,7 @@ void EchoInfo(void) {
 	sprintf(timeDisplay, "Used Time: %-.4lf", current_time);
 	MovePen(2.6, 8.70);
 	DrawTextString(timeDisplay);
-	sprintf(scoreDisplay, "current_map: %d", current_map+1);
+	sprintf(scoreDisplay, "current_map: %d", current_map + 1);
 	MovePen(5.8, 8.70);
 	DrawTextString(scoreDisplay);
 	sprintf(userDisplay, "current_player: %s", player[current_player].name);
@@ -52,19 +54,21 @@ void echo_intro(void) {
 
 	//todo: 提示信息位置的调整
 	GetStyle(2);
-	MovePen(3, 7);
+	SetPointSize(30);
+	SetPenColor("blue");
+	MovePen(2.5, 7);
 	DrawTextString("1.移动图形：		鼠标左键拖拽");
-	MovePen(3, 6.5);
+	MovePen(2.5, 6.5);
 	DrawTextString("2.旋转图形：		右键单击 或者 点击图形按下q,e键旋转");
-	MovePen(3, 6);
+	MovePen(2.5, 6);
 	DrawTextString("3.提示：			点击HINT按钮，再点击想要移动的七巧板，获取下一步的提示");
-	MovePen(3, 5.5);
+	MovePen(2.5, 5.5);
 	DrawTextString("4.重置游戏：		CTRL+R");
-	MovePen(3, 5);
+	MovePen(2.5, 5);
 	DrawTextString("5.保存游戏状态：	CTRL+S");
-	MovePen(3, 4.5);
+	MovePen(2.5, 4.5);
 	DrawTextString("6.读取游戏状态：	CTRL+N 或者 界面选择CONTINUE选项");
-	MovePen(3, 4);
+	MovePen(2.5, 4);
 	DrawTextString("7.退出游戏：		ESC键 或者 点击退出");
 	if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 		game_status = 3;
@@ -78,6 +82,7 @@ void echo_intro(void) {
 
 
 /*Part 按钮*/
+
 void menu(void) {//显示菜单
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
@@ -159,10 +164,10 @@ void button_page_one()
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor
 }
-void welcome(void){
-/**
- * \brief 欢迎界面的生成
- */
+void welcome(void) {
+	/**
+	 * \brief 欢迎界面的生成
+	 */
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
@@ -218,13 +223,101 @@ void welcome(void){
 	DrawLine(-0.5, 0.5);
 	DrawLine(-0.5, -0.5);
 	EndFilledRegion();//绘制七巧板
+	SetPenColor("Dark Gray");
+	MovePen(1.6, 1);
+	StartFilledRegion(1);
+	DrawLine(0.6, 3);
+	DrawLine(0.3, -0.3);
+	DrawLine(0.3, 0.3);
+	DrawLine(0.3, -0.3);
+	DrawLine(0.3, 0.3);
+	DrawLine(0.6, -3);
+	DrawLine(-2.6, 0);
+	EndFilledRegion();
+	SetPenColor("White");
+	StartFilledRegion(1);
+	MovePen(2.2, 4);
+	DrawLine(0.05, 0.25);
+	DrawLine(1.1, 0);
+	DrawLine(0.05, -0.25);
+	DrawLine(-0.3, -0.3);
+	DrawLine(-0.3, 0.3);
+	DrawLine(-0.3, -0.3);
+	DrawLine(-0.3, 0.3);
+	EndFilledRegion();
+
+	SetPenColor("Dark Gray");
+	MovePen(8.0, 1);
+	StartFilledRegion(1);
+	DrawLine(0.4, 2);
+	DrawLine(0.2, -0.2);
+	DrawLine(0.2, 0.2);
+	DrawLine(0.2, -0.2);
+	DrawLine(0.2, 0.2);
+	DrawLine(0.4, -2);
+	DrawLine(-1.6, 0);
+	EndFilledRegion();
+	SetPenColor("White");
+	StartFilledRegion(1);
+	MovePen(8.4, 3);
+	DrawLine(0.05, 0.25);
+	DrawLine(0.7, 0);
+	DrawLine(0.05, -0.25);
+	DrawLine(-0.2, -0.2);
+	DrawLine(-0.2, 0.2);
+	DrawLine(-0.2, -0.2);
+	DrawLine(-0.2, 0.2);
+	EndFilledRegion();
+
+	SetPenColor("Dark Gray");
+	MovePen(11.3, 1);
+	StartFilledRegion(1);
+	DrawLine(0.5, 2.5);
+	DrawLine(0.25, -0.25);
+	DrawLine(0.25, 0.25);
+	DrawLine(0.25, -0.25);
+	DrawLine(0.25, 0.25);
+	DrawLine(0.5, -2.5);
+	DrawLine(-2, 0);
+	EndFilledRegion();
+	SetPenColor("White");
+	StartFilledRegion(1);
+	MovePen(11.8, 3.5);
+	DrawLine(0.05, 0.25);
+	DrawLine(0.9, 0);
+	DrawLine(0.05, -0.25);
+	DrawLine(-0.25, -0.25);
+	DrawLine(-0.25, 0.25);
+	DrawLine(-0.25, -0.25);
+	DrawLine(-0.25, 0.25);
+	EndFilledRegion();
+
+	MovePen(11.8, 6.5);
+	StartFilledRegion(1);
+	DrawEllipticalArc(1, 0.5, 0, 360);
+	EndFilledRegion();
+
+	MovePen(14.8, 7.5);
+	StartFilledRegion(1);
+	DrawEllipticalArc(1, 0.5, 0, 360);
+	EndFilledRegion();
+
+	MovePen(4.8, 7.5);
+	StartFilledRegion(1);
+	DrawEllipticalArc(0.8, 0.4, 0, 360);
+	EndFilledRegion();
+
+	MovePen(1.8, 6.5);
+	StartFilledRegion(1);
+	DrawEllipticalArc(0.8, 0.4, 0, 360);
+	EndFilledRegion();//绘制背景图形
 	SetPointSize(100);
-	SetPenColor("line");
+	SetPenColor("martina");
 	drawBox(6.5, 4.5, 1.0, 1.0, 0, "Tangram", "S", "blue");
 	SetPointSize(1);
-	if (button(GenUIID(0), 6.3, 1.5, WindowWidth / 10, 0.4, "EXIT"))exit(-1);
-	if (button(GenUIID(0), 6.3, 2.0, WindowWidth / 10, 0.4, "INTRODUCTION"))game_status=8;
-	if (button(GenUIID(0), 6.3, 2.5, WindowWidth / 10, 0.4, "PLAY"))
+	if (button(GenUIID(0), 6.0, 1.8, WindowWidth / 7, 0.4, "EXIT"))exit(-1);
+	if (button(GenUIID(0), 6.0, 2.3, WindowWidth / 7, 0.4, "INTRODUCTION"))game_status = 8;
+	if (button(GenUIID(0), 6.0, 2.8, WindowWidth / 7, 0.4, "PLAY"))
 	{
 		game_status = -4;
 	}
@@ -237,16 +330,15 @@ void welcome(void){
 
 
 /*Part 背景*/
+
 void background(void) {//界面背景
 	InitButton();
 	DisplayClear();
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
-
 	MovePen(0, 0);
-	DefineColor("line", 1, 0.9, 0.6);
-	SetPenColor("line");
+	SetPenColor("martina");
 	StartFilledRegion(1);
 	DrawLine(14, 0);
 	DrawLine(0, 9);
@@ -263,7 +355,7 @@ void background(void) {//界面背景
 	DefineColor("pink", 1, 0.5, 0.5);
 
 	MovePen(6, -1);
-	SetPenColor("yellow");
+	SetPenColor("green");
 	StartFilledRegion(1);
 	DrawArc(5, 30, 120);
 	EndFilledRegion();
@@ -300,8 +392,7 @@ void _background(void) {//游戏界面背景
 	int size = GetPointSize();
 
 	MovePen(0, 0);
-	DefineColor("line", 1, 0.9, 0.6);
-	SetPenColor("rose");
+	SetPenColor("martina");
 	StartFilledRegion(1);
 	DrawLine(14, 0);
 	DrawLine(0, 9);
@@ -310,7 +401,7 @@ void _background(void) {//游戏界面背景
 	EndFilledRegion();
 
 	MovePen(0, 0);
-	SetPenColor("#a786df");
+	SetPenColor("energos");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
 	DrawLine(0, 8.55);
@@ -319,7 +410,7 @@ void _background(void) {//游戏界面背景
 	EndFilledRegion();
 
 	MovePen(10.5, 0);
-	SetPenColor("#a786df");
+	SetPenColor("#f9bc60");
 	StartFilledRegion(1);
 	DrawLine(3.6, 0);
 	DrawLine(0, 8.55);
@@ -331,7 +422,7 @@ void _background(void) {//游戏界面背景
 	SetPenColor(pencolor);	//back to system pencolor
 }
 
-void lose_page(void){
+void lose_page(void) {
 	//输出结束信息
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
@@ -349,9 +440,9 @@ void lose_page(void){
 	SetPenColor("#ffc0ad");
 	SetPenSize(2);
 	SetPointSize(40);
-	MovePen(6.4, 5);
-	DrawTextString("You lost");
-	
+	MovePen(5.9, 4);
+	DrawTextString("You lost!!!");
+
 
 	SetPointSize(20);
 	if (button(GenUIID(0), 5.9, 3, WindowWidth / 5, 0.5, "new game")) {
@@ -368,7 +459,7 @@ void win_page(void) {
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
 
-	SetPenColor("#004643");
+	SetPenColor("martina");
 	SetPenSize(1);
 
 	MovePen(0, 0);
@@ -378,11 +469,44 @@ void win_page(void) {
 	DrawLine(-14, 0);
 	DrawLine(0, -9);
 	EndFilledRegion();
-
+	if (colorindex == 0)		tangram("yellow");
+	if (colorindex == 1)	tangram("rose");
+	if (colorindex == 2)	tangram("tea");
+	if (colorindex == 3)	tangram("purple");
+	if (colorindex == 4)	tangram("red");
+	MovePen(6.0, 5.9);
+	SetPenColor("black");
+	DrawLine(1, 0);
+	DrawLine(-1, 1);
+	DrawLine(0, -1);
+	MovePen(8.0, 5.9);
+	DrawLine(-0.5, 0.5);
+	DrawLine(-1, 0);
+	DrawLine(0.5, -0.5);
+	MovePen(6.0, 6.9);
+	DrawLine(0.5, -0.5);
+	DrawLine(0.5, 0.5);
+	DrawLine(-0.5, 0.5);
+	DrawLine(-0.5, -0.5);
+	MovePen(6.0, 6.9);
+	DrawLine(0.5, 0.5);
+	DrawLine(-0.5, 0.5);
+	DrawLine(0, -1);
+	MovePen(6.0, 7.9);
+	DrawLine(2, 0);
+	DrawLine(-1, -1);
+	DrawLine(-1, 1);
+	MovePen(8.0, 7.9);
+	DrawLine(0, -2);
+	DrawLine(-1, 1);
+	DrawLine(1, 1);
+	MovePen(6.5, 6.4);
+	DrawLine(1, 0);
+	DrawLine(-0.5, 0.5);
 	SetPenColor("#f9bc60");
 	SetPenSize(2);
 	SetPointSize(40);
-	MovePen(6.4, 5);
+	MovePen(5.9, 4);
 	DrawTextString("You Win!!!");
 
 	SetPointSize(20);
@@ -397,6 +521,14 @@ void win_page(void) {
 
 void ranklist_ui(void)
 {
+	MovePen(3, 0);
+	SetPenColor("green");
+	StartFilledRegion(0.8);
+	DrawLine(9, 0);
+	DrawLine(0, 9);
+	DrawLine(-9, 0);
+	DrawLine(0, -9);
+	EndFilledRegion();
 	echo_ranklist(current_map);	//显示排行榜		ranklist.c
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
@@ -404,7 +536,7 @@ void ranklist_ui(void)
 	char scoreDisplay[100];
 	SetPenColor("#001e1d");
 	sprintf(scoreDisplay, "current_map: %d", current_map + 1);
-	MovePen(7, 8.70);
+	MovePen(6.5, 8.70);
 	DrawTextString(scoreDisplay);
 	if (button(GenUIID(1), 12.5, 5, WindowWidth / 10, 0.4, "page")) {
 		current_map += 1;
@@ -437,24 +569,25 @@ void select_game_page(void)
 			current_map = i;
 		}
 	}
-	if (button(GenUIID(0), 7.3, 1, WindowWidth / 10, 0.4, "next")) {
+	if (button(GenUIID(0), 7.3, 0.7, WindowWidth / 10, 0.4, "next")) {
 		page++;
 		page = min(page, (MapNumber_MAX - 1) / 8);
 	}
-	if (button(GenUIID(1), 5.9, 1, WindowWidth / 10, 0.4, "before")) {
+	if (button(GenUIID(1), 5.9, 0.7, WindowWidth / 10, 0.4, "before")) {
 		page--;
 		page = max(page, 0);
 	}
 	if (button(GenUIID(2), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
 		game_status = -1;
 	}
+	SetPointSize(20);
 	if (button(GenUIID(3), 12, 8, WindowWidth / 10, 0.4, "createMap"))
 	{
 		game_status = 6;
 		delete_shape();
 		Initshape();
 	}
-		
+
 
 	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
@@ -468,13 +601,74 @@ void create_map_page(void)
 	SetPointSize(80);
 	drawBox(7.0, 8, 0, 0, 0, "Create The Map", "0", "blue");
 	SetPointSize(30);
-	if (button(GenUIID(0), 12.5, 0, WindowWidth / 10, 0.4, "return")) {
+	if (button(GenUIID(0), 7.3, 0.5, WindowWidth / 10, 0.4, "return")) {
 		game_status = 7;
 	}
-	if (button(GenUIID(1), 10, 0, WindowWidth / 10, 0.4, "save")) {
-
-		DIY_map();
+	if (button(GenUIID(1), 5.9, 0.5, WindowWidth / 10, 0.4, "save")) {
+		//DIY_map();
 	}
+	SetPointSize(size);		//back to system pointsize
+	SetPenSize(pensize);	//back to system pensize
+	SetPenColor(pencolor);	//back to system pencolor
+}
+
+void tangram(string color) {
+	int pensize = GetPenSize();
+	string pencolor = GetPenColor();
+	int size = GetPointSize();
+
+	//绘制七巧板
+	SetPenSize(3);
+	MovePen(6.0, 5.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(1, 0);
+	DrawLine(-1, 1);
+	DrawLine(0, -1);
+	EndFilledRegion();
+	MovePen(8.0, 5.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(-0.5, 0.5);
+	DrawLine(-1, 0);
+	DrawLine(0.5, -0.5);
+	EndFilledRegion();
+	MovePen(6.0, 6.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(0.5, -0.5);
+	DrawLine(0.5, 0.5);
+	DrawLine(-0.5, 0.5);
+	DrawLine(-0.5, -0.5);
+	EndFilledRegion();
+	MovePen(6.0, 6.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(0.5, 0.5);
+	DrawLine(-0.5, 0.5);
+	DrawLine(0, -1);
+	EndFilledRegion();
+	MovePen(6.0, 7.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(2, 0);
+	DrawLine(-1, -1);
+	DrawLine(-1, 1);
+	EndFilledRegion();
+	MovePen(8.0, 7.9);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(0, -2);
+	DrawLine(-1, 1);
+	DrawLine(1, 1);
+	EndFilledRegion();
+	MovePen(6.5, 6.4);
+	SetPenColor(color);
+	StartFilledRegion(1);
+	DrawLine(1, 0);
+	DrawLine(-0.5, 0.5);
+	DrawLine(-0.5, -0.5);
+	EndFilledRegion();//绘制七巧板
 	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor

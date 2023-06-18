@@ -19,13 +19,13 @@ void user_login_button()
 	double fH = GetFontHeight();
 	double h = fH * 2; // 控件高度
 	double w = WindowWidth / 4; // 控件宽度
-	double x = WindowWidth / 3.5;
-	double y = WindowHeight / 2 - h;
+	double x = WindowWidth / 2.5;
+	double y = WindowHeight / 1.5 - h;
 	int pensize = GetPenSize();
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
 	SetPenColor("#001e1d");
-	SetPointSize(3);
+	SetPointSize(30);
 	MovePen(3, 7);
 	DrawTextString("请输入用户名和密码，未在用户库当中会新建用户");
 	SetPenColor("Brown");
@@ -158,18 +158,21 @@ void echo_ranklist(int temp) {
 	string pencolor = GetPenColor();
 	int size = GetPointSize();
 	SetPenColor("Black");
-	SetPointSize(12);
+	SetPointSize(30);
 	double fH = GetFontHeight();
 	char ranklist_content[200];
 	rank(temp);
-	for (int i = 0; i < min(8,playerNumber); i++) {
+
+	for (int i = 0; i < min(8, playerNumber); i++) {
 		if (player[i].time[temp] == 0 || player[i].time[temp] == TIME_LEFT) continue;
-		sprintf(ranklist_content, "User Name: %s TimeUsed:%.1lf\n", player[i].name,player[i].time[temp]);
-		MovePen(4, 8-2*fH*i);
+		sprintf(ranklist_content, "User Name: %s TimeUsed:%.1lf\n", player[i].name, player[i].time[temp]);
+		MovePen(4, 8 - 2 * fH * i);
 		DrawTextString(ranklist_content);
 	}
 	SetPointSize(size);		//back to system pointsize
 	SetPenSize(pensize);	//back to system pensize
 	SetPenColor(pencolor);	//back to system pencolor	
 }
+
+
 

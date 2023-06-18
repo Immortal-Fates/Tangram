@@ -7,11 +7,6 @@
 #include "../Header.h"
 #include "shape.h"
 Shape *head = NULL, * tail = NULL;
-char colorList[100][100] = {
-	"Green","Orange","Blue", "Violet", "Cyan","Yellow", "Red",
-	"Black", "Dark Gray", "Gray", "Brown",
-	 "Light Gray","White", "Magenta" };
-const int colorNumber = 14;
 
 Shape* tangramshape[7];
 

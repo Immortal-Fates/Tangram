@@ -13,6 +13,8 @@ int MapNumber_MAX;
 int Is_Hint = 0;
 double current_time = 0.0;
 int page;
+int colorindex = 0; //闪烁时颜色下标
+
 
 void timer(int timerID);
 void KeyboardEventProcess(int key, int event);
@@ -36,6 +38,7 @@ void main() {
 	//timer -> timer.c
 	registerTimerEvent(timer);
 	startTimer(0, TIME_INTERVAL);
+	startTimer(1, 500);
 
 	//keyboard -> keyboardEvent.c
 	registerKeyboardEvent(KeyboardEventProcess);
