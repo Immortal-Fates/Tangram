@@ -23,8 +23,8 @@ void user_login_button()
 	SetPenColor("#001e1d");
 	SetPointSize(25);
 	double fH = GetFontHeight();
-	double h = fH * 3; // 控件高度
-	double w = WindowWidth / 4; // 控件宽度
+	double h = fH * 3;				// 控件高度
+	double w = WindowWidth / 4;		// 控件宽度
 	double x = WindowWidth / 2.5;
 	double y = WindowHeight / 1.5 - h;
 	MovePen(3, 7);

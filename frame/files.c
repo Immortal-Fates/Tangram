@@ -96,12 +96,13 @@ void GenerateMap(void){
 	}
 	fscanf(fp, "%d\n", &MapNumber_MAX);
 	char _;
+	int _t;
 	for (int i = 0; i < MapNumber_MAX; i++) {
-		fscanf(fp, "%c%c\n",&_,&_);
+		fscanf(fp, "%c%d\n",&_,&_t);
 		fscanf(fp, "%d\n", &map[i].vertexNum);
 		fscanf(fp, "%lf%lf\n", &map[i].px, &map[i].py);
 		for(int j = 0;j <= map[i].vertexNum-1;j++){
-			char temp[100],tempx[100],tempy[100];
+			char temp[1000],tempx[1000],tempy[1000];
 			fscanf(fp, "%[^\n]%*c\n",temp);
 			sscanf(temp, "%s %s", tempx, tempy);
 			EVIC_Eval(tempx,&map[i].vertex[j][0]);	//利用EVIC_Eval函数将表达式计算出来，并且转换为double
@@ -148,7 +149,7 @@ void Generate_subMap(void) {
 void save_subMap(int MapNumber)
 {
 	FILE* fp;
-	if ((fp = fopen("./file/aaa.txt", "a+")) == NULL)
+	if ((fp = fopen("./file/submap_info.txt", "a+")) == NULL)
 	{
 		fclose(fp);
 		return;

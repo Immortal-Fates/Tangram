@@ -157,17 +157,18 @@ void DIY_map() {
 	/**
 	 * \brief 自定义地图
 	 */
+	current_time = 1;
 	create_submap_line_link();//done
 	create_submap_line();
-	create_submap_vertex();
+	//create_submap_vertex();
 
-	Save_mapCreate_File();				//保存地图
-	save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
-	Map_head = NULL, Map_tail = NULL;
-	GenerateMap();
-	InitMap();
-	Generate_subMap();
-	game_status = 7;
+	//Save_mapCreate_File();				//保存地图
+	//save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
+	//Map_head = NULL, Map_tail = NULL;
+	//GenerateMap();
+	//InitMap();
+	//Generate_subMap();
+	//game_status = 7;
 }
 void create_submap_line_link()
 {
@@ -206,16 +207,9 @@ void create_submap_line(void)
 		
 		while (temp_in)
 		{
-			if (Is_superposition(temp, temp_in))
+			if (Is_superposition(temp, temp_in))  //如果重合
 			{
 				add_line(temp, temp_in);//删除前面两个重合的两个结点
-				//if (next_temp == temp_in)      //todo:能直接比较吗?
-				//{
-				//	next_temp = temp_in->next;
-				//}
-				
-				/*DeleteNode(submap_line_link_head, temp->dataptr, (*Is_same_line));
-				DeleteNode(submap_line_link_head, temp_in->dataptr, (*Is_same_line));*/
 				break;
 			}
 			temp_in = temp_in->next;
@@ -224,13 +218,14 @@ void create_submap_line(void)
 		
 	}
 
-	/*FILE* fp;
+	FILE* fp;
 
-	if ((fp = fopen("./file/error.txt", "a+")) != NULL) {
+	if ((fp = fopen("./file/error.txt", "w")) != NULL) {
 		linkedlistADT temp_adt = submap_line_link_head->next;
 		while (temp_adt)
 		{
-
+			//MovePen(((line*)(temp_adt->dataptr))->start.x, ((line*)(temp_adt->dataptr))->start.y);
+			//DrawLine(((line*)(temp_adt->dataptr))->end.x - ((line*)(temp_adt->dataptr))->start.x , ((line*)(temp_adt->dataptr))->end.y - ((line*)(temp_adt->dataptr))->start.y);
 			fprintf(fp, "sx = %lf sy =%lf ", ((line*)(temp_adt->dataptr))->start.x, ((line*)(temp_adt->dataptr))->start.y);
 
 			fprintf(fp, "ex = %lf ey =%lf\n", ((line*)(temp_adt->dataptr))->end.x, ((line*)(temp_adt->dataptr))->end.y);
@@ -238,7 +233,7 @@ void create_submap_line(void)
 			temp_adt = temp_adt->next;
 		}
 	fclose(fp);
-	}*/
+	}
 	
 	return;
 }
@@ -250,11 +245,11 @@ void create_submap_vertex(void)
 	 */
 	 //先存入起始的一条边
 
-	/*FILE* fp;
+	FILE* fp;
 	if ((fp = fopen("./file/Errorsnap.txt", "w")) == NULL) {
 
 		fclose(fp);
-	}*/
+	}
 
 	linkedlistADT temp = submap_line_link_head->next;
 	linkedlistADT temp_line_next;
@@ -275,11 +270,12 @@ void create_submap_vertex(void)
 		
 		//找到有一个点相同,并将找到的边从链表中删除，每次都用end来判断，所以找到另一边的end相同，要将start和end互换
 		temp_line_next = SearchNode(submap_line_link_head, temp->dataptr, (*have_same_point));
-		if (temp_line_next == NULL) {
-			break;//没找到则跳出
+		if (temp_line_next != NULL) {
+			DeleteNode(submap_line_link_head, temp_line_next->dataptr, (*Is_same_line));
+			
 		}
 		else {
-			DeleteNode(submap_line_link_head, temp_line_next->dataptr, (*Is_same_line));
+			break;//没找到则跳出
 		}
 		line* line1 = (line*)temp->dataptr;
 		line* line2 = (line*)temp_line_next->dataptr;
@@ -314,12 +310,13 @@ void create_submap_vertex(void)
 		}
 	}
 	map[MapNumber_MAX].vertexNum = vertexnum-1;
-	MapNumber_MAX++;
 	
-	/*for (int i = 0; i < map[MapNumber_MAX].vertexNum; i++) {
+	
+	for (int i = 0; i < map[MapNumber_MAX].vertexNum; i++) {
 		fprintf(fp, "%lf %lf \n ",map[MapNumber_MAX].vertex[i][0], map[MapNumber_MAX].vertex[i][1]);
 	}
-	fclose(fp);*/
+	fclose(fp);
+	MapNumber_MAX++;
 	
 	return;
 }

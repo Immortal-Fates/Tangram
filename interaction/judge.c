@@ -7,7 +7,7 @@
   **********************************************************5**********/
 #include "../Header.h"
 #include "judge.h"
-double eps = 1e-5;
+double eps = 1e-4;
 bool IsParallel(line* line1, line* line2);				//from mouseevent.c
 double DistanceBetweenLines(line* line1, line* line2);	//from mouseevent.c
 
@@ -242,9 +242,6 @@ bool Is_superposition(linkedlistADT node1, linkedlistADT node2) {
 
 void add_line(linkedlistADT node1, linkedlistADT node2)
 {
-
-    
-
     /**
      * \brief:给两个边.判断是否重合，一点重合不算重合，重合后是否会创建新的边，！！！在该函数中仅创建新的node，不会删除原来的node
      * \param:给出链表中的两个结点，因为我们在判断后要对链表进行修改,修改则会返回true
@@ -254,26 +251,27 @@ void add_line(linkedlistADT node1, linkedlistADT node2)
     
    
     //现在两条边已经是重合了
+
     //线是竖直的情况
-    if (dcmp(line1->start.x - line1->end.x))      //处理竖直情况
+    if (dcmp(line1->start.x - line1->end.x) || dcmp(line2->start.x - line2->end.x))      //处理竖直情况
     {
         //对4个点排序
         node point[4] = { line1->start,line1->end,line2->start,line2->end };
         //从小到大
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
-            for (int j = i + 1; j < 4; j++)
+            for (int j = 0; j < 4; j++)
             {
-                if (point[j].y < point[j - 1].y)
+                if (point[j].y < point[i].y)
                 {
                     node temp;
-                    temp = point[j];
-                    point[j] = point[j - 1];
-                    point[j - 1] = temp;
+                    temp = point[i];
+                    point[i] = point[j];
+                    point[j] = temp;
                 }
             }
         }
-        if (dcmp(point[1].y - point[2].y))
+        if (dcmp(point[1].y - point[2].y))              //两条边需要合并
         {
             line* temp;
             temp = (line*)malloc(sizeof(line));
@@ -322,16 +320,16 @@ void add_line(linkedlistADT node1, linkedlistADT node2)
         //对4个点排序
         node point[4] = { line1->start,line1->end,line2->start,line2->end };
         //从小到大
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i <4; i++)
         {
-            for (int j = i + 1; j < 4; j++)
+            for (int j = 0; j < 4; j++)
             {
-                if (point[j].x < point[j - 1].x)
+                if (point[j].x < point[i].x)
                 {
                     node temp;
-                    temp = point[j];
-                    point[j] = point[j - 1];
-                    point[j - 1] = temp;
+                    temp = point[i];
+                    point[i] = point[j];
+                    point[j] = temp;
                 }
             }
         }

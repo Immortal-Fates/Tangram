@@ -202,7 +202,22 @@ void display() {
 		default:
 			break;
 	}
-	
+	if(current_time == 1)
+	{
+		linkedlistADT temp_adt = submap_line_link_head->next;
+		while (temp_adt)
+		{
+
+			SetPenSize(3);
+			MovePen(((line*)(temp_adt->dataptr))->start.x, ((line*)(temp_adt->dataptr))->start.y);
+			DrawLine(((line*)(temp_adt->dataptr))->end.x - ((line*)(temp_adt->dataptr))->start.x , ((line*)(temp_adt->dataptr))->end.y - ((line*)(temp_adt->dataptr))->start.y);
+			/*fprintf(fp, "sx = %lf sy =%lf ", ((line*)(temp_adt->dataptr))->start.x, ((line*)(temp_adt->dataptr))->start.y);
+
+			fprintf(fp, "ex = %lf ey =%lf\n", ((line*)(temp_adt->dataptr))->end.x, ((line*)(temp_adt->dataptr))->end.y);*/
+
+			temp_adt = temp_adt->next;
+		}
+	}
 }
 
 
