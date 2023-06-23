@@ -157,18 +157,18 @@ void DIY_map() {
 	/**
 	 * \brief 自定义地图
 	 */
-	current_time = 1;
+	//current_time = 1;
 	create_submap_line_link();//done
 	create_submap_line();
-	//create_submap_vertex();
+	create_submap_vertex();
 
-	//Save_mapCreate_File();				//保存地图
-	//save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
-	//Map_head = NULL, Map_tail = NULL;
-	//GenerateMap();
-	//InitMap();
-	//Generate_subMap();
-	//game_status = 7;
+	Save_mapCreate_File();				//保存地图
+	save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
+	Map_head = NULL, Map_tail = NULL;
+	GenerateMap();
+	InitMap();
+	Generate_subMap();
+	game_status = 7;
 }
 void create_submap_line_link()
 {
