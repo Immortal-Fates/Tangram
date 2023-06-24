@@ -40,7 +40,7 @@
 
 7.排行榜
 
-![img](C:/Users/Philfan/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif)
+
 
 ## 二、题目要求及实现详解
 
@@ -77,6 +77,7 @@
 - 用户登录系统
 - 排行榜、天梯系统
 - 优秀的UI设计
+- 较多的代码注释
 
 ## 三、代码结构
 
