@@ -3,7 +3,7 @@
 
 #include "./frame/shape.h"
 
-#define TIME_LEFT 800				//剩余时间
+#define TIME_LEFT 80				//剩余时间
 #define WindowWidth 14				//窗口宽度
 #define WindowHeight 9				//窗口高度
 #define TIME_INTERVAL 50			//时间间隔
