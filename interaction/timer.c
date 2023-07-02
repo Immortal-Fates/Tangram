@@ -22,7 +22,7 @@ void timer(int timerID) {
 			{
 				game_status = -3;
 				mciSendString("open ./file/game_lose.mp3 alias game_lose", NULL, 0, NULL);
-				mciSendString("play game_lose", NULL, 0, NULL);     //播放成功的音乐
+				mciSendString("play game_lose", NULL, 0, NULL);     //播放失败的音乐
 			}
 			display();
 			break;

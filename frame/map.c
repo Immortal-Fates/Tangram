@@ -157,19 +157,59 @@ void DIY_map() {
 	/**
 	 * \brief 自定义地图
 	 */
-	//current_time = 1;
-	create_submap_line_link();//done
-	create_submap_line();
-	create_submap_vertex();
+	 //current_time = 1;
+	int issuccess = 0;//0失败，1成功
+	if (judge_createmap_complishment() == TRUE)
+	{
 
-	Save_mapCreate_File();				//保存地图
-	save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
-	Map_head = NULL, Map_tail = NULL;
-	GenerateMap();
-	InitMap();
-	Generate_subMap();
-	game_status = 7;
+		issuccess = 1;
+		DIY_map_anmination(issuccess);
+		create_submap_line_link();
+		create_submap_line();
+		create_submap_vertex();
+
+		Save_mapCreate_File();				//保存地图
+		save_subMap(MapNumber_MAX - 1);		//保存子地图//将地图编号设为MapNumber_MAX-1,因为编号从0开始计数
+		Map_head = NULL, Map_tail = NULL;
+		GenerateMap();
+		InitMap();
+		Generate_subMap();
+		game_status = 7;
+	}
+	else {
+		DIY_map_anmination(issuccess);
+	}
 }
+void DIY_map_anmination(int issuccess)
+{
+	if (issuccess == 0)
+	{
+		int pensize = GetPenSize();
+		string pencolor = GetPenColor();
+		int size = GetPointSize();
+		SetPenColor("ocean");
+		SetPenSize(25);
+		MovePen(6.5, 7);
+		DrawTextString("Wrong map!");
+		SetPointSize(size);		//back to system pointsize
+		SetPenSize(pensize);	//back t6o system pensize
+		SetPenColor(pencolor);	//back to system pencolor
+	}
+	else
+	{
+		int pensize = GetPenSize();
+		string pencolor = GetPenColor();
+		int size = GetPointSize();
+		SetPenColor("ocean");
+		SetPenSize(25);
+		MovePen(6.5, 7);
+		DrawTextString("Successfully !");
+		SetPointSize(size);		//back to system pointsize
+		SetPenSize(pensize);	//back t6o system pensize
+		SetPenColor(pencolor);	//back to system pencolor
+	}
+}
+
 void create_submap_line_link()
 {
 	/**

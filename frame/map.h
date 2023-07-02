@@ -2,6 +2,7 @@
 #ifndef _MAP_H_
 #define MAP_H
 #include "shape.h"
+//#include"../interaction/judge.h"
 #include"../include/linkedlist.h"
 
 /*Part 地图的生成*/
@@ -25,6 +26,7 @@ void MapData(void);
 
 /*Part2 自定义地图*/
 void DIY_map(void);
+void DIY_map_anmination(int issuccess);
 
 /*Part3 用户提示*/
 void DrawSubmap(int MapNumber);

@@ -144,6 +144,8 @@ bool judge_point_in_map(node point)
     {
         node p1 = temp->edge[i].start;
         node p2 = temp->edge[i].end;
+        node p3;
+        node p4;
         //score = ((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y));
 
         if ((dcmp(point.x - p1.x) && dcmp(point.y - p1.y)) || (dcmp(point.x - p2.x) && dcmp(point.y - p2.y)))   //点与点重合
@@ -166,42 +168,73 @@ bool judge_point_in_map(node point)
             //进入下一条边的判断
             continue;
         }
+
         if (point.y <= p2.y)
         {//p2在射线之上  
             if (point.y >= p1.y)      //重合intersection不加
             {//p1正好在射线下方,往右边发出射线  
-                if ((point.y - p1.y) * (p2.x - p1.x) > (point.x - p1.x) * (p2.y - p1.y))//斜率判断,在P1和P2之间且在P1P2右侧,在与边有交点的情况下且y相等再+1（满足奇数）；解决一点与两点水平
+                if ((point.y - p1.y) * (p2.x - p1.x) > (point.x - p1.x) * (p2.y - p1.y))//斜率判断,在P1和P2之间且在P1P2右侧,在与边有交点的情况下且y相等再+1（满足奇数）(仍要分情况讨论)；解决一点与两点水平
                 {
-                    intersection++;
-                    if (point.y == p1.y)  //只与p1进行判断，保证仅+1(如果有2个这样的情况就不行了)
+                    if (point.y == p2.y)  //只与p2判断
                     {
-                        intersection++;
-                        count++;
+                        int k = i;
+                        k++;
+                        p3 = temp->edge[k % lineNum].start;
+                        p4 = temp->edge[k % lineNum].end;
+                        while (p3.y == p4.y)   //水平的边直接不考虑
+                        {
+                            k++;
+                            p3 = temp->edge[k % lineNum].start;
+                            p4 = temp->edge[k % lineNum].end;
+                        }
+                        //只有p1,p4在p2的两侧才会使intersection++;否则在同侧不加
+                        if ((p1.y - p2.y) * (p4.y - p2.y) > 0)
+                        {
+                            intersection++;
+                        }
                     }
+                    else {
+                        intersection++;  //非特殊情况无需判断
+                    }
+
                 }
             }
         }
-        if (point.y >= p2.y)
+        if (point.y > p2.y)
         {
             if (point.y <= p1.y)
             {
                 //p2正好在射线下方，p1在射线上  
                 if ((point.y - p2.y) * (p1.x - p2.x) > (point.x - p2.x) * (p1.y - p2.y))//斜率判断,在P1和P2之间且在P1P2右侧  
                 {
-                    intersection++;
-                    if (point.y == p1.y)
+                    if (point.y == p2.y)
                     {
-                        intersection++;
-                        count++;
+                        int k = i;
+                        k++;
+                        p3 = temp->edge[k % lineNum].start;
+                        p4 = temp->edge[k % lineNum].end;
+                        while (p3.y == p4.y)   //水平的边直接不考虑
+                        {
+                            k++;
+                            p3 = temp->edge[k % lineNum].start;
+                            p4 = temp->edge[k % lineNum].end;
+                        }
+                        //只有p1,p4在p2的两侧才会使intersection++;否则在同侧不加
+                        if ((p1.y - p2.y) * (p4.y - p2.y) > 0)
+                        {
+
+                            intersection++;
+                        }
                     }
+                    else {
+                        intersection++;  //非特殊情况无需判断
+                    }
+
                 }
             }
         }
     }
-    if (count % 2 == 0 && count != 0)       //偶数个个这样使count++的点，会使intersection变成偶数
-    {
-        intersection++;
-    }
+
     if (intersection % 2 == 1)  //为奇数，在map内
     {
         return TRUE;
@@ -211,6 +244,7 @@ bool judge_point_in_map(node point)
         return FALSE;      //为偶数，在map外
     }
 }
+
 
 bool dcmp(double x)
 {
@@ -447,6 +481,79 @@ bool have_same_point(void* obj1, void* obj2)
     return FALSE;
 
 }
+bool judge_createmap_complishment()
+{
+    /**
+     * \brief:判断DIYmap是否成功.（基本思路：每个tangram都有至少点在其他tangram的边上，且没有点在其他tangram的内部）
+     *
+     *
+     * \return
+     */
+    Shape* temp = head;
+
+    //map[MapNumber_MAX - 1];
+    while (temp)
+    {
+        int vertexnum = temp->vertexNum;
+        int count = 0;
+        for (int i = 0; i < vertexnum; i++)
+        {
+            if (judge_point_in_tangram(temp->vertex[i]) == FALSE)       //有一个点在其他tangram的内部则返回false
+            {
+                return FALSE;
+            }
+            if (judge_point_on_line(temp->vertex[i], temp) == TRUE)
+            {
+                count++;
+            }
+        }
+        if (count == 0)        //没有点在其他tangram边上则不满足条件
+        {
+            return FALSE;
+        }
+        temp = temp->next;
+    }
+    return TRUE;
+}
+bool judge_point_on_line(node point, Shape* ttemp)
+{
+    /**
+     * \brief:判断点是否在tangram的边上，是则返回true,不是则返回false,如何排除和自己作比较？
+     * .
+     *
+     * \param point
+     * \return
+     */
+    Shape* temp = head;
+    while (temp)
+    {
+        if (temp == ttemp)        //避免和自己作比较
+        {
+            temp = temp->next;
+            continue;
+        }
+        int vertexNum = temp->vertexNum;
+        int lineNum = temp->vertexNum;//边数=顶点数
+        for (int i = 0; i < lineNum; i++)//边记录start和end  
+        {
+            node p1 = temp->edge[i].start;
+            node p2 = temp->edge[i].end;
+
+            if ((dcmp(point.x - p1.x) && dcmp(point.y - p1.y)) || (dcmp(point.x - p2.x) && dcmp(point.y - p2.y)) || (dcmp(point.y - p1.y) && dcmp(point.y - p2.y)))  //与顶点重合不算在tangram内，判断下一个tangram;解决一点与一条边水平
+            {
+                return TRUE;
+            }
+            //和边重合
+            if (((point.y <= p2.y + eps && point.y >= p1.y - eps) || (point.y <= p1.y + eps && point.y >= p2.y - eps)) && ((point.x <= p2.x + eps && point.x >= p1.x - eps) || (point.x <= p1.x + eps && point.x >= p2.x - eps)) && ((((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) < 0.1) && (((point.y - p1.y) * (p2.x - p1.x) - (point.x - p1.x) * (p2.y - p1.y)) > -0.1)))//点在边上
+            {
+                return TRUE;
+            }
+        }
+        temp = temp->next;
+    }
+    return FALSE;
+}
+
 
 
 

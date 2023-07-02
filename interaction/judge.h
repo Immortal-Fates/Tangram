@@ -16,7 +16,7 @@ void judge_complishment();
 //判断每个多边形的点是否在map里，判断每个多边形的点是否不在其他多边形内
 
 bool judge_point_in_tangram(node point);    //射线法,
-bool judge_point_in_map(node point);   //传入地图（不知道地图的用处？）
+bool judge_point_in_map(node point);   //传入地图
 bool dcmp(double x);
 
 bool Is_superposition(linkedlistADT node1, linkedlistADT node2);
@@ -24,5 +24,6 @@ void add_line(linkedlistADT node1, linkedlistADT node2);
 bool Is_same_line(void* obj1, void* obj2);
 bool Is_psame_line(void* obj1, void* obj2);
 bool have_same_point(void* obj1, void* obj2);
-
+bool judge_createmap_complishment();
+bool judge_point_on_line(node point, Shape* ttemp);
 #endif // !_JUDGE_H_
